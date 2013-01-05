@@ -4,5 +4,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Label Content="Hi Rozina" Height="28" HorizontalAlignment="Left" Margin="75,99,0,0" Name="label1" VerticalAlignment="Top" />
+        <ListBox Height="100" HorizontalAlignment="Left" Margin="124,212,0,0" Name="listBox1" VerticalAlignment="Top" Width="120" />
+        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="144,38,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
     </Grid>
 </Window>
