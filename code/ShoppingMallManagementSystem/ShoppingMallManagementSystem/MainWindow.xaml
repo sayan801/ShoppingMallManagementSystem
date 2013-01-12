@@ -17,12 +17,16 @@
         <TabItem Header="Third">
             <Canvas Height="100" Name="canvas1" Width="200" />
         </TabItem>
-        <TabItem />
-        <TabItem />
-        <TabItem />
-        <TabItem />
-        <TabItem />
-        <TabItem />
-        <TabItem />
+        <TabItem Header="Fourth" >
+            <ComboBox Height="23" Name="comboBox1" Width="120" >
+                <ComboBoxItem>rectangle</ComboBoxItem>
+                <ComboBoxItem>triangle</ComboBoxItem>
+            </ComboBox>
+        </TabItem>
+        <TabItem Header="Fifth" >
+            <DatePicker Height="25" Name="datePicker1" Width="115" />
+        </TabItem>
+
+
     </TabControl>
 </Window>
