@@ -1,7 +1,7 @@
 ﻿<Window x:Class="ShoppingMallManagementSystem.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Shopping Mall Management System" Height="350" Width="525">
+        Title="Shopping Mall Management System" Height="421" Width="595">
     <TabControl>
         <TabItem Header="First">
             <Grid Background="#FFA1B093">
@@ -25,6 +25,9 @@
         </TabItem>
         <TabItem Header="Fifth" >
             <DatePicker Height="25" Name="datePicker1" Width="115" />
+        </TabItem>
+        <TabItem Header="Sixth" >
+            <StackPanel />
         </TabItem>
 
 
