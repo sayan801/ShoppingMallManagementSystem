@@ -1,5 +1,10 @@
+<html>
+<body>
+<h3>CHECK YOUR GUESSING POWER AND KNOW WHICH TYPE OF JOB IS APPROPRIATE FOR YOU</h3>
+</body>
+</html>
 <script type=text/javascript>
-var iRandom;
+var iRandom,count=0;
 function Restart()
 {
 iRandom = Math.floor(Math.random()*11);
@@ -8,6 +13,7 @@ alert('OK, I am thinking of a number between 1 and 10');
 function Guess()
 {
 var yourGuess = document.getElementById('myGuess').value;
+count++;
 if (yourGuess>iRandom)
 	alert('Too High.');
 if (yourGuess<iRandom)
@@ -15,8 +21,33 @@ if (yourGuess<iRandom)
 if (yourGuess==iRandom)
 	{
 	alert('Well done! You guessed it.');
+         rank();
 	Restart();
 	}
+}
+function rank()
+{
+   
+   if (count==1)
+   {
+    alert("excellent your guess");
+    alert("suitable job for you:DETECTIVE");
+    }
+    if (count==2)
+     {
+      alert("suitable job for you:LAWYER");
+      }
+      if (count==3)
+       alert("suitable job for you:DOCTOR");
+       if (count==4)
+        alert("suitable job for you:ENGINEER");
+        if (count==5)
+         alert("suitable job for you:BUISNESS");
+    else
+    {
+     alert("suitable job for you: TEACHER");
+     }
+     
 }
 </script>
 <div>Enter your guess between 1 and 10: <input type=text id='myGuess' name='myGuess'>
