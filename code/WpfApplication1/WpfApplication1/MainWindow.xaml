@@ -40,6 +40,11 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="RozinaBtnStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF9EF2F2" />
+            <Setter Property="Width" Value="115"/>                  
+        </Style>
+
         <Style x:Key="TItemStyle" TargetType="TabItem">
             <Setter Property="Width" Value="115" />
             <Setter Property="Height" Value="33" />
@@ -227,8 +232,8 @@
         <Canvas Height="289" HorizontalAlignment="Left" Margin="10,10,0,0" Name="canvas1" VerticalAlignment="Top" Width="493" Background="#FFAFFA00" OpacityMask="#FFC84B00" Opacity="4" DataContext="{Binding}">
             <Label Canvas.Left="104" Canvas.Top="46" Content="Oriflame India" Height="67" Name="label1" Width="310" FontFamily="Vladimir Script" FontSize="48" />
             <Button Canvas.Left="31" Canvas.Top="166" Content="Make UP Kit"  Name="button1" Style="{StaticResource PlainBtnStyle}" />
-            <Button Canvas.Left="33" Canvas.Top="210" Content="Shampoo" Height="25" Name="button2" Width="115" FontSize="14" Background="#FF9EF2F2" />
-            <Button Canvas.Left="30" Canvas.Top="124" Content="Face Wash" Height="25" Name="button4" Width="117" Background="#FF9EF2F2" Click="button4_Click" />
+            <Button Canvas.Left="33" Canvas.Top="210" Content="Shampoo" Height="25" Name="button2" Style="{StaticResource RozinaBtnStyle}" />
+            <Button Canvas.Left="30" Canvas.Top="254" Content="Face Wash" Height="25" Name="button4" Width="117" Background="#FF9EF2F2" Click="button4_Click" />
         </Canvas>
     </Grid>
 </Window>
