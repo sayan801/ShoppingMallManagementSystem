@@ -1,0 +1,9 @@
+﻿<Window x:Class="WpfApplication1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window1" Height="300" Width="600" Background="#FFA1E535">
+    <Grid Background="#FFA4CE62">
+        <TextBox Height="55" HorizontalAlignment="Left" Margin="170,23,0,0" Name="textBox1" VerticalAlignment="Top" Width="408" Text="  Pure Nature Organic Tea Tree &amp; Rosemary Purifying Wash &amp; Tone Gel" Background="#FFEFBEA8" />
+        <Image Height="235" HorizontalAlignment="Left" Margin="0,12,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="161" Source="/WpfApplication1;component/Images/21350_1.png" />
+    </Grid>
+</Window>

@@ -24,9 +24,20 @@ namespace WpfApplication1
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void comboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.Close();
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 Window1obj=new Window1();
+            Window1obj.Show();
         }
     }
 }
