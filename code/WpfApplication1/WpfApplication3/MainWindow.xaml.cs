@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApplication1
+namespace WpfApplication3
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,25 +24,10 @@ namespace WpfApplication1
             InitializeComponent();
         }
 
-        private void comboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void button1_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
-        private void button4_Click(object sender, RoutedEventArgs e)
-        {
-            Window1 Window1obj=new Window1();
-            Window1obj.Show();
-        }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Clinic all clear is a great shampoo.");
+            Window1 obj = new Window1();
+            obj.Show();
         }
     }
 }

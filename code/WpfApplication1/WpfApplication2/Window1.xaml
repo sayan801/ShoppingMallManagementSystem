@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfApplication2.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window1" Height="300" Width="300">
+    <Grid AllowDrop="True">
+        <Grid.ContextMenu>
+            <ContextMenu />
+        </Grid.ContextMenu>
+        <Label Content="HAVE YOU FIND YOUR CHOICE?" Height="34" HorizontalAlignment="Left" Margin="26,23,0,0" Name="label1" VerticalAlignment="Top" Width="237" />
+        <Button Content="YES" Height="29" HorizontalAlignment="Left" Margin="16,164,0,0" Name="button1" VerticalAlignment="Top" Width="56" />
+        <Button Content="NO" Height="29" HorizontalAlignment="Left" Margin="108,164,0,0" Name="button2" VerticalAlignment="Top" Width="55" />
+        <Button Content="NEXT" Height="28" HorizontalAlignment="Left" Margin="190,164,0,0" Name="button3" VerticalAlignment="Top" Width="72" Click="button3_Click" />
+        <ScrollViewer ScrollChanged="ScrollViewer_ScrollChanged">
+            <StackPanel>
+                <Label Content="mango" Background="Bisque"></Label>
+                <Label Content="apple" Background="Bisque"></Label>
+                <Label Content="orange" Background="Bisque"></Label>
+                <Label Content="banana" Background="Bisque"></Label>
+                <Label Content="lichies" Background="Bisque"></Label>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
