@@ -1,0 +1,24 @@
+﻿<Window x:Class="trigger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="NormalStyle">
+            <Setter Property="Control.HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Control.Margin" Value="10"></Setter>
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Foreground" Value="Red"></Setter>
+                    <Setter Property="Control.Background" Value="Yellow"></Setter>
+                 </Trigger>
+                <Trigger Property="Button.IsPressed" Value="True">
+                    <Setter Property="Control.Foreground" Value="Pink"></Setter>
+                    <Setter Property="Control.Background" Value="White"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>   
+    <Grid>
+        <Button Content="WELLCOME TO TECHNICISE" Style="{StaticResource NormalStyle}" Height="111" HorizontalAlignment="Left" Margin="80,89,0,0" Name="button1" VerticalAlignment="Top" Width="363" Click="button1_Click" />
+    </Grid>
+</Window>

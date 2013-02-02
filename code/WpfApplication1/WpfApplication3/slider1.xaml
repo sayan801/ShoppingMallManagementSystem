@@ -9,5 +9,6 @@
         <Slider Height="40" HorizontalAlignment="Left" Margin="120,122,0,0" Name="slider" VerticalAlignment="Top" Width="91" Minimum="0" Maximum="100" />
         <Label Content="Select Range" Height="27" HorizontalAlignment="Left" Margin="56,22,0,0" Name="label1" VerticalAlignment="Top" Width="186" />
         <TextBlock Height="35" HorizontalAlignment="Left" Margin="0,222,0,0" Name="textBlock1" Text="{Binding Source={x:Static sys:DateTime.Today},StringFormat='{}{0:dddd, MMMM, yyyy}'}" VerticalAlignment="Top" Width="278" />
+        <Button Content="Next" Height="36" HorizontalAlignment="Left" Margin="152,171,0,0" Name="button1" VerticalAlignment="Top" Width="107" Click="button1_Click" />
     </Grid>
 </Window>

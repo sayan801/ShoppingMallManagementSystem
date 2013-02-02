@@ -14,19 +14,23 @@ using System.Windows.Shapes;
 namespace WpfApplication3
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for Window2.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Window2 : Window
     {
-        public Window1()
+        public Window2()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            Window2 obj=new Window2();
-            obj.Show();
+            MessageBox.Show(string.Format("You have entered :{0}", this.textBox1.Text));
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
