@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
-namespace WpfApplication5
+namespace trigger
 {
     /// <summary>
     /// Interaction logic for App.xaml

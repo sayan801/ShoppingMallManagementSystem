@@ -8,7 +8,7 @@
     <ProjectGuid>{1A18041A-6EBD-4C5C-B1EA-D7676A93AE56}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WpfApplication5</RootNamespace>
+    <RootNamespace>trigger</RootNamespace>
     <AssemblyName>WpfApplication5</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

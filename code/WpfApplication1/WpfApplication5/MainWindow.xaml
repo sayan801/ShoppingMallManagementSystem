@@ -19,6 +19,6 @@
         </Style>
     </Window.Resources>   
     <Grid>
-        <Button Content="WELLCOME TO TECHNICISE" Style="{StaticResource NormalStyle}" Height="111" HorizontalAlignment="Left" Margin="80,89,0,0" Name="button1" VerticalAlignment="Top" Width="363" Click="button1_Click" />
+        <Button Content="WELLCOME TO TECHNICISE" Style="{StaticResource NormalStyle}" Height="111" HorizontalAlignment="Left" Margin="80,89,0,0" Name="welcomeBtn" VerticalAlignment="Top" Width="363" Click="welcomeBtn_Click" />
     </Grid>
 </Window>

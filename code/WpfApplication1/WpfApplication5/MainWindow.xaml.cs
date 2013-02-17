@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApplication5
+namespace trigger
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -21,12 +21,14 @@ namespace WpfApplication5
     {
         public MainWindow()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void welcomeBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show(DateTime.Now.ToString() +": Hi");
         }
+
+       
     }
 }
