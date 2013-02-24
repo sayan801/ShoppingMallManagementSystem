@@ -29,6 +29,11 @@ namespace trigger
             MessageBox.Show(DateTime.Now.ToString() +": Hi");
         }
 
+        private void hyperLinkTypeLable_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Hyperlink example");
+        }
+
        
     }
 }

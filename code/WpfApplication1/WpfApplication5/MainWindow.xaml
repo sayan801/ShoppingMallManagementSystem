@@ -20,5 +20,6 @@
     </Window.Resources>   
     <Grid>
         <Button Content="WELLCOME TO TECHNICISE" Style="{StaticResource NormalStyle}" Height="111" HorizontalAlignment="Left" Margin="80,89,0,0" Name="welcomeBtn" VerticalAlignment="Top" Width="363" Click="welcomeBtn_Click" />
+        <Label Content="Click me" Height="28" HorizontalAlignment="Left" Margin="151,257,0,0" Name="hyperLinkTypeLable" VerticalAlignment="Top" MouseDown="hyperLinkTypeLable_MouseDown" />
     </Grid>
 </Window>
