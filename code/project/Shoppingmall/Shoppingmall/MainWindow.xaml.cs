@@ -27,14 +27,14 @@ namespace WpfApplication1
 
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            string VAL = "";
-            if (ck1.Checked)
-            {
-                VAL += ck1.Content;
-            }
-            MessageBox.Show(VAL);
-        }
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    string VAL = "";
+        //    if (ck1.Checked)
+        //    {
+        //        VAL += ck1.Content;
+        //    }
+        //    MessageBox.Show(VAL);
+        //}
     }
 }

@@ -13,32 +13,25 @@
     <DockPanel LastChildFill="True">
       
         <UniformGrid DockPanel.Dock="Top" Columns="1">
-            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Snap ITC" FontSize="48">
                 Welcome to the Shoppingmall
             </Label>
         </UniformGrid>
-        <UniformGrid DockPanel.Dock="Top" Rows="1">
-            <Button>xz</Button>
-            <TextBox></TextBox>
-            <Button>abc</Button>
-            <Button>xz</Button>
+        <UniformGrid Height="20"  DockPanel.Dock="Top"></UniformGrid>
+        <UniformGrid DockPanel.Dock="Top">
+            <TextBlock>
+                <Hyperlink FontSize="20">Ground Floor</Hyperlink>
+                <Hyperlink FontSize="20">First floor</Hyperlink>
+                <Hyperlink FontSize="20">Second floor</Hyperlink>
+                <Hyperlink FontSize="20">Third floor</Hyperlink>
+            </TextBlock>
         </UniformGrid>
-        <UniformGrid DockPanel.Dock="Bottom">
+        <!--<UniformGrid DockPanel.Dock="Bottom">
             <Label >
                 Welcome to the Shoppingmall
             </Label>
-        </UniformGrid>
-        <UniformGrid DockPanel.Dock="Top" Rows="1">
-            <Button Content="name" Margin="1,10,20,4">
-                
-            </Button>
-            <Button Content="CHECK" Click="Button_Click"></Button>
-            <CheckBox Name="ck1">1</CheckBox>
-            <CheckBox Name="CK2">2
-                
-            </CheckBox>
-            <CheckBox Name="CK3">3</CheckBox>
-        </UniformGrid>
-        
+        </UniformGrid>-->
+        <!--<UniformGrid DockPanel.Dock="Top" Rows="1">
+            </UniformGrid>-->
     </DockPanel>
 </Window>
