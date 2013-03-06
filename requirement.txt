@@ -1,0 +1,4 @@
+1.This software provided the facility to get a detail view of the shoppingmall.
+2.Here we get details of each product available at every shop.
+3.we can send feedback after having a facility.
+4.we can check the status of the availability of a perticular product.
