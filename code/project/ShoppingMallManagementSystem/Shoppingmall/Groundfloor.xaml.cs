@@ -9,32 +9,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfApplication1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Groundfloor.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Groundfloor : Window
     {
-        public MainWindow()
+        public Groundfloor()
         {
             InitializeComponent();
         }
-        
-
-
-
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    string VAL = "";
-        //    if (ck1.Checked)
-        //    {
-        //        VAL += ck1.Content;
-        //    }
-        //    MessageBox.Show(VAL);
-        //}
     }
 }

@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ShoppingMallManagementSystem
+namespace WpfApplication1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,5 +23,23 @@ namespace ShoppingMallManagementSystem
         {
             InitializeComponent();
         }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        
+
+
+
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    string VAL = "";
+        //    if (ck1.Checked)
+        //    {
+        //        VAL += ck1.Content;
+        //    }
+        //    MessageBox.Show(VAL);
+        //}
     }
 }

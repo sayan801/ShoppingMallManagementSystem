@@ -20,10 +20,10 @@
         <UniformGrid Height="20"  DockPanel.Dock="Top"></UniformGrid>
         <UniformGrid DockPanel.Dock="Top">
             <TextBlock>
-                <Hyperlink FontSize="20">Ground Floor</Hyperlink>
-                <Hyperlink FontSize="20">First floor</Hyperlink>
-                <Hyperlink FontSize="20">Second floor</Hyperlink>
-                <Hyperlink FontSize="20">Third floor</Hyperlink>
+                <Hyperlink  Click="Hyperlink_Click" FontSize="20">Ground Floor</Hyperlink>
+                <Hyperlink Click="Hyperlink_Click" FontSize="20">First floor</Hyperlink>
+                <Hyperlink Click="Hyperlink_Click" FontSize="20">Second floor</Hyperlink>
+                <Hyperlink Click="Hyperlink_Click" FontSize="20">Third floor</Hyperlink>
             </TextBlock>
         </UniformGrid>
         <!--<UniformGrid DockPanel.Dock="Bottom">
