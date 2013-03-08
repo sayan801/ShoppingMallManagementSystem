@@ -26,20 +26,13 @@ namespace WpfApplication1
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
-
+            WpfApplication1.Groundfloor obj = new Groundfloor();
+            obj.Show();
         }
         
 
 
 
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    string VAL = "";
-        //    if (ck1.Checked)
-        //    {
-        //        VAL += ck1.Content;
-        //    }
-        //    MessageBox.Show(VAL);
-        //}
+       
     }
 }
