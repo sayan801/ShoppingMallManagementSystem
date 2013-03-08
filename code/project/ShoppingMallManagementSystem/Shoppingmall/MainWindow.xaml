@@ -17,7 +17,12 @@
                 Welcome to the Shoppingmall
             </Label>
         </UniformGrid>
-        <UniformGrid Height="20"  DockPanel.Dock="Top"></UniformGrid>
+        <UniformGrid Height="60"  DockPanel.Dock="Top" Columns="2">
+            <Label>search</Label>
+                <TextBox Height="31" Name="textBox1" Width="153" />
+            
+            
+        </UniformGrid>
         <UniformGrid DockPanel.Dock="Top">
             <TextBlock>
                 <Hyperlink  Click="Hyperlink_Click" FontSize="20">Ground Floor</Hyperlink>

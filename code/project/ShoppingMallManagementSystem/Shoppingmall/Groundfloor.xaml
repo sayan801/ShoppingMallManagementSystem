@@ -2,8 +2,14 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Groundfloor" Height="300" Width="300" WindowState="Maximized">
-    <UniformGrid>
-        <Label Height="33" Width="99">Mainland China</Label>
-        <Label Content="Label" Height="33" Name="label1" Width="101" />
-    </UniformGrid>
+    <DockPanel Name="mydockpanel" LastChildFill="True">
+        <Label DockPanel.Dock="Top" Height="77"></Label>
+            <Label DockPanel.Dock="Top" FontFamily="Vladimir Script" FontSize="20">Mainland China</Label>
+            <Label Content="Cafe Coffee Day"  DockPanel.Dock="Top" Height="32" FontFamily="Viner Hand ITC" FontSize="20" />
+        <Label DockPanel.Dock="Top" FontFamily="Stencil" FontSize="20">Pizza Hut</Label>
+        <Label DockPanel.Dock="Top" FontFamily="Showcard Gothic" FontSize="20">Adidas</Label>
+        <Label DockPanel.Dock="Top" FontFamily="Snap ITC" FontSize="20">Manyabar</Label>
+        <Label DockPanel.Dock="Top" FontFamily="SimSun-ExtB" FontSize="22">Play Zone</Label>
+
+    </DockPanel>
 </Window>
