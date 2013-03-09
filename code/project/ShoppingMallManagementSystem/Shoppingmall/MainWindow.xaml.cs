@@ -24,15 +24,17 @@ namespace WpfApplication1
             InitializeComponent();
         }
 
-        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        private void Hyperlink_Click1(object sender, RoutedEventArgs e)
         {
             WpfApplication1.Groundfloor obj = new Groundfloor();
             obj.Show();
+            WpfApplication1.firstfloor obj1 = new firstfloor();
+            obj1.Show();
+             
         }
-        
 
-
-
+       
+       
        
     }
 }
