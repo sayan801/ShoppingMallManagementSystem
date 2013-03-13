@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingmallUI", "Shoppingm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Style", "Style\Style.csproj", "{68D271BD-DD16-4EDC-A5C7-59378C470203}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "destination", "destination\destination.csproj", "{F7C09C26-F34A-48AE-B8C1-CD2A197F66C4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -21,10 +19,6 @@ Global
 		{68D271BD-DD16-4EDC-A5C7-59378C470203}.Debug|x86.Build.0 = Debug|x86
 		{68D271BD-DD16-4EDC-A5C7-59378C470203}.Release|x86.ActiveCfg = Release|x86
 		{68D271BD-DD16-4EDC-A5C7-59378C470203}.Release|x86.Build.0 = Release|x86
-		{F7C09C26-F34A-48AE-B8C1-CD2A197F66C4}.Debug|x86.ActiveCfg = Debug|x86
-		{F7C09C26-F34A-48AE-B8C1-CD2A197F66C4}.Debug|x86.Build.0 = Debug|x86
-		{F7C09C26-F34A-48AE-B8C1-CD2A197F66C4}.Release|x86.ActiveCfg = Release|x86
-		{F7C09C26-F34A-48AE-B8C1-CD2A197F66C4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

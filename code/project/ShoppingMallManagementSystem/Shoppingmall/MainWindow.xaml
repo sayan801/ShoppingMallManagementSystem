@@ -1,7 +1,7 @@
 ﻿<Window x:Class="WpfApplication1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="714" WindowState="Maximized">
+        Title="MainWindow" Height="350" Width="714" WindowState="Maximized" xmlns:my="clr-namespace:WpfApplication1">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -17,26 +17,28 @@
                 Welcome to the Shoppingmall
             </Label>
         </UniformGrid>
-        <UniformGrid Height="60"  DockPanel.Dock="Top" Columns="2">
-            <Label Width="58">search</Label>
-                <TextBox Height="31" Name="textBox1" Width="153" />
+        <UniformGrid  DockPanel.Dock="Top"  Rows="1">
+            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Margin="50,0,0,0" >Search By</Label>
+                <TextBox  Name="textBox1" Margin="100,0,0,0"   />
+             <!--<ScrollViewer Name="scrollViewer1"
+VerticalScrollBarVisibility="Auto" AllowDrop="True" DragOver="scrollViewer1_DragOver" Drop="scrollViewer1_Drop">-->
+
+
+            <Button Visibility="Visible" Margin="0,0,240,0" IsEnabled="False" ></Button>
             
             
         </UniformGrid>
         <UniformGrid DockPanel.Dock="Top">
             <TextBlock>
-                <Hyperlink  Click="Hyperlink_Click1" FontSize="20">Ground Floor</Hyperlink>
-                <Hyperlink Click="Hyperlink_Click1" FontSize="20">First floor</Hyperlink>
-                <Hyperlink Click="Hyperlink_Click1" FontSize="20">Second floor</Hyperlink>
-                <Hyperlink Click="Hyperlink_Click1" FontSize="20">Third floor</Hyperlink>
+                <Hyperlink  FontSize="20" AllowDrop="True">Product</Hyperlink>
+                <Hyperlink Click="Hyperlink_Click"  FontSize="20">Shop</Hyperlink>
+                <Hyperlink Click="Hyperlink_Click_1"  FontSize="20">Floor</Hyperlink>
+                <Hyperlink Name="thrdflrHprlnk" Click="thrdflrHprlnk_Click"  FontSize="20">Feed Back</Hyperlink>
             </TextBlock>
         </UniformGrid>
-        <!--<UniformGrid DockPanel.Dock="Bottom">
-            <Label >
-                Welcome to the Shoppingmall
-            </Label>
-        </UniformGrid>-->
-        <!--<UniformGrid DockPanel.Dock="Top" Rows="1">
-            </UniformGrid>-->
+        <DockPanel DockPanel.Dock="Bottom" Name="infodoc" >
+            <my:UserControl1/>
+        </DockPanel>
+        
     </DockPanel>
 </Window>
