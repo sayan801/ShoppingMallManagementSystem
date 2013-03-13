@@ -6,6 +6,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Background="Beige" >
     <Grid Width="301">
-        <Image Height="299" HorizontalAlignment="Left" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="300" Source="/Shoppingmall;component/Images/images.jpg" />
+        <Image Height="299" HorizontalAlignment="Left" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="300" Source="/Shoppingmall;component/Images/images.jpg">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="/Shoppingmall;component/Images/images.jpg" />
+            </Image.OpacityMask>
+        </Image>
     </Grid>
 </UserControl>
