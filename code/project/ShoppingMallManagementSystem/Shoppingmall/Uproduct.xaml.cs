@@ -9,16 +9,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfApplication1
 {
     /// <summary>
-    /// Interaction logic for Groundfloor.xaml
+    /// Interaction logic for Uproduct.xaml
     /// </summary>
-    public partial class Groundfloor : Window
+    public partial class Uproduct : UserControl
     {
-        public Groundfloor()
+        public Uproduct()
         {
             InitializeComponent();
         }

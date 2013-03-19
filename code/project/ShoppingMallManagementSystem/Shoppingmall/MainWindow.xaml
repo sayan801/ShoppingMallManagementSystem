@@ -20,8 +20,7 @@
         <UniformGrid  DockPanel.Dock="Top"  Rows="1">
             <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Margin="50,0,0,0" >Search By</Label>
                 <TextBox  Name="textBox1" Margin="100,0,0,0"   />
-             <!--<ScrollViewer Name="scrollViewer1"
-VerticalScrollBarVisibility="Auto" AllowDrop="True" DragOver="scrollViewer1_DragOver" Drop="scrollViewer1_Drop">-->
+            
 
 
             <Button Visibility="Visible" Margin="0,0,240,0" IsEnabled="False" ></Button>
@@ -30,10 +29,10 @@ VerticalScrollBarVisibility="Auto" AllowDrop="True" DragOver="scrollViewer1_Drag
         </UniformGrid>
         <UniformGrid DockPanel.Dock="Top">
             <TextBlock>
-                <Hyperlink  FontSize="20" AllowDrop="True">Product</Hyperlink>
-                <Hyperlink Click="Hyperlink_Click"  FontSize="20">Shop</Hyperlink>
-                <Hyperlink Click="Hyperlink_Click_1"  FontSize="20">Floor</Hyperlink>
-                <Hyperlink Name="thrdflrHprlnk" Click="thrdflrHprlnk_Click"  FontSize="20">Feed Back</Hyperlink>
+                <Hyperlink  Name="product" Click="product_Click" FontSize="20">Product</Hyperlink>
+                <Hyperlink  Name="shop" Click="shop_Click"  FontSize="20">Shop</Hyperlink>
+                <Hyperlink  Name="floor" Click="floor_Click"  FontSize="20">Floor</Hyperlink>
+                <Hyperlink Name="feed_back" Click="feed_back_Click"  FontSize="20">Feed Back</Hyperlink>
             </TextBlock>
         </UniformGrid>
         <DockPanel DockPanel.Dock="Bottom" Name="infodoc" >

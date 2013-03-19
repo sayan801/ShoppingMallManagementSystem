@@ -54,6 +54,27 @@ namespace WpfApplication1
                obj.Show();
         }
 
+        private void shop_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void floor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void feed_back_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //private void product_Click(object sender, RoutedEventArgs e)
+        //{
+        // WpfApplication1.Uproduct obj=new Uproduct;
+        //    Uproduct.Show();
+        //}
+
        
        
        
