@@ -12,8 +12,8 @@
     </Window.Resources>
     <DockPanel LastChildFill="True">
       
-        <UniformGrid DockPanel.Dock="Top" Columns="1">
-            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Snap ITC" FontSize="48">
+        <UniformGrid DockPanel.Dock="Top" Columns="1" Background="Navy">
+            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Snap ITC" FontSize="48" Foreground="White">
                 Welcome to the Shoppingmall
             </Label>
         </UniformGrid>

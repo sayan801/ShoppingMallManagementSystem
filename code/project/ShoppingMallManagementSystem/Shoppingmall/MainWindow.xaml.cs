@@ -32,27 +32,27 @@ namespace WpfApplication1
              
         //}
 
-        private void Hyperlink_Click(object sender, RoutedEventArgs e)
-        {
+        //private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
 
-        private void Hyperlink_Click_1(object sender, RoutedEventArgs e)
-        {
+        //private void Hyperlink_Click_1(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
 
-        private void thrdflrHprlnk_Click(object sender, RoutedEventArgs e)
-        {
-            WpfApplication1.firstfloor obj1 = new firstfloor();
-            obj1.Show();
-        }
+        //private void thrdflrHprlnk_Click(object sender, RoutedEventArgs e)
+        //{
+        //    WpfApplication1.firstfloor obj1 = new firstfloor();
+        //    obj1.Show();
+        //}
 
-        private void Hyperlink_click(object sender, MouseEventArgs e)
-        {
-            WpfApplication1.Groundfloor obj = new Groundfloor();
-               obj.Show();
-        }
+        //private void Hyperlink_click(object sender, MouseEventArgs e)
+        //{
+        //    WpfApplication1.Groundfloor obj = new Groundfloor();
+        //       obj.Show();
+        //}
 
         private void shop_Click(object sender, RoutedEventArgs e)
         {
@@ -69,11 +69,12 @@ namespace WpfApplication1
 
         }
 
-        //private void product_Click(object sender, RoutedEventArgs e)
-        //{
-        // WpfApplication1.Uproduct obj=new Uproduct;
-        //    Uproduct.Show();
-        //}
+        private void product_Click(object sender, RoutedEventArgs e)
+        {
+         WpfApplication1.Uproduct obj=new WpfApplication1.Uproduct();
+         infodoc.Children.Clear();
+            infodoc.Children.Add(obj);
+        }
 
        
        

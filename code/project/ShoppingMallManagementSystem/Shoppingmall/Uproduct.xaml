@@ -4,10 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <!--<DockPanel LastChildFill="True">
-        <UserControl DockPanel.Dock="Top">
-            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Available Product</Label>
-        </UserControl>
-    </DockPanel>-->
+             d:DesignHeight="300" d:DesignWidth="300" FontFamily="Tempus Sans ITC" FontSize="20" Foreground="#FF318931">
+    <DockPanel LastChildFill="True">
+        <UniformGrid DockPanel.Dock="Top" Columns="1">
+            <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Top">Babies Product</Label>
+            <Label> Soft toys</Label>
+            <Label> Resturent</Label>
+            <Label>Beauty parler</Label>
+            <Label>Electronics Gadgeats</Label>
+            <Label>Beddings</Label>
+            <Label>Book Stall</Label>
+            <Label>Accerrice</Label>
+            <Label>Shoes</Label>
+        </UniformGrid>
+    </DockPanel>
 
+    </UserControl>
