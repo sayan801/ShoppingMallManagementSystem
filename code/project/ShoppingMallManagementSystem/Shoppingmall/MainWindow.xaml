@@ -17,8 +17,8 @@
                 Welcome to the Shoppingmall
             </Label>
         </UniformGrid>
-        <UniformGrid  DockPanel.Dock="Top"  Rows="1">
-            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Margin="50,0,0,0" >Search By</Label>
+        <UniformGrid  DockPanel.Dock="Top"  Rows="1" Background="CadetBlue">
+            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Margin="50,0,0,0">Search By</Label>
                 <TextBox  Name="textBox1" Margin="100,0,0,0"   />
             
 
@@ -27,7 +27,7 @@
             
             
         </UniformGrid>
-        <UniformGrid DockPanel.Dock="Top">
+        <UniformGrid DockPanel.Dock="Top" Background="CadetBlue">
             <TextBlock>
                 <Hyperlink  Name="product" Click="product_Click" FontSize="20">Product</Hyperlink>
                 <Hyperlink  Name="shop" Click="shop_Click"  FontSize="20">Shop</Hyperlink>

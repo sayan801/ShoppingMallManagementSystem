@@ -9,16 +9,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfApplication1
 {
     /// <summary>
-    /// Interaction logic for firstfloor.xaml
+    /// Interaction logic for Ushop.xaml
     /// </summary>
-    public partial class firstfloor : Window
+    public partial class Ushop : UserControl
     {
-        public firstfloor()
+        public Ushop()
         {
             InitializeComponent();
         }

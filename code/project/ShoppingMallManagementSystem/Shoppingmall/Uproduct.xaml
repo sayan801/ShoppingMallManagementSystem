@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" FontFamily="Tempus Sans ITC" FontSize="20" Foreground="#FF318931">
     <DockPanel LastChildFill="True">
-        <UniformGrid DockPanel.Dock="Top" Columns="1">
+        <UniformGrid DockPanel.Dock="Top" Columns="1" Background="Aquamarine">
             <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Top">Babies Product</Label>
             <Label> Soft toys</Label>
             <Label> Resturent</Label>
