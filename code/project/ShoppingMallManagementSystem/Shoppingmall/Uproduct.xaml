@@ -5,18 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" FontFamily="Tempus Sans ITC" FontSize="20" Foreground="#FF318931">
-    <DockPanel LastChildFill="True">
-        <UniformGrid DockPanel.Dock="Top" Columns="1" Background="Aquamarine">
-            <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Top">Babies Product</Label>
-            <Label> Soft toys</Label>
-            <Label> Resturent</Label>
+    <DockPanel LastChildFill="True"  >
+        <UniformGrid DockPanel.Dock="Top" Columns="1">
+            <ScrollViewer Height="256" Margin="0,0,480,0">
+                <StackPanel Background="Orange" Opacity=".8" >
+                <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Top">Babies Product</Label>
+            <Label>Soft toys</Label>
+            <Label>Resturent</Label>
             <Label>Beauty parler</Label>
             <Label>Electronics Gadgeats</Label>
             <Label>Beddings</Label>
             <Label>Book Stall</Label>
             <Label>Accerrice</Label>
             <Label>Shoes</Label>
+                </StackPanel>
+            </ScrollViewer>
         </UniformGrid>
+        <UniformGrid >
+            <Image Source="C:\Users\ROZINA\Desktop\images.jpg" >
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="C:\Users\ROZINA\Desktop\images.jpg" />
+                </Image.OpacityMask>
+            </Image>
+        </UniformGrid>
+       
     </DockPanel>
 
     </UserControl>
