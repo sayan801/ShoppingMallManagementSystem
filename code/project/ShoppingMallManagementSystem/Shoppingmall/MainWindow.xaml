@@ -13,8 +13,19 @@
     <DockPanel LastChildFill="True">
       
         <UniformGrid DockPanel.Dock="Top" Columns="1" Background="Navy">
-            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Snap ITC" FontSize="48" Foreground="White">
-                Welcome to the Shoppingmall
+            <Label Name="lable1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Snap ITC" FontSize="48" Foreground="Goldenrod"
+              Content="Welcome to the Shoppingmall">
+                <Label.Triggers>
+                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation AutoReverse="True" From="2" To="0" Storyboard.TargetName="lable1" Storyboard.TargetProperty="Opacity">
+                                    
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Label.Triggers>
             </Label>
         </UniformGrid>
         <UniformGrid  DockPanel.Dock="Top"  Rows="1" Background="CadetBlue">
