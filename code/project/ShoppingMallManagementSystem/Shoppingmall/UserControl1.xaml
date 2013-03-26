@@ -6,9 +6,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Background="Beige" >
     <Grid >
-        <Image HorizontalAlignment="Left" Name="image1" Stretch="Fill" VerticalAlignment="Top" Source="/Shoppingmall;component/Images/images.jpg">
+        <Image HorizontalAlignment="Left" Name="image1" Stretch="Fill" VerticalAlignment="Top" Source="C:\Users\ROZINA\Desktop\front.jpg">
             <Image.OpacityMask>
-                <ImageBrush ImageSource="/Shoppingmall;component/Images/images.jpg" />
+                <ImageBrush ImageSource="C:\Users\ROZINA\Desktop\front.jpg" />
             </Image.OpacityMask>
         </Image>
     </Grid>
