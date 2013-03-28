@@ -6,10 +6,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" FontFamily="Tempus Sans ITC" FontSize="20" Foreground="#FF318931">
     <DockPanel LastChildFill="True"  >
-        <UniformGrid DockPanel.Dock="Top" Columns="1">
-            <ScrollViewer Height="256" Margin="0,0,480,0">
+        <UniformGrid DockPanel.Dock="Left">
+            <ScrollViewer>
                 <StackPanel Background="Orange" Opacity=".8" >
-                <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Top">Babies Product</Label>
+                <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Name="babiesproduct" MouseDoubleClick="babiesproduct_MouseDoubleClick">Babies Product</Label>
             <Label>Soft toys</Label>
             <Label>Resturent</Label>
             <Label>Beauty parler</Label>
@@ -18,10 +18,16 @@
             <Label>Book Stall</Label>
             <Label>Accerrice</Label>
             <Label>Shoes</Label>
+                    <Label>Bags</Label>
+                    <Label>Ladies Garments</Label>
+                    <Label>Jeans</Label>
+                    <Label>T-shirt</Label>
+                    <Label>Wooden Product</Label>
+                    
                 </StackPanel>
             </ScrollViewer>
         </UniformGrid>
-        <UniformGrid >
+        <UniformGrid  Name="upinfo">
             <Image Source="C:\Users\ROZINA\Desktop\images.jpg" >
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="C:\Users\ROZINA\Desktop\images.jpg" />

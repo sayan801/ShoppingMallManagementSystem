@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BabiesProduct.xaml.cs">
+      <DependentUpon>BabiesProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SoftToyes.xaml.cs">
+      <DependentUpon>SoftToyes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ufloor.xaml.cs">
       <DependentUpon>Ufloor.xaml</DependentUpon>
     </Compile>
@@ -67,6 +73,10 @@
     <Compile Include="Ushop.xaml.cs">
       <DependentUpon>Ushop.xaml</DependentUpon>
     </Compile>
+    <Page Include="BabiesProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,6 +89,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SoftToyes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ufloor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

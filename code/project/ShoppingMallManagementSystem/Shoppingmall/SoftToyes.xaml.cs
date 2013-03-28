@@ -15,21 +15,13 @@ using System.Windows.Shapes;
 namespace WpfApplication1
 {
     /// <summary>
-    /// Interaction logic for Uproduct.xaml
+    /// Interaction logic for SoftToyes.xaml
     /// </summary>
-    public partial class Uproduct : UserControl
+    public partial class SoftToyes : UserControl
     {
-        public Uproduct()
+        public SoftToyes()
         {
             InitializeComponent();
         }
-
-        private void babiesproduct_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            WpfApplication1.BabiesProduct bpobj = new BabiesProduct();
-            upinfo.Children.Clear();
-            upinfo.Children.Add(bpobj);
-        }
     }
-
 }
