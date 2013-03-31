@@ -30,6 +30,8 @@ namespace WpfApplication1
             upinfo.Children.Clear();
             upinfo.Children.Add(bpobj);
         }
+
+       
     }
 
 }

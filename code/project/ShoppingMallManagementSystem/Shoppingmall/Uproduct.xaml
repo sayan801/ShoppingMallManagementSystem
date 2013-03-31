@@ -28,9 +28,9 @@
             </ScrollViewer>
         </UniformGrid>
         <UniformGrid  Name="upinfo">
-            <Image Source="C:\Users\ROZINA\Desktop\images.jpg" >
+            <Image Source="C:\Users\ROZINA\Documents\GitHub\ShoppingMallManagementSystem\code\project\ShoppingMallManagementSystem\image\images.jpg" >
                 <Image.OpacityMask>
-                    <ImageBrush ImageSource="C:\Users\ROZINA\Desktop\images.jpg" />
+                    <ImageBrush ImageSource="C:\Users\ROZINA\Documents\GitHub\ShoppingMallManagementSystem\code\project\ShoppingMallManagementSystem\image\images.jpg" />
                 </Image.OpacityMask>
             </Image>
         </UniformGrid>

@@ -9,6 +9,12 @@
         <UniformGrid DockPanel.Dock="Left" Columns="2" Margin="0,0,0,200">
             <Label ToolTip="Kidzee(Stall-111),Monorama(Stall-9)">Ground Floor</Label>
             <Label>Third Floor</Label>
+            <Image Source="C:\Users\ROZINA\Desktop\image1.jpg" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="C:\Users\ROZINA\Desktop\image1.jpg">
+                   </ImageBrush>
+                </Image.OpacityMask>
+              </Image>
         </UniformGrid>
         
             

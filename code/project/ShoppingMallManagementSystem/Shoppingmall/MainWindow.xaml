@@ -19,7 +19,7 @@
                     <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                         <BeginStoryboard>
                             <Storyboard>
-                                <DoubleAnimation AutoReverse="True" From="2" To="0" Storyboard.TargetName="lable1" Storyboard.TargetProperty="Opacity">
+                                <DoubleAnimation AutoReverse="True" From="2" To="0" Storyboard.TargetName="lable1" Storyboard.TargetProperty="Opacity" RepeatBehavior="Forever">
                                     
                                 </DoubleAnimation>
                             </Storyboard>
