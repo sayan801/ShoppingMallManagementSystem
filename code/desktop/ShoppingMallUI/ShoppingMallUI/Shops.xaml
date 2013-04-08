@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="ShoppingMall.Shops"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" FontFamily="Tempus Sans ITC" FontSize="20" Foreground="#FF318931">
+    <DockPanel LastChildFill="True"  >
+        <UniformGrid DockPanel.Dock="Left">
+            <ScrollViewer Width="250">
+                <StackPanel Background="Orange" Opacity=".8" >
+            <Label>Main Land Chaina</Label>
+            <Label>Cafe Coffie Day</Label>
+            <Label>Pizza Hut</Label>
+            <Label>Mcdonalds</Label>
+            <Label>Adidas</Label>
+            <Label>Reebok</Label>
+            <Label>Manyabar</Label>
+            <Label>Pantaloons</Label>
+            <Label>Fasion Bigbazar</Label>
+            <Label>Habibs</Label>
+            <Label>Woodlands</Label>
+            <Label>Playzone</Label>
+            <Label>Kidzone</Label>
+            <Label>Paper House</Label>
+            <Label>Sujata Cenema Hall</Label>
+                </StackPanel>
+            </ScrollViewer>
+        </UniformGrid>
+        <UniformGrid  Name="upinfo" Background="White">
+
+        </UniformGrid>
+
+    </DockPanel>
+
+</UserControl>
