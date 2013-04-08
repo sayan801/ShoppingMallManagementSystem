@@ -1,0 +1,3 @@
+Create GUI , styling...
+Install mysql in rozina's machine
+complete database connection
