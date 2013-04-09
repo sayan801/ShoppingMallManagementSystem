@@ -52,6 +52,7 @@
                 <Hyperlink  Name="shop" Style="{StaticResource HyperlinkStyle}" Click="shop_Click"  FontSize="20">Shops</Hyperlink>
                 <Hyperlink  Name="floor" Style="{StaticResource HyperlinkStyle}"  FontSize="20">Floor</Hyperlink>
                 <Hyperlink Name="feedback" Style="{StaticResource HyperlinkStyle}" Click="feedback_Click" FontSize="20">Feed Back</Hyperlink>
+                <Hyperlink Name="adminZoneobjHL" Style="{StaticResource HyperlinkStyle}" Click="adminZoneobjHL_Click" FontSize="20">Admin Zone</Hyperlink>
             </TextBlock>
         </UniformGrid>
         <DockPanel DockPanel.Dock="Bottom" Name="infodocP" LastChildFill="True">

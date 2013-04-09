@@ -55,12 +55,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminZone.xaml.cs">
+      <DependentUpon>AdminZone.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FeedBack.xaml.cs">
       <DependentUpon>FeedBack.xaml</DependentUpon>
     </Compile>
     <Compile Include="Shops.xaml.cs">
       <DependentUpon>Shops.xaml</DependentUpon>
     </Compile>
+    <Page Include="AdminZone.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FeedBack.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

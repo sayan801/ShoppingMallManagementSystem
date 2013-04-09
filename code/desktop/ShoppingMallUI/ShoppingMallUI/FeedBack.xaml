@@ -4,20 +4,44 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" FontFamily="Tempus Sans ITC" FontSize="20" Foreground="#FF318931">
+             d:DesignHeight="300" d:DesignWidth="586" FontFamily="Tempus Sans ITC" FontSize="20" Foreground="#FF318931">
     <DockPanel LastChildFill="True"  >
-        <UniformGrid DockPanel.Dock="Left">
-            <ScrollViewer Width="250">
-                <StackPanel Background="Orange" Opacity=".8" >
-                    <Label>Buyers Feedback</Label>
-                    <Label>Sellers Feedback</Label>
-                    <Label>Guest Feedback</Label>
-                </StackPanel>
-            </ScrollViewer>
+        
+        <UniformGrid  Name="upinfo" Background="White" DockPanel.Dock="Top" Columns="4">
+            <Label></Label>
+            <Label>Name</Label>
+            <TextBox></TextBox>
+            <Label></Label>
+            <Label></Label>
+            <Label>address</Label>
+            <TextBox></TextBox>
+            <Label></Label>
+            <Label>Enter your</Label>
+            <Label>mobileno</Label>
+            <TextBox></TextBox>
+            <Label></Label>
+            <Label>Feed Back</Label>
+            <Label>email</Label>
+            <TextBox></TextBox>
+            <Label></Label>
+            <Label></Label>
+            <Label>type</Label>
+            <TextBox></TextBox>
+            <Label></Label>
+            <Label></Label>
+            <Label>feedback</Label>
+            <TextBox></TextBox>
+            <Label></Label>
+            <Label></Label>
+            <Button></Button>
+            <Button></Button>
+            <Label></Label>
+            
+           
         </UniformGrid>
-        <UniformGrid  Name="upinfo" Background="White">
+        
+        <UniformGrid DockPanel.Dock="Bottom">
 
         </UniformGrid>
-
     </DockPanel>
 </UserControl>

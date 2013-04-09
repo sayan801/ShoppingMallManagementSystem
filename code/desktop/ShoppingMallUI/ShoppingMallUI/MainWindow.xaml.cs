@@ -46,7 +46,12 @@ namespace ShoppingMall
             infodocP.Children.Clear();
             infodocP.Children.Add(FeedBackobj);
         }
-
+        private void adminZoneobjHL_Click(object sender, RoutedEventArgs e)
+        {
+            ShoppingMall.AdminZone AdminZoneobj = new ShoppingMall.AdminZone();
+            infodocP.Children.Clear();
+            infodocP.Children.Add(AdminZoneobj);
+        }
         
     }
 }
