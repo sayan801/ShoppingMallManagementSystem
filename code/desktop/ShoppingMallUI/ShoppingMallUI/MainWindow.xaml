@@ -10,7 +10,9 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
+    
     <DockPanel LastChildFill="True">
+        
 
         <UniformGrid DockPanel.Dock="Top" Columns="1" Background="#FF251D23">
             <Label Name="lable1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Snap ITC" FontSize="48" Foreground="Goldenrod"
@@ -52,8 +54,12 @@
                 <Hyperlink Name="feedback" Style="{StaticResource HyperlinkStyle}" Click="feedback_Click" FontSize="20">Feed Back</Hyperlink>
             </TextBlock>
         </UniformGrid>
-        <DockPanel DockPanel.Dock="Bottom" Name="infodocP" >
-            
+        <DockPanel DockPanel.Dock="Bottom" Name="infodocP" LastChildFill="True">
+            <UniformGrid DockPanel.Dock="Top">
+                <UniformGrid.Background>
+                    <ImageBrush ImageSource="/ShoppingMallUI;component/Images/shopping-femmes-hd-fond-d-cran-182156.jpg" />
+                </UniformGrid.Background>
+            </UniformGrid>
         </DockPanel>
 
     </DockPanel>
