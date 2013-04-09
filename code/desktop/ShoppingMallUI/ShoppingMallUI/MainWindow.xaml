@@ -49,10 +49,10 @@
         <UniformGrid DockPanel.Dock="Top" >
             <TextBlock FontFamily="Sylfaen" FontWeight="Bold" FontStyle="Normal" >
                 <Hyperlink  Name="product" Style="{StaticResource HyperlinkStyle}" Click="product_Click">Products</Hyperlink>
-                <Hyperlink  Name="shop" Style="{StaticResource HyperlinkStyle}" Click="shop_Click"  FontSize="20">Shops</Hyperlink>
-                <Hyperlink  Name="floor" Style="{StaticResource HyperlinkStyle}"  FontSize="20">Floor</Hyperlink>
-                <Hyperlink Name="feedback" Style="{StaticResource HyperlinkStyle}" Click="feedback_Click" FontSize="20">Feed Back</Hyperlink>
-                <Hyperlink Name="adminZoneobjHL" Style="{StaticResource HyperlinkStyle}" Click="adminZoneobjHL_Click" FontSize="20">Admin Zone</Hyperlink>
+                <Hyperlink  Name="shop" Style="{StaticResource HyperlinkStyle}" Click="shop_Click"  >Shops</Hyperlink>
+                <Hyperlink  Name="floor" Style="{StaticResource HyperlinkStyle}"  >Floor</Hyperlink>
+                <Hyperlink Name="feedback" Style="{StaticResource HyperlinkStyle}" Click="feedback_Click" >Feed Back</Hyperlink>
+                <Hyperlink Name="adminZoneobjHL" Style="{StaticResource HyperlinkStyle}" Click="adminZoneobjHL_Click">Admin Zone</Hyperlink>
             </TextBlock>
         </UniformGrid>
         <DockPanel DockPanel.Dock="Bottom" Name="infodocP" LastChildFill="True">

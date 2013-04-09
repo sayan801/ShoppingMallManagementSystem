@@ -8,6 +8,7 @@ namespace ShoppingMallData
     public class FeedbackInfo
     {
         public string id { get; set; }
+        public DateTime feedDate { get; set; }
         public string name { get; set; }
         public string address { get; set; }
         public string mobileno { get; set; }

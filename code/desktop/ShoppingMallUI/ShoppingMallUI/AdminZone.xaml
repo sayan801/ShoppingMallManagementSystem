@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="659" Style="{DynamicResource UserCntrlStyle}">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -15,33 +15,41 @@
     </UserControl.Resources>
     <DockPanel LastChildFill="True"  >
 
-        <UniformGrid  Name="upinfo" Background="White" DockPanel.Dock="Top" Columns="4">
+        <UniformGrid  Name="loginUG" Background="White" DockPanel.Dock="Top" Columns="4">
             <Label></Label>
-            <Label>User Name</Label>
-            <TextBox Name="adminUserNameTB"></TextBox>
+            <Label  Style="{StaticResource LblStyle}" >User Name</Label>
+            <TextBox Name="adminUserNameTB" Style="{StaticResource commonTBtyle}"></TextBox> 
             <Label></Label>
             <Label></Label>
-            <Label>Password</Label>
-            <PasswordBox Name="adminUserPassPb"></PasswordBox>
+            <Label Style="{StaticResource LblStyle}" >Password</Label>
+            <PasswordBox Name="adminUserPassPb" ></PasswordBox>
             <Label></Label>
             
             <Label></Label>
-            <Button Name="adminresetBtn" Style="{StaticResource ControlBtnStyle}">Reset</Button>
+            <Button Name="adminresetBtn" Style="{StaticResource ControlBtnStyle}" Click="adminresetBtn_Click">Reset</Button>
             <Button Name="adminloginBtn" Style="{StaticResource ControlBtnStyle}" Click="adminloginBtn_Click">Login</Button>
             <Label></Label>
 
 
         </UniformGrid>
+        <UniformGrid  Name="logoutUG" DockPanel.Dock="Top" Columns="4">
+            <Label></Label>
+            <Label></Label>
+            <Label></Label>
+            <Button Name="adminlogoutBtn" Style="{StaticResource ControlBtnStyle}" Visibility="Collapsed" Click="adminlogoutBtn_Click">Logout Admin</Button>
+            
 
+
+        </UniformGrid>
         <UniformGrid DockPanel.Dock="Bottom" Name="manageadminUG" Visibility="Collapsed">
             <TabControl>
-                <TabItem Header="Manage Shops">
+                <TabItem Header="Manage Shops" Style="{StaticResource TItemStyle}">
                     
                 </TabItem>
-                <TabItem Header="Manage Products">
+                <TabItem Header="Manage Products" Style="{StaticResource TItemStyle}">
 
                 </TabItem>
-                <TabItem Header="Manage Others">
+                <TabItem Header="Manage Others" Style="{StaticResource TItemStyle}">
 
                 </TabItem>
             </TabControl>

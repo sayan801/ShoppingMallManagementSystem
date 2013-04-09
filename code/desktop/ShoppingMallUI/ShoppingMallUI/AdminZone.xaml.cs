@@ -27,8 +27,30 @@ namespace ShoppingMall
         private void adminloginBtn_Click(object sender, RoutedEventArgs e)
         {
             if (adminUserNameTB.Text.Equals("1") && adminUserPassPb.Password.Equals("1"))
+            {
                 manageadminUG.Visibility = Visibility.Visible;
+                loginUG.Visibility = Visibility.Collapsed;
+                adminlogoutBtn.Visibility = Visibility.Visible;
+                clearSecurityFields();
+            }
+        }
 
+        private void adminlogoutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            manageadminUG.Visibility = Visibility.Collapsed;
+            loginUG.Visibility = Visibility.Visible;
+            adminlogoutBtn.Visibility = Visibility.Collapsed;
+            clearSecurityFields();
+        }
+
+        private void clearSecurityFields()
+        {
+            adminUserNameTB.Text = adminUserPassPb.Password = "";
+        }
+
+        private void adminresetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            clearSecurityFields();
         }
     }
 }
