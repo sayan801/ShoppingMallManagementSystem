@@ -20,15 +20,23 @@
                     <Label>Shoes</Label>
                     <Label>Bags</Label>
                     <Label>Ladies Garments</Label>
+                    <Label>Geans Wear</Label>
                     <Label>Jeans</Label>
                     <Label>T-shirt</Label>
+                    <Label>Kid Section</Label>
                     <Label>Wooden Product</Label>
+                    <Label>Grocery</Label>
+                    <Label>Jwellary</Label>
+                    <Label>Mobile Zone</Label>
+                    <Label>Music Store</Label>
+                    <Label>Bioscope</Label>
+                    
 
                 </StackPanel>
             </ScrollViewer>
         </UniformGrid>
         <UniformGrid  Name="upinfo" Background="White">
-            
+            <Image  Name="image1" Stretch="UniformToFill"  Source="/ShoppingMallUI;component/Images/Shopping-Black-Friday1.jpg" />
         </UniformGrid>
 
     </DockPanel>
