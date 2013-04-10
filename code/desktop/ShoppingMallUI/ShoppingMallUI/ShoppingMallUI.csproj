@@ -58,6 +58,9 @@
     <Compile Include="AdminZone.xaml.cs">
       <DependentUpon>AdminZone.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BabiesProduct.xaml.cs">
+      <DependentUpon>BabiesProduct.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FeedBack.xaml.cs">
       <DependentUpon>FeedBack.xaml</DependentUpon>
     </Compile>
@@ -65,6 +68,10 @@
       <DependentUpon>Shops.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminZone.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BabiesProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

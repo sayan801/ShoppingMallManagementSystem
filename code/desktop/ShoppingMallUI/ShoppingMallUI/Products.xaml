@@ -9,7 +9,7 @@
         <UniformGrid DockPanel.Dock="Left">
             <ScrollViewer Width="250">
                 <StackPanel Background="Orange" Opacity=".8" >
-                    <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Name="babiesproduct">Babies Product</Label>
+                    <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Name="babiesproduct" MouseEnter="babiesproduct_MouseEnter">Babies Product</Label>
                     <Label>Soft toys</Label>
                     <Label>Resturent</Label>
                     <Label>Beauty parler</Label>

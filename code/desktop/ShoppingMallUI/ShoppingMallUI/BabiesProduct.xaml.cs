@@ -15,21 +15,13 @@ using System.Windows.Shapes;
 namespace ShoppingMall
 {
     /// <summary>
-    /// Interaction logic for Products.xaml
+    /// Interaction logic for BabiesProduct.xaml
     /// </summary>
-    public partial class Products : UserControl
+    public partial class BabiesProduct : UserControl
     {
-        public Products()
+        public BabiesProduct()
         {
             InitializeComponent();
-        }
-
-        private void babiesproduct_MouseEnter(object sender, MouseEventArgs e)
-        {
-            ShoppingMall.BabiesProduct bobj = new BabiesProduct();
-            upinfo.Children.Clear();
-            upinfo.Children.Add(bobj);
-
         }
     }
 }
