@@ -10,8 +10,26 @@
             <UniformGrid.Background>
                 <ImageBrush ImageSource="/ShoppingMallUI;component/Images/shopping.jpg" Stretch="Fill" TileMode="None" Opacity="0.3" />
             </UniformGrid.Background>
-            <Label>Ground Floor</Label>
-            <Label>Third Floor</Label>
+            <Label MouseEnter="Label_MouseEnter">Ground Floor
+                <Label.ContextMenu>
+                    <ContextMenu ContextMenuService.VerticalOffset="0,0,14,8" Background="BurlyWood">
+                        <MenuItem Header="KIDZEE"/>
+                        <MenuItem Header="Aishairjya"/>
+                        <MenuItem Header="Monoroma"/>
+                        <MenuItem Header="babies choice"/>
+                       </ContextMenu>
+                </Label.ContextMenu>
+            </Label>
+            <Label MouseEnter="Label_MouseEnter_1"  ContextMenuService.HorizontalOffset="0,4,10,20">Third Floor
+                <Label.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Kiddies Centre"/>
+                        <MenuItem Header="Baby-Kitbits"/>
+                        <MenuItem Header="little Pikins"/>
+                        <MenuItem Header=" PAWPAW"/>
+                    </ContextMenu>
+                </Label.ContextMenu>
+            </Label>
             
         </UniformGrid>
        

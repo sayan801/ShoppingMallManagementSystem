@@ -23,5 +23,28 @@ namespace ShoppingMall
         {
             InitializeComponent();
         }
+
+
+        private void Label_MouseEnter(object sender, MouseEventArgs e)
+        {
+            (sender as Label).ContextMenu.IsEnabled = true;
+            (sender as Label).ContextMenu.PlacementTarget = (sender as Label);
+            (sender as Label).ContextMenu.Placement = System.Windows.Controls.Primitives.PlacementMode.Bottom;
+            (sender as Label).ContextMenu.IsOpen = true;
+       
+        }
+
+        private void Label_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            (sender as Label).ContextMenu.IsEnabled = true;
+            (sender as Label).ContextMenu.PlacementTarget = (sender as Label);
+            (sender as Label).ContextMenu.Placement = System.Windows.Controls.Primitives.PlacementMode.Bottom;
+            (sender as Label).ContextMenu.IsOpen = true;
+       
+        }
+
+      
+
+       
     }
 }
