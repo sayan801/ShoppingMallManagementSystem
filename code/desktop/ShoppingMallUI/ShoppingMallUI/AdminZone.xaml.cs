@@ -31,6 +31,7 @@ namespace ShoppingMall
         {
             fetchProductData();
             fetchShopData();
+            fetchFeedBackData();
         }
 
         private void adminloginBtn_Click(object sender, RoutedEventArgs e)
@@ -70,7 +71,7 @@ namespace ShoppingMall
         {
             clearProductFields();
         }
-
+        #region Insert Product
         private void submitproductkBtn_Click(object sender, RoutedEventArgs e)
         {
             ShoppingMallData.ProductInfo newProduct = new ShoppingMallData.ProductInfo();
@@ -86,13 +87,16 @@ namespace ShoppingMall
 
             ShoppingMallDb.DbInteraction.DoEnterProduct(newProduct);
             clearProductFields();
+            fetchProductData();
         }
 
         private string GenerateId()
         {
             return DateTime.Now.ToOADate().ToString();
         }
+        #endregion
 
+        #region Get Product
         ObservableCollection<ProductInfo> _productsCollection = new ObservableCollection<ProductInfo>();
 
 
@@ -117,6 +121,19 @@ namespace ShoppingMall
             }
         }
 
+        #endregion
+
+        #region Insert Shop
+        private void clearShopFields()
+        {
+            shopnameTB.Text = shopTagTB.Text = shopRateTB.Text = shopDescriptionTB.Text = "";
+            shopTypeCB.SelectedIndex = 1;
+        }
+        private void resetShopmangBtn_Click(object sender, RoutedEventArgs e)
+        {
+            clearShopFields();
+        }
+
         private void submitkShopmangBtn_Click(object sender, RoutedEventArgs e)
         {
             ShoppingMallData.ShopInfo newShop = new ShoppingMallData.ShopInfo();
@@ -130,9 +147,12 @@ namespace ShoppingMall
             newShop.description = shopDescriptionTB.Text;
 
             ShoppingMallDb.DbInteraction.DoEnterShop(newShop);
-            
+            clearShopFields();
+            fetchShopData();
         }
+        #endregion
 
+        #region Get Shop
         ObservableCollection<ShopInfo> _shopsCollection = new ObservableCollection<ShopInfo>();
 
 
@@ -156,7 +176,125 @@ namespace ShoppingMall
                 _shopsCollection.Add(shop);
             }
         }
+        #endregion
 
+        #region Get FeedBack
+
+        ObservableCollection<FeedbackInfo> _feedbackCollection = new ObservableCollection<FeedbackInfo>();
+
+
+        public ObservableCollection<FeedbackInfo> feedbackCollection
+        {
+            get
+            {
+                return _feedbackCollection;
+            }
+        }
        
+
+        private void fetchFeedBackData()
+        {
+            List<FeedbackInfo> feedbacks = DbInteraction.GetAllFeedbackList();
+
+            _feedbackCollection.Clear();
+
+            foreach (FeedbackInfo feedback in feedbacks)
+            {
+                _feedbackCollection.Add(feedback);
+            }
+        }
+        #endregion
+
+        #region Delete Product
+        private ProductInfo GetSelectedProductItem()
+        {
+
+            ProductInfo productToDelete = null;
+
+            if (productsView.SelectedIndex == -1)
+                MessageBox.Show("Please Select an Item");
+            else
+            {
+                ProductInfo i = (ProductInfo)productsView.SelectedItem;
+
+                productToDelete = _productsCollection.Where(item => item.id.Equals(i.id)).First();
+            }
+
+            return productToDelete;
+        }
+
+        private void deleteProduct_Click(object sender, RoutedEventArgs e)
+        {
+            ProductInfo productToDelete = GetSelectedProductItem();
+            if (productToDelete != null)
+            {
+                productsCollection.Remove(productToDelete);
+                ShoppingMallDb.DbInteraction.DeleteProduct(productToDelete.id);
+                fetchProductData();
+            }
+        }
+        #endregion
+
+        #region Delete Shop
+        private ShopInfo GetSelectedShopItem()
+        {
+
+            ShopInfo shopToDelete = null;
+
+            if (shopsView.SelectedIndex == -1)
+                MessageBox.Show("Please Select an Item");
+            else
+            {
+                ShopInfo i = (ShopInfo)shopsView.SelectedItem;
+
+                shopToDelete = _shopsCollection.Where(item => item.id.Equals(i.id)).First();
+            }
+
+            return shopToDelete;
+        }
+
+        private void deleteShop_Click(object sender, RoutedEventArgs e)
+        {
+            ShopInfo shopToDelete = GetSelectedShopItem();
+            if (shopToDelete != null)
+            {
+                shopsCollection.Remove(shopToDelete);
+                ShoppingMallDb.DbInteraction.DeleteShop(shopToDelete.id);
+                fetchShopData();
+            }
+        }
+        #endregion
+
+        #region Delete FeedBack
+        private FeedbackInfo GetSelectedFeedbackItem()
+        {
+
+            FeedbackInfo feedbackToDelete = null;
+
+            if (feedbackView.SelectedIndex == -1)
+                MessageBox.Show("Please Select an Item");
+            else
+            {
+                FeedbackInfo i = (FeedbackInfo)feedbackView.SelectedItem;
+
+                feedbackToDelete = _feedbackCollection.Where(item => item.id.Equals(i.id)).First();
+            }
+
+            return feedbackToDelete;
+        }
+
+        private void deleteFeedbackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            FeedbackInfo feedbackToDelete = GetSelectedFeedbackItem();
+            if (feedbackToDelete != null)
+            {
+                feedbackCollection.Remove(feedbackToDelete);
+                ShoppingMallDb.DbInteraction.DeleteFeedback(feedbackToDelete.id);
+                
+            }
+        }
+        #endregion
+        
     }
 }
+

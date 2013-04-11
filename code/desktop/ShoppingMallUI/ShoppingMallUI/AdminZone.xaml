@@ -86,7 +86,7 @@
                             <TextBox Name="searchTB"></TextBox>
                             <Button Style="{StaticResource ControlBtnStyle}">Search</Button>
                             <Button Style="{StaticResource ControlBtnStyle}">Edit</Button>
-                            <Button  Style="{StaticResource ControlBtnStyle}">Delete</Button>
+                            <Button Name="deleteProduct" Style="{StaticResource ControlBtnStyle}" Click="deleteProduct_Click">Delete</Button>
                             <Button Style="{StaticResource ControlBtnStyle}">Close</Button>
                         </UniformGrid>
                         <UniformGrid DockPanel.Dock="Bottom">
@@ -141,7 +141,7 @@
                             <TextBox Name="shopDescriptionTB"></TextBox>
                             <Label></Label>
                             <Label></Label>
-                            <Button Name="resetShopmangBtn" Style="{StaticResource ControlBtnStyle}">Reset</Button>
+                            <Button Name="resetShopmangBtn" Style="{StaticResource ControlBtnStyle}" Click="resetShopmangBtn_Click">Reset</Button>
                             <Button Name="submitkShopmangBtn" Style="{StaticResource ControlBtnStyle}" Click="submitkShopmangBtn_Click">Submit</Button>
                             <Label></Label>
 
@@ -153,7 +153,7 @@
                             <TextBox Name="searchShopmangTB"></TextBox>
                             <Button Style="{StaticResource ControlBtnStyle}">Search</Button>
                             <Button Style="{StaticResource ControlBtnStyle}">Edit</Button>
-                            <Button  Style="{StaticResource ControlBtnStyle}">Delete</Button>
+                            <Button Name="deleteShop" Click="deleteShop_Click" Style="{StaticResource ControlBtnStyle}">Delete</Button>
                             <Button Name="closeAdmin" Style="{StaticResource ControlBtnStyle}" >Close</Button>
                         </UniformGrid>
                         <UniformGrid DockPanel.Dock="Bottom">
@@ -176,8 +176,34 @@
                         </UniformGrid>
                     </DockPanel>
                 </TabItem>
-                <TabItem Header="Manage Others" Style="{StaticResource TItemStyle}">
+                <TabItem Header="Manage FeedBack" Style="{StaticResource TItemStyle}">
+                    <DockPanel LastChildFill="True">
+                        <Button Name="deleteFeedbackBtn" HorizontalAlignment="Right" DockPanel.Dock="Bottom" Style="{StaticResource ControlBtnStyle}" Width="173" Margin="0,0,20,0" Click="deleteFeedbackBtn_Click">Delete</Button>
+                    <UniformGrid DockPanel.Dock="Top">
+                        <ListView Name="feedbackView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding feedbackCollection}" Loaded="Window_Loaded" >
 
+
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Width="100" Header="Date" DisplayMemberBinding="{Binding feedDate}"  />
+                                    <GridViewColumn Width="200" Header="Name" DisplayMemberBinding="{Binding name}"  />
+                                    <GridViewColumn Width="250" Header="Address" DisplayMemberBinding="{Binding address}" />
+                                    <GridViewColumn Width="150" Header="Contact No." DisplayMemberBinding="{Binding mobileno}"/>
+                                    <GridViewColumn Width="200" Header="Email" DisplayMemberBinding="{Binding email}" />
+                                    <GridViewColumn Width="110" Header="Type" DisplayMemberBinding="{Binding type}" />
+                                    <GridViewColumn Width="370" Header="Feedback" DisplayMemberBinding="{Binding feedback}" />
+
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </UniformGrid>
+                   </DockPanel>
+                </TabItem>
+
+                
+                <TabItem Header="Manage Others" Style="{StaticResource TItemStyle}">
+                    
+                    
                 </TabItem>
             </TabControl>
         </UniformGrid>

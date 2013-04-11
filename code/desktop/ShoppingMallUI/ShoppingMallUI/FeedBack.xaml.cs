@@ -45,6 +45,7 @@ namespace ShoppingMall
 
             ShoppingMallDb.DbInteraction.DoEnterFeedback(newFeedback);
             clearFeedBackFields();
+            fetchFeedBackData();
         }
 
         private string GenerateId()

@@ -59,7 +59,7 @@
         </UniformGrid>
         
         <UniformGrid DockPanel.Dock="Bottom">
-            <ListView Name="visitorView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding feedbackCollection}" Loaded="Window_Loaded" >
+            <ListView Name="feedbackView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding feedbackCollection}" Loaded="Window_Loaded" >
 
 
                 <ListView.View>

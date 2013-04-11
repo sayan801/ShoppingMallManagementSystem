@@ -123,6 +123,34 @@ namespace ShoppingMallDb
 
         }
         #endregion
+        #region Delete Feedback
+
+        public static void DeleteFeedback(string feedbackToDelete)
+        {
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "DELETE FROM feedback WHERE id=@feedbackToDelete";
+                msqlCommand.Parameters.AddWithValue("@feedbackToDelete", feedbackToDelete);
+
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+            }
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+        }
+
+        #endregion
         #endregion
 
         #region Product
@@ -214,10 +242,38 @@ namespace ShoppingMallDb
 
         }
         #endregion
+        #region Delete Product
+
+        public static void DeleteProduct(string productToDelete)
+        {
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "DELETE FROM product WHERE id=@productToDelete";
+                msqlCommand.Parameters.AddWithValue("@productToDelete", productToDelete);
+
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+            }
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+        }
+
+        #endregion
         #endregion
 
-        #region Product
-        #region Insert Product
+        
+        #region Insert Shop
 
         public static int DoEnterShop(ShopInfo NewShop)
         {
@@ -257,6 +313,7 @@ namespace ShoppingMallDb
             return returnVal;
         }
         #endregion
+
         #region Display Shop
 
         public static List<ShopInfo> GetAllShopList()
@@ -307,6 +364,34 @@ namespace ShoppingMallDb
 
         }
         #endregion
+
+        #region Delete Shop
+
+        public static void DeleteShop(string shopToDelete)
+        {
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "DELETE FROM shop WHERE id=@shopToDelete";
+                msqlCommand.Parameters.AddWithValue("@shopToDelete", shopToDelete);
+
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+            }
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+        }
+
         #endregion
     }
 }
