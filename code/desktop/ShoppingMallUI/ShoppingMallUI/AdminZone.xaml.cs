@@ -26,7 +26,7 @@ namespace ShoppingMall
 
         private void adminloginBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (adminUserNameTB.Text.Equals("1") && adminUserPassPb.Password.Equals("1"))
+            if (adminUserNameTB.Text.Equals("") && adminUserPassPb.Password.Equals(""))
             {
                 manageadminUG.Visibility = Visibility.Visible;
                 loginUG.Visibility = Visibility.Collapsed;

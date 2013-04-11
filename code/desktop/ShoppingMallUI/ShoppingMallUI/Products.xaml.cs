@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Windows.Controls;
 
 namespace ShoppingMall
 {
@@ -24,12 +25,29 @@ namespace ShoppingMall
             InitializeComponent();
         }
 
-        private void babiesproduct_MouseEnter(object sender, MouseEventArgs e)
-        {
-            ShoppingMall.BabiesProduct bobj = new BabiesProduct();
-            upinfo.Children.Clear();
-            upinfo.Children.Add(bobj);
+        //private void babiesproduct_MouseEnter(object sender, MouseEventArgs e)
+        //{
+        //    ShoppingMall.BabiesProduct bobj = new BabiesProduct();
+        //    upinfo.Children.Clear();
+        //    upinfo.Children.Add(bobj);
 
+        //}
+        private void Slider_ValueChanged(
+    object sender,
+    RoutedPropertyChangedEventArgs<double> e)
+{
+    var slider = sender as Slider;
+    var tick = slider.Ticks
+        .Where(xx => Math.Abs(e.NewValue - xx) < slider.LargeChange);
+    if (tick.Any())
+    {
+        var newValue = tick.First();
+        if (e.NewValue != newValue)
+        {
+            //DispatcherInvoke(() => slider.Value = newValue);
         }
+    }
+}
+
     }
 }

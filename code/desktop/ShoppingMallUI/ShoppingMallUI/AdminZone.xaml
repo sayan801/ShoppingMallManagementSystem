@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="659" Style="{DynamicResource UserCntrlStyle}">
+             d:DesignHeight="541" d:DesignWidth="851" Style="{DynamicResource UserCntrlStyle}">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -43,11 +43,137 @@
         </UniformGrid>
         <UniformGrid DockPanel.Dock="Bottom" Name="manageadminUG" Visibility="Collapsed">
             <TabControl>
-                <TabItem Header="Manage Shops" Style="{StaticResource TItemStyle}">
-                    
-                </TabItem>
+                
                 <TabItem Header="Manage Products" Style="{StaticResource TItemStyle}">
+                    <DockPanel LastChildFill="True">
 
+                        <UniformGrid  Name="manageUG" DockPanel.Dock="Top" Columns="4">
+                            
+                            
+                            <Label></Label>
+                            <Label Style="{StaticResource LblStyle}" >Name</Label>
+                            <TextBox Name="nameTB"></TextBox>
+                            <Label></Label>
+                            <Label  Style="{StaticResource LblStyle}" >Manage All</Label>
+                            <Label Style="{StaticResource LblStyle}" >Brand</Label>
+                            <TextBox Name="BrandTB"></TextBox>
+                            <Label></Label>
+
+                            <Label  Style="{StaticResource LblStyle}" >Products</Label>
+                            <Label  Style="{StaticResource LblStyle}" >Type</Label>
+                            <ComboBox IsEditable="True" Name="typeCB" SelectedIndex="1">
+                                <ComboBoxItem>Electronics</ComboBoxItem>
+                                <ComboBoxItem>Garments</ComboBoxItem>
+                                <ComboBoxItem>Others</ComboBoxItem>
+                            </ComboBox>
+                            <Label></Label>
+                            
+                            <Label></Label>
+                            <Label  Style="{StaticResource LblStyle}" >Description</Label>
+                            <TextBox Name="descriptionTB"></TextBox>
+                            <Label></Label>
+                            <Label></Label>
+                            <Button Name="resetBtn" Style="{StaticResource ControlBtnStyle}">Reset</Button>
+                            <Button Name="submitkBtn" Style="{StaticResource ControlBtnStyle}">Submit</Button>
+                            <Label></Label>
+
+
+                        </UniformGrid>
+        
+
+                        <UniformGrid DockPanel.Dock="Bottom" Rows="1">
+                            <TextBox Name="searchTB"></TextBox>
+                            <Button Style="{StaticResource ControlBtnStyle}">Search</Button>
+                            <Button Style="{StaticResource ControlBtnStyle}">Edit</Button>
+                            <Button  Style="{StaticResource ControlBtnStyle}">Delete</Button>
+                            <Button Style="{StaticResource ControlBtnStyle}">Close</Button>
+                        </UniformGrid>
+                        <UniformGrid DockPanel.Dock="Bottom">
+                            <ListView Name="productsView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding productsCollection}">
+
+
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Width="100" Header="Id" DisplayMemberBinding="{Binding id}"  />
+                                        <GridViewColumn Width="200" Header="Name" DisplayMemberBinding="{Binding name}"  />
+                                        <GridViewColumn Width="250" Header="Brand" DisplayMemberBinding="{Binding brand}" />
+                                        <GridViewColumn Width="110" Header="Type" DisplayMemberBinding="{Binding type}" />
+                                        <GridViewColumn Width="370" Header="Description" DisplayMemberBinding="{Binding description}" />
+
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </UniformGrid>
+                    </DockPanel>
+                </TabItem>
+                <TabItem Header="Manage Shops" Style="{StaticResource TItemStyle}">
+                    <DockPanel LastChildFill="True">
+
+                        <UniformGrid  Name="manageShopUG" DockPanel.Dock="Top" Columns="4">
+
+
+                            <Label></Label>
+                            <Label Style="{StaticResource LblStyle}" >Name</Label>
+                            <TextBox Name="shopnameTB"></TextBox>
+                            <Label></Label>
+                            <Label  Style="{StaticResource LblStyle}" >Manage All</Label>
+                            <Label  Style="{StaticResource LblStyle}" >Tag</Label>
+                            <TextBox Name="shopTagTB"></TextBox>
+                            <Label></Label>
+                            <Label  Style="{StaticResource LblStyle}" >Shops</Label>
+
+                            
+                            <Label  Style="{StaticResource LblStyle}" >Type</Label>
+                            <ComboBox IsEditable="True" Name="shopTypeCB" SelectedIndex="1">
+                                <ComboBoxItem>Electronics</ComboBoxItem>
+                                <ComboBoxItem>Garments</ComboBoxItem>
+                                <ComboBoxItem>Others</ComboBoxItem>
+                            </ComboBox>
+                            <Label></Label>
+                            <Label></Label>
+                            
+                            <Label  Style="{StaticResource LblStyle}" >Rate</Label>
+                            <TextBox Name="shopRateTB"></TextBox>
+                            <Label></Label>
+                            <Label></Label>
+                            <Label  Style="{StaticResource LblStyle}" >Description</Label>
+                            <TextBox Name="shopDescriptionTB"></TextBox>
+                            <Label></Label>
+                            <Label></Label>
+                            <Button Name="resetShopmangBtn" Style="{StaticResource ControlBtnStyle}">Reset</Button>
+                            <Button Name="submitkShopmangBtn" Style="{StaticResource ControlBtnStyle}">Submit</Button>
+                            <Label></Label>
+
+
+                        </UniformGrid>
+
+
+                        <UniformGrid DockPanel.Dock="Bottom" Rows="1">
+                            <TextBox Name="searchShopmangTB"></TextBox>
+                            <Button Style="{StaticResource ControlBtnStyle}">Search</Button>
+                            <Button Style="{StaticResource ControlBtnStyle}">Edit</Button>
+                            <Button  Style="{StaticResource ControlBtnStyle}">Delete</Button>
+                            <Button Style="{StaticResource ControlBtnStyle}">Close</Button>
+                        </UniformGrid>
+                        <UniformGrid DockPanel.Dock="Bottom">
+                            <ListView Name="shopsView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding shopsCollection}">
+
+
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Width="100" Header="Id" DisplayMemberBinding="{Binding id}"  />
+                                        <GridViewColumn Width="200" Header="Name" DisplayMemberBinding="{Binding name}"  />
+                                        <GridViewColumn Width="250" Header="Tag" DisplayMemberBinding="{Binding tag}" />
+                                        <GridViewColumn Width="110" Header="Type" DisplayMemberBinding="{Binding type}" />
+                                        <GridViewColumn Width="370" Header="Rate" DisplayMemberBinding="{Binding rating}" />
+                                        <GridViewColumn Width="370" Header="Description" DisplayMemberBinding="{Binding description}" />
+                                        
+
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </UniformGrid>
+                    </DockPanel>
                 </TabItem>
                 <TabItem Header="Manage Others" Style="{StaticResource TItemStyle}">
 
