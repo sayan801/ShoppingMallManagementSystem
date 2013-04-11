@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
              mc:Ignorable="d" 
              d:DesignHeight="541" d:DesignWidth="851" Style="{DynamicResource UserCntrlStyle}">
 
@@ -61,7 +62,7 @@
 
                             <Label  Style="{StaticResource LblStyle}" >Products</Label>
                             <Label  Style="{StaticResource LblStyle}" >Type</Label>
-                            <ComboBox IsEditable="True" Name="typeCB" SelectedIndex="1">
+                            <ComboBox IsEditable="True" Name="ProductypeCB" SelectedIndex="1">
                                 <ComboBoxItem>Electronics</ComboBoxItem>
                                 <ComboBoxItem>Garments</ComboBoxItem>
                                 <ComboBoxItem>Others</ComboBoxItem>
@@ -70,11 +71,11 @@
                             
                             <Label></Label>
                             <Label  Style="{StaticResource LblStyle}" >Description</Label>
-                            <TextBox Name="descriptionTB"></TextBox>
+                            <TextBox Name="productdescriptionTB"></TextBox>
                             <Label></Label>
                             <Label></Label>
-                            <Button Name="resetBtn" Style="{StaticResource ControlBtnStyle}">Reset</Button>
-                            <Button Name="submitkBtn" Style="{StaticResource ControlBtnStyle}">Submit</Button>
+                            <Button Name="resetBtn" Style="{StaticResource ControlBtnStyle}" Click="resetBtn_Click">Reset</Button>
+                            <Button Name="submitproductkBtn" Style="{StaticResource ControlBtnStyle}" Click="submitproductkBtn_Click">Submit</Button>
                             <Label></Label>
 
 
@@ -89,7 +90,7 @@
                             <Button Style="{StaticResource ControlBtnStyle}">Close</Button>
                         </UniformGrid>
                         <UniformGrid DockPanel.Dock="Bottom">
-                            <ListView Name="productsView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding productsCollection}">
+                            <ListView Name="productsView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding productsCollection}" Loaded="Window_Loaded">
 
 
                                 <ListView.View>
@@ -141,7 +142,7 @@
                             <Label></Label>
                             <Label></Label>
                             <Button Name="resetShopmangBtn" Style="{StaticResource ControlBtnStyle}">Reset</Button>
-                            <Button Name="submitkShopmangBtn" Style="{StaticResource ControlBtnStyle}">Submit</Button>
+                            <Button Name="submitkShopmangBtn" Style="{StaticResource ControlBtnStyle}" Click="submitkShopmangBtn_Click">Submit</Button>
                             <Label></Label>
 
 
@@ -153,10 +154,10 @@
                             <Button Style="{StaticResource ControlBtnStyle}">Search</Button>
                             <Button Style="{StaticResource ControlBtnStyle}">Edit</Button>
                             <Button  Style="{StaticResource ControlBtnStyle}">Delete</Button>
-                            <Button Style="{StaticResource ControlBtnStyle}">Close</Button>
+                            <Button Name="closeAdmin" Style="{StaticResource ControlBtnStyle}" >Close</Button>
                         </UniformGrid>
                         <UniformGrid DockPanel.Dock="Bottom">
-                            <ListView Name="shopsView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding shopsCollection}">
+                            <ListView Name="shopsView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding shopsCollection}"  Loaded="Window_Loaded">
 
 
                                 <ListView.View>

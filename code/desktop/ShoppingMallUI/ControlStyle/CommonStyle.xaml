@@ -6,6 +6,7 @@
         <Setter Property="Foreground" Value="Goldenrod" />
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="BorderBrush" Value="#FF3DC43D" />
+        <Setter Property="FontFamily" Value="Tempus Sans ITC" />
         <Setter Property="OpacityMask" Value="White" />
         <Setter Property="Template">
             <Setter.Value>
@@ -23,10 +24,12 @@
                             <Setter TargetName="border" Property="BorderBrush" Value="#FF87742D" />
                             <Setter Property="Button.Background" Value="#FF72633F" />
                             <Setter Property="Button.Foreground" Value="#FFADA4A4" />
+                            <Setter Property="Button.FontFamily" Value="Tempus Sans ITC" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="border" Property="BorderBrush" Value="White" />
                             <Setter Property="Button.Background" Value="#D8D8D8" />
+                            <Setter Property="Button.FontFamily" Value="Tempus Sans ITC" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -1,7 +1,7 @@
 ﻿<Window x:Class="ShoppingMall.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="New Mall" WindowState="Maximized" Background="#FF251D23" >
+        Title="New Mall" WindowState="Maximized" Background="#FF251D23" FontFamily="Tempus Sans ITC" FontSize="20">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -35,10 +35,7 @@
            
             <TextBox DockPanel.Dock="Left"  Width="276" HorizontalAlignment="Left" />
                 <!--<Image Source=""></Image>-->
-                <Button DockPanel.Dock="Left" Width="23">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/ShoppingMallUI;component/Images/Search.png" />
-                    </Button.Background></Button>
+                <Button Style="{StaticResource ControlBtnStyle}">Go</Button>
                 <Label DockPanel.Dock="Right"></Label>
             </DockPanel>
 

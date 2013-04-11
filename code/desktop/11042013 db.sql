@@ -52,6 +52,61 @@ LOCK TABLES `feedback` WRITE;
 INSERT INTO `feedback` VALUES ('41373.8325975347','2013-04-09 00:00:00','as','a','s','sa','Customer','sa'),('41373.8433135417','2013-04-09 00:00:00','d bd','gdf','df','bfd','bfdb ','fdfb'),('41373.8536373958','2013-04-09 00:00:00','1qwe','qwe','wqew','qe','Customer','qwe'),('41373.854291713','2013-04-09 00:00:00','','','','','','');
 /*!40000 ALTER TABLE `feedback` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product` (
+  `id` varchar(100) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `brand` varchar(100) DEFAULT NULL,
+  `type` varchar(45) DEFAULT NULL,
+  `description` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product`
+--
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES ('41375.7588948958','bv ','b ','Garments','v '),('41375.7669710764','fm','gjnf','fgjmf','gjf');
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `shop`
+--
+
+DROP TABLE IF EXISTS `shop`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shop` (
+  `id` varchar(100) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `tag` varchar(100) DEFAULT NULL,
+  `type` varchar(100) DEFAULT NULL,
+  `rating` varchar(45) DEFAULT NULL,
+  `description` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `shop`
+--
+
+LOCK TABLES `shop` WRITE;
+/*!40000 ALTER TABLE `shop` DISABLE KEYS */;
+INSERT INTO `shop` VALUES ('41375.7766051389','nfg','fhnf','Garments','hgfh','gfh');
+/*!40000 ALTER TABLE `shop` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -62,4 +117,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-04-09 20:36:37
+-- Dump completed on 2013-04-11 18:50:51

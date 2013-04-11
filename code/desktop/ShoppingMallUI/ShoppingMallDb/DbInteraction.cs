@@ -124,5 +124,189 @@ namespace ShoppingMallDb
         }
         #endregion
         #endregion
+
+        #region Product
+        #region Insert Product
+
+        public static int DoEnterProduct(ProductInfo NewProduct)
+        {
+            int returnVal = 0;
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {
+                //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+
+                //define the connection used by the command object
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "INSERT INTO product(id,name,brand,type,description) "
+                                    + "VALUES(@id,@name,@brand,@type,@description)";
+
+                msqlCommand.Parameters.AddWithValue("@id", NewProduct.id);
+                msqlCommand.Parameters.AddWithValue("@name", NewProduct.name);
+                msqlCommand.Parameters.AddWithValue("@brand", NewProduct.brand);
+                msqlCommand.Parameters.AddWithValue("@type", NewProduct.type);
+                msqlCommand.Parameters.AddWithValue("@description", NewProduct.description);
+                msqlCommand.ExecuteNonQuery();
+
+                returnVal = 1;
+            }
+            catch (Exception er)
+            {
+                returnVal = 0;
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+            return returnVal;
+        }
+        #endregion
+        #region Display Product
+
+        public static List<ProductInfo> GetAllProductList()
+        {
+            return QueryAllProductList();
+        }
+
+        private static List<ProductInfo> QueryAllProductList()
+        {
+            List<ProductInfo> ProductList = new List<ProductInfo>();
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+
+
+                msqlCommand.CommandText = "Select * From product;";
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+                while (msqlReader.Read())
+                {
+                    ProductInfo Product = new ProductInfo();
+
+                    Product.id = msqlReader.GetString("id");
+                    Product.name = msqlReader.GetString("name");
+                    Product.brand = msqlReader.GetString("brand");
+                    Product.type = msqlReader.GetString("type");
+                    Product.description = msqlReader.GetString("description");
+
+                    ProductList.Add(Product);
+                }
+            }
+
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+              
+                msqlConnection.Close();
+            }
+
+            return ProductList;
+
+        }
+        #endregion
+        #endregion
+
+        #region Product
+        #region Insert Product
+
+        public static int DoEnterShop(ShopInfo NewShop)
+        {
+            int returnVal = 0;
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {
+                //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+
+                //define the connection used by the command object
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "INSERT INTO shop(id,name,tag,type,rating,description) "
+                                    + "VALUES(@id,@name,@tag,@type,@rating,@description)";
+
+                msqlCommand.Parameters.AddWithValue("@id", NewShop.id);
+                msqlCommand.Parameters.AddWithValue("@name", NewShop.name);
+                msqlCommand.Parameters.AddWithValue("@tag", NewShop.tag);
+                msqlCommand.Parameters.AddWithValue("@type", NewShop.type);
+                msqlCommand.Parameters.AddWithValue("@rating", NewShop.rating);
+                msqlCommand.Parameters.AddWithValue("@description", NewShop.description);
+                msqlCommand.ExecuteNonQuery();
+
+                returnVal = 1;
+            }
+            catch (Exception er)
+            {
+                returnVal = 0;
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+            return returnVal;
+        }
+        #endregion
+        #region Display Shop
+
+        public static List<ShopInfo> GetAllShopList()
+        {
+            return QueryAllShopList();
+        }
+
+        private static List<ShopInfo> QueryAllShopList()
+        {
+            List<ShopInfo> ShopList = new List<ShopInfo>();
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+
+
+                msqlCommand.CommandText = "Select * From shop;";
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+                while (msqlReader.Read())
+                {
+                    ShopInfo Shop = new ShopInfo();
+
+                    Shop.id = msqlReader.GetString("id");
+                    Shop.name = msqlReader.GetString("name");
+                    Shop.tag = msqlReader.GetString("tag");
+                    Shop.type = msqlReader.GetString("type");
+                    Shop.type = msqlReader.GetString("rating");
+                    Shop.description = msqlReader.GetString("description");
+
+                    ShopList.Add(Shop);
+                }
+            }
+
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+
+                msqlConnection.Close();
+            }
+
+            return ShopList;
+
+        }
+        #endregion
+        #endregion
     }
 }
