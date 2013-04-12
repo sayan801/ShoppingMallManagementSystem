@@ -266,20 +266,17 @@ namespace ShoppingMall
         #endregion
 
         #region Delete FeedBack
+
         private FeedbackInfo GetSelectedFeedbackItem()
         {
-
             FeedbackInfo feedbackToDelete = null;
-
             if (feedbackView.SelectedIndex == -1)
-                MessageBox.Show("Please Select an Item");
+                MessageBox.Show("please select an item");
             else
             {
                 FeedbackInfo i = (FeedbackInfo)feedbackView.SelectedItem;
-
                 feedbackToDelete = _feedbackCollection.Where(item => item.id.Equals(i.id)).First();
             }
-
             return feedbackToDelete;
         }
 
@@ -290,7 +287,6 @@ namespace ShoppingMall
             {
                 feedbackCollection.Remove(feedbackToDelete);
                 ShoppingMallDb.DbInteraction.DeleteFeedback(feedbackToDelete.id);
-                
             }
         }
         #endregion

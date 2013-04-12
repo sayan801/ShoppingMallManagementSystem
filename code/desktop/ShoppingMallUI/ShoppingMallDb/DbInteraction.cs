@@ -98,6 +98,7 @@ namespace ShoppingMallDb
                 {
                     FeedbackInfo Feedback = new FeedbackInfo();
 
+                    Feedback.id = msqlReader.GetString("id");
                     Feedback.feedDate = msqlReader.GetDateTime("feedDate");
                     Feedback.name = msqlReader.GetString("name");
                     Feedback.address = msqlReader.GetString("address");
