@@ -12,6 +12,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Windows.Controls;
+using ShoppingMallData;
+using System.Collections.ObjectModel;
+using ShoppingMallDb;
 
 namespace ShoppingMall
 {
@@ -20,6 +23,18 @@ namespace ShoppingMall
     /// </summary>
     public partial class Products : UserControl
     {
+        ObservableCollection<ProductInfo> _productsCollection = new ObservableCollection<ProductInfo>();
+
+
+        public ObservableCollection<ProductInfo> productsCollection
+        {
+            get
+            {
+                return _productsCollection;
+            }
+        }
+
+
         public Products()
         {
             InitializeComponent();
@@ -35,19 +50,42 @@ namespace ShoppingMall
         private void Slider_ValueChanged(
     object sender,
     RoutedPropertyChangedEventArgs<double> e)
-{
-    var slider = sender as Slider;
-    var tick = slider.Ticks
-        .Where(xx => Math.Abs(e.NewValue - xx) < slider.LargeChange);
-    if (tick.Any())
-    {
-        var newValue = tick.First();
-        if (e.NewValue != newValue)
         {
-            //DispatcherInvoke(() => slider.Value = newValue);
+            var slider = sender as Slider;
+            var tick = slider.Ticks
+                .Where(xx => Math.Abs(e.NewValue - xx) < slider.LargeChange);
+            if (tick.Any())
+            {
+                var newValue = tick.First();
+                if (e.NewValue != newValue)
+                {
+                    //DispatcherInvoke(() => slider.Value = newValue);
+                }
+            }
         }
-    }
-}
 
+        private void fetchProductData()
+        {
+            List<ProductInfo> products = DbInteraction.GetAllProductList();
+
+            _productsCollection.Clear();
+
+            foreach (ProductInfo product in products)
+            {
+                _productsCollection.Add(product);
+            }
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            fetchProductData();
+        }
+        }
+
+
+
+     
     }
-}
+
+
