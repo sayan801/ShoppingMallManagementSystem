@@ -9,7 +9,14 @@
     <DockPanel LastChildFill="True"  >
         <UniformGrid DockPanel.Dock="Left">
             <ScrollViewer Width="250">
-                <StackPanel Background="Orange" Opacity=".8" >
+                <ListView  HorizontalAlignment="Stretch"  Background="Orange"  >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="250" Header="Product Item" />
+                         </GridView>
+                    </ListView.View>
+                </ListView>
+                <!--<StackPanel Background="Orange" Opacity=".8" >
                     <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Name="babiesproduct">Babies Product</Label>
                     <Label>Soft toys</Label>
                     <Label>Resturent</Label>
@@ -33,7 +40,7 @@
                     <Label>Bioscope</Label>
                     
 
-                </StackPanel>
+                </StackPanel>-->
             </ScrollViewer>
         </UniformGrid>
         <UniformGrid  Name="upinfo">
