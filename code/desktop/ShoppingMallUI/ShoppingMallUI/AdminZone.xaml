@@ -76,6 +76,7 @@
                             <Label></Label>
                             <Button Name="resetBtn" Style="{StaticResource ControlBtnStyle}" Click="resetBtn_Click">Reset</Button>
                             <Button Name="submitproductkBtn" Style="{StaticResource ControlBtnStyle}" Click="submitproductkBtn_Click">Submit</Button>
+                            <Button Name="editProductkBtn" Style="{StaticResource ControlBtnStyle}" Visibility="Collapsed" Click="editProductkBtn_Click">Update</Button>
                             <Label></Label>
 
 
@@ -85,7 +86,7 @@
                         <UniformGrid DockPanel.Dock="Bottom" Rows="1">
                             <TextBox Name="searchTB"></TextBox>
                             <Button Style="{StaticResource ControlBtnStyle}">Search</Button>
-                            <Button Style="{StaticResource ControlBtnStyle}">Edit</Button>
+                            <Button Name="editProductBtn" Style="{StaticResource ControlBtnStyle}" Click="editProductBtn_Click">Edit</Button>
                             <Button Name="deleteProduct" Style="{StaticResource ControlBtnStyle}" Click="deleteProduct_Click">Delete</Button>
                             <Button Style="{StaticResource ControlBtnStyle}">Close</Button>
                         </UniformGrid>
@@ -143,7 +144,7 @@
                             <Label></Label>
                             <Button Name="resetShopmangBtn" Style="{StaticResource ControlBtnStyle}" Click="resetShopmangBtn_Click">Reset</Button>
                             <Button Name="submitkShopmangBtn" Style="{StaticResource ControlBtnStyle}" Click="submitkShopmangBtn_Click">Submit</Button>
-                            <Label></Label>
+                            <Button Name="UpdateShopmangBtn" Style="{StaticResource ControlBtnStyle}" Visibility="Collapsed" Click="UpdateShopmangBtn_Click">Update</Button>
 
 
                         </UniformGrid>
@@ -152,7 +153,7 @@
                         <UniformGrid DockPanel.Dock="Bottom" Rows="1">
                             <TextBox Name="searchShopmangTB"></TextBox>
                             <Button Style="{StaticResource ControlBtnStyle}">Search</Button>
-                            <Button Style="{StaticResource ControlBtnStyle}">Edit</Button>
+                            <Button Name="editShopBtn" Style="{StaticResource ControlBtnStyle}" Click="editShopBtn_Click">Edit</Button>
                             <Button Name="deleteShop" Click="deleteShop_Click" Style="{StaticResource ControlBtnStyle}">Delete</Button>
                             <Button Name="closeAdmin" Style="{StaticResource ControlBtnStyle}" >Close</Button>
                         </UniformGrid>

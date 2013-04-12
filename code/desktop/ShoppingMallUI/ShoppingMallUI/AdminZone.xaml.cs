@@ -290,6 +290,78 @@ namespace ShoppingMall
             }
         }
         #endregion
+
+        #region Edit Product
+        private void editProductBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ProductInfo productToEdit = GetSelectedProductItem();
+            if (productToEdit != null)
+            {
+                nameTB.Text = productToEdit.name;
+                BrandTB.Text = productToEdit.brand;
+                ProductypeCB.Text = productToEdit.type;
+                productdescriptionTB.Text = productToEdit.description;
+            }
+            editProductkBtn.Visibility = Visibility.Visible;
+            submitproductkBtn.Visibility = Visibility.Collapsed;
+        }
+
+        private void editProductkBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ProductInfo productToEdit = GetSelectedProductItem();
+
+            productToEdit.name = nameTB.Text;
+            productToEdit.brand = BrandTB.Text;
+            productToEdit.type = ProductypeCB.Text;
+            productToEdit.description = productdescriptionTB.Text;
+
+
+
+            ShoppingMallDb.DbInteraction.EditProduct(productToEdit);
+
+            clearProductFields();
+            editProductkBtn.Visibility = Visibility.Collapsed;
+            submitproductkBtn.Visibility = Visibility.Visible;
+            fetchProductData();
+        }
+        #endregion
+
+        #region Edit Shop
+        private void editShopBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShopInfo shopToEdit = GetSelectedShopItem();
+            if (shopToEdit != null)
+            {
+                shopnameTB.Text = shopToEdit.name;
+                shopTagTB.Text = shopToEdit.tag;
+                shopTypeCB.Text = shopToEdit.type;
+                shopRateTB.Text = shopToEdit.rating;
+                shopDescriptionTB.Text = shopToEdit.description;
+            }
+            UpdateShopmangBtn.Visibility = Visibility.Visible;
+            submitkShopmangBtn.Visibility = Visibility.Collapsed;
+        }
+
+        private void UpdateShopmangBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShopInfo shopToEdit = GetSelectedShopItem();
+                        
+            shopToEdit.name = shopnameTB.Text;
+            shopToEdit.tag = shopTagTB.Text;
+            shopToEdit.type = shopTypeCB.Text;
+            shopToEdit.rating = shopRateTB.Text;
+            shopToEdit.description = shopDescriptionTB.Text;
+
+
+            ShoppingMallDb.DbInteraction.EditShop(shopToEdit);
+            
+            clearShopFields();
+            UpdateShopmangBtn.Visibility = Visibility.Collapsed;
+            submitkShopmangBtn.Visibility = Visibility.Visible;
+            fetchShopData();
+        }
+        #endregion
+
         
     }
 }

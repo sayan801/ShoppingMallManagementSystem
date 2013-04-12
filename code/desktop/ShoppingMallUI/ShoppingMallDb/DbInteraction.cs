@@ -271,6 +271,44 @@ namespace ShoppingMallDb
         }
 
         #endregion
+        #region Edit Product
+
+        public static void EditProduct(ProductInfo newUpdateProduct)
+        {
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {
+                //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "UPDATE product SET name=@name,brand=@brand,type=@type,description=@description  WHERE id=@id";
+
+
+                msqlCommand.Parameters.AddWithValue("@name", newUpdateProduct.name);
+                msqlCommand.Parameters.AddWithValue("@brand", newUpdateProduct.brand);
+                msqlCommand.Parameters.AddWithValue("@type", newUpdateProduct.type);
+                msqlCommand.Parameters.AddWithValue("@description", newUpdateProduct.description);
+                msqlCommand.Parameters.AddWithValue("@id", newUpdateProduct.id);
+
+               
+
+                msqlCommand.ExecuteNonQuery();
+
+
+            }
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+        }
+
+        #endregion
         #endregion
 
         
@@ -345,7 +383,7 @@ namespace ShoppingMallDb
                     Shop.name = msqlReader.GetString("name");
                     Shop.tag = msqlReader.GetString("tag");
                     Shop.type = msqlReader.GetString("type");
-                    Shop.type = msqlReader.GetString("rating");
+                    Shop.rating = msqlReader.GetString("rating");
                     Shop.description = msqlReader.GetString("description");
 
                     ShopList.Add(Shop);
@@ -381,6 +419,45 @@ namespace ShoppingMallDb
                 msqlCommand.Parameters.AddWithValue("@shopToDelete", shopToDelete);
 
                 MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+            }
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+        }
+
+        #endregion
+
+        #region Edit Shop
+
+        public static void EditShop(ShopInfo newUpdateShop)
+        {
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {
+                //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "UPDATE shop SET name=@name,tag=@tag,type=@type,rating=@rating,description=@description  WHERE id=@id";
+
+                               
+                
+                msqlCommand.Parameters.AddWithValue("@name", newUpdateShop.name);
+                msqlCommand.Parameters.AddWithValue("@tag", newUpdateShop.tag);
+                msqlCommand.Parameters.AddWithValue("@type", newUpdateShop.type);
+                msqlCommand.Parameters.AddWithValue("@rating", newUpdateShop.rating);
+                msqlCommand.Parameters.AddWithValue("@description", newUpdateShop.description);
+                msqlCommand.Parameters.AddWithValue("@id", newUpdateShop.id);
+
+                msqlCommand.ExecuteNonQuery();
+
 
             }
             catch (Exception er)
