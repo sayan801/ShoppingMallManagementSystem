@@ -32,10 +32,11 @@
         </UniformGrid>
         <UniformGrid  DockPanel.Dock="Top" Rows="1" >
             <DockPanel>
-           
-            <TextBox DockPanel.Dock="Left"  Width="276" HorizontalAlignment="Left" />
+                <Button DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}">Go</Button>
+
+                <TextBox DockPanel.Dock="Right"  Width="276" HorizontalAlignment="Left" />
                 <!--<Image Source=""></Image>-->
-                <Button Style="{StaticResource ControlBtnStyle}">Go</Button>
+                
                 <Label DockPanel.Dock="Right"></Label>
             </DockPanel>
 
@@ -43,13 +44,13 @@
 
 
         </UniformGrid>
-        <UniformGrid DockPanel.Dock="Top" >
+        <UniformGrid DockPanel.Dock="Top" Margin="2">
             <TextBlock FontFamily="Sylfaen" FontWeight="Bold" FontStyle="Normal" >
-                <Hyperlink  Name="product" Style="{StaticResource HyperlinkStyle}" Click="product_Click">Products</Hyperlink>
-                <Hyperlink  Name="shop" Style="{StaticResource HyperlinkStyle}" Click="shop_Click"  >Shops</Hyperlink>
-                <Hyperlink  Name="floor" Style="{StaticResource HyperlinkStyle}"  >Floor</Hyperlink>
-                <Hyperlink Name="feedback" Style="{StaticResource HyperlinkStyle}" Click="feedback_Click" >Feed Back</Hyperlink>
-                <Hyperlink Name="adminZoneobjHL" Style="{StaticResource HyperlinkStyle}" Click="adminZoneobjHL_Click">Admin Zone</Hyperlink>
+                <Button Name="product" Style="{StaticResource ControlBtnStyle}" Click="product_Click">Products</Button>
+                <Button Name="shop" Style="{StaticResource ControlBtnStyle}" Click="shop_Click">Shops</Button>
+                <Button Name="floor" Style="{StaticResource ControlBtnStyle}" >Floor</Button>
+                <Button Name="feedback" Style="{StaticResource ControlBtnStyle}" Click="feedback_Click" >Feedback</Button>
+                <Button Name="adminZoneobjHL" Style="{StaticResource ControlBtnStyle}" Click="adminZoneobjHL_Click" >Admin Zone</Button>
             </TextBlock>
         </UniformGrid>
         <DockPanel DockPanel.Dock="Bottom" Name="infodocP" LastChildFill="True">
