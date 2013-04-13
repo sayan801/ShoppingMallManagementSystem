@@ -11,6 +11,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
+using ShoppingMallData;
+using ShoppingMallDb;
 
 namespace ShoppingMall
 {
@@ -19,9 +22,40 @@ namespace ShoppingMall
     /// </summary>
     public partial class Shops : UserControl
     {
+        ObservableCollection<ShopInfo> _shopsCollection = new ObservableCollection<ShopInfo>();
+
+
+        public ObservableCollection<ShopInfo> shopsCollection
+        {
+            get
+            {
+                return _shopsCollection;
+            }
+        }
+
         public Shops()
         {
             InitializeComponent();
         }
+
+        private void ListView_Loaded(object sender, RoutedEventArgs e)
+        {
+            fetchShopData();
+
+        }
+
+
+        private void fetchShopData()
+        {
+            List<ShopInfo> shops = DbInteraction.GetAllShopList();
+
+            _shopsCollection.Clear();
+            
+            foreach (ShopInfo shop in shops)
+            {
+                _shopsCollection.Add(shop);
+            }
+        }
+       
     }
 }

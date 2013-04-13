@@ -3,15 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" FontFamily="Tempus Sans ITC" FontSize="20" Foreground="#FF318931">
     <DockPanel LastChildFill="True"  >
         <UniformGrid DockPanel.Dock="Left">
             <ScrollViewer Width="250">
-                <ListView  HorizontalAlignment="Stretch"  Background="Orange" >
+                <ListView  HorizontalAlignment="Stretch"  Background="Orange" ItemsSource="{Binding shopsCollection}" Loaded="ListView_Loaded">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Width="250" Header="Shop List" />
+                            <GridViewColumn Width="250" Header="Shop List" DisplayMemberBinding="{Binding name}" />
                         </GridView>
                     </ListView.View>
                 </ListView>

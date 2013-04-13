@@ -43,7 +43,7 @@
 
         </UniformGrid>
         <UniformGrid DockPanel.Dock="Bottom" Name="manageadminUG" Visibility="Collapsed">
-            <TabControl>
+            <TabControl >
                 
                 <TabItem Header="Manage Products" Style="{StaticResource TItemStyle}">
                     <DockPanel LastChildFill="True">
