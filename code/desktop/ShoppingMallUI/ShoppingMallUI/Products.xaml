@@ -7,6 +7,13 @@
              xmlns:toolkit="http://schemas.microsoft.com/wpf/2008/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="719" FontFamily="Tempus Sans ITC" FontSize="20" Foreground="#FF318931" Loaded="UserControl_Loaded" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ControlStyle;component/Commonstyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <DockPanel LastChildFill="True"  >
         <UniformGrid DockPanel.Dock="Left">
             <ScrollViewer Width="250">
@@ -44,21 +51,32 @@
                 </StackPanel>-->
             </ScrollViewer>
         </UniformGrid>
-        <UniformGrid  Name="upinfo">
-            
-            <UniformGrid.Background>
-                <ImageBrush ImageSource="/ShoppingMallUI;component/Images/Shopping-Black-Friday1.jpg" />
-            </UniformGrid.Background>
-            <DockPanel>
-                <Image Source="/ShoppingMallUI;component/Images/Shopping-Black-Friday1.jpg" Width="212" Height="122" />
-                <TextBlock Height="94">about the product</TextBlock>
-                <Slider Ticks="100.0" Name="slider1"
-        Minimum="0.0"
-        Maximum="500.0"
-        Value="75.0"
-        SmallChange="1.0"
-        LargeChange="10.0"
-        ValueChanged="Slider_ValueChanged" />
+        <UniformGrid  Name="upinfo" Background="White">
+            <DockPanel LastChildFill="True">
+
+
+
+                <DockPanel DockPanel.Dock="Right" >
+                    <Image DockPanel.Dock="top" Source="/ShoppingMallUI;component/Images/Shopping-Black-Friday1.jpg" Width="234" Height="138" />
+                    <UniformGrid DockPanel.Dock="Bottom" Columns="1">
+                        <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Your Name</Label>
+                        <TextBox></TextBox>
+                        <Label  Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Email</Label>
+                        <TextBox></TextBox>
+                        <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Product Rating</Label>
+                        <TextBox></TextBox>
+                        <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Tell us your experience with this Product</Label>
+                        <TextBox></TextBox>
+                        <Label></Label>
+                        <UniformGrid Rows="1">
+                            <Button Style="{StaticResource ControlBtnStyle}" >Reset</Button>
+                            <Button Style="{StaticResource ControlBtnStyle}" >Submit</Button>
+                        </UniformGrid>
+                    </UniformGrid>
+                </DockPanel>
+
+                <TextBlock DockPanel.Dock="Top" Height="94">about the product</TextBlock>
+                <TextBlock DockPanel.Dock="Bottom" Height="94">Feedback</TextBlock>
             </DockPanel>
         </UniformGrid>
 
