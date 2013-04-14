@@ -471,5 +471,44 @@ namespace ShoppingMallDb
         }
 
         #endregion
+
+        public static List<ProductInfo> GetSelectedProductList(ProductInfo productInfoObj)
+        {
+            List<ProductInfo> ProductList = new List<ProductInfo>();
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+
+
+                msqlCommand.CommandText = "Select * From product where name = @name;";
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+                while (msqlReader.Read())
+                {
+                    ProductInfo Product = new ProductInfo();
+                    msqlCommand.Parameters.AddWithValue("@name", Product.name);
+                   
+
+                    ProductList.Add(Product);
+                }
+            }
+
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+
+                msqlConnection.Close();
+            }
+
+            return ProductList;
+
+
+        }
     }
 }

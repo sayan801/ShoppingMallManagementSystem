@@ -81,11 +81,22 @@ namespace ShoppingMall
 
             fetchProductData();
         }
+
+        private void productDetailsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           ProductInfo productInfoObj = _productsCollection.ElementAt(productDetailsList.SelectedIndex);
+
+             List<ProductInfo> products = DbInteraction.GetSelectedProductList(productInfoObj);
+
+            aboutTheProductTextBlock.Text = productInfoObj.name;
+        }
+
+        }
         }
 
 
 
      
-    }
+    
 
 
