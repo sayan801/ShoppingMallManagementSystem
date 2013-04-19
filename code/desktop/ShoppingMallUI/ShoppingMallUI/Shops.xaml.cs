@@ -56,6 +56,13 @@ namespace ShoppingMall
                 _shopsCollection.Add(shop);
             }
         }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShopInfo shopInfoObj = _shopsCollection.ElementAt(shopDetailsList.SelectedIndex);
+            List<ShopInfo> shops = DbInteraction.GetSelectedShopList(shopInfoObj);
+            aboutShopTextBlock.Text = shopInfoObj.name;
+        }
        
     }
 }

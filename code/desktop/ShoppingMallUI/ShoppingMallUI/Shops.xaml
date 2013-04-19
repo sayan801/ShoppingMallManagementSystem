@@ -16,7 +16,7 @@
     <DockPanel LastChildFill="True"  >
         <UniformGrid DockPanel.Dock="Left">
             <ScrollViewer Width="250">
-                <ListView  HorizontalAlignment="Stretch"  Background="Orange" ItemsSource="{Binding shopsCollection}" Loaded="ListView_Loaded">
+                <ListView  HorizontalAlignment="Stretch" Name="shopDetailsList"  Background="Orange" ItemsSource="{Binding shopsCollection}" Loaded="ListView_Loaded" SelectionChanged="ListView_SelectionChanged" >
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Width="250" Header="Shop List" DisplayMemberBinding="{Binding name}" />
@@ -66,7 +66,7 @@
                </UniformGrid>
             </DockPanel>
 
-                <TextBlock DockPanel.Dock="Top" Height="94">about the product</TextBlock>
+                <TextBlock Name="aboutShopTextBlock" DockPanel.Dock="Top" Height="94">About the Shop</TextBlock>
                 <TextBlock DockPanel.Dock="Bottom" Height="94">Feedback</TextBlock>
             </DockPanel>
         </UniformGrid>

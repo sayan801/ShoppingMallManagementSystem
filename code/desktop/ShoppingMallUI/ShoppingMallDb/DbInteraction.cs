@@ -508,7 +508,43 @@ namespace ShoppingMallDb
 
             return ProductList;
 
+        }
 
+        public static List<ShopInfo> GetSelectedShopList(ShopInfo shopInfoObj)
+        {
+            List<ShopInfo> ShopList = new List<ShopInfo>();
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+
+
+                msqlCommand.CommandText = "Select * From shop where name = @name;";
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+                while (msqlReader.Read())
+                {
+                    ShopInfo Shop = new ShopInfo();
+                    msqlCommand.Parameters.AddWithValue("@name", Shop.name);
+
+
+                    ShopList.Add(Shop);
+                }
+            }
+
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+
+                msqlConnection.Close();
+            }
+
+            return ShopList;
         }
     }
 }
