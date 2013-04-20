@@ -49,7 +49,7 @@
                 <Button Name="product" Style="{StaticResource ControlBtnStyle}" Click="product_Click">Products</Button>
                 <Button Name="shop" Style="{StaticResource ControlBtnStyle}" Click="shop_Click">Shops</Button>
                 <Button Name="floor" Style="{StaticResource ControlBtnStyle}" >Floor</Button>
-                <Button Name="feedback" Style="{StaticResource ControlBtnStyle}" Click="feedback_Click" >Feedback</Button>
+                <Button Name="contactusBtn" Style="{StaticResource ControlBtnStyle}" Click="contactusBtn_Click" >Contact Us</Button>
                 <Button Name="adminZoneobjHL" Style="{StaticResource ControlBtnStyle}" Click="adminZoneobjHL_Click" >Admin Zone</Button>
             </TextBlock>
         </UniformGrid>

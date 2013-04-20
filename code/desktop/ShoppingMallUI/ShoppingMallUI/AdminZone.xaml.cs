@@ -82,6 +82,7 @@ namespace ShoppingMall
             newProduct.brand = BrandTB.Text;
             newProduct.type = ProductypeCB.Text;
             newProduct.description = productdescriptionTB.Text;
+            //newProduct.image = shopimgPhoto.BitmapImage;
 
 
 
@@ -180,27 +181,27 @@ namespace ShoppingMall
 
         #region Get FeedBack
 
-        ObservableCollection<FeedbackInfo> _feedbackCollection = new ObservableCollection<FeedbackInfo>();
+        ObservableCollection<ContactusInfo> _contactusCollection = new ObservableCollection<ContactusInfo>();
 
 
-        public ObservableCollection<FeedbackInfo> feedbackCollection
+        public ObservableCollection<ContactusInfo> contactusCollection
         {
             get
             {
-                return _feedbackCollection;
+                return _contactusCollection;
             }
         }
        
 
         private void fetchFeedBackData()
         {
-            List<FeedbackInfo> feedbacks = DbInteraction.GetAllFeedbackList();
+            List<ContactusInfo> contactuss = DbInteraction.GetAllContactusList();
 
-            _feedbackCollection.Clear();
+            _contactusCollection.Clear();
 
-            foreach (FeedbackInfo feedback in feedbacks)
+            foreach (ContactusInfo contactus in contactuss)
             {
-                _feedbackCollection.Add(feedback);
+                _contactusCollection.Add(contactus);
             }
         }
         #endregion
@@ -267,26 +268,26 @@ namespace ShoppingMall
 
         #region Delete FeedBack
 
-        private FeedbackInfo GetSelectedFeedbackItem()
+        private ContactusInfo GetSelectedContactusItem()
         {
-            FeedbackInfo feedbackToDelete = null;
-            if (feedbackView.SelectedIndex == -1)
+            ContactusInfo contactusToDelete = null;
+            if (contactusView.SelectedIndex == -1)
                 MessageBox.Show("please select an item");
             else
             {
-                FeedbackInfo i = (FeedbackInfo)feedbackView.SelectedItem;
-                feedbackToDelete = _feedbackCollection.Where(item => item.id.Equals(i.id)).First();
+                ContactusInfo i = (ContactusInfo)contactusView.SelectedItem;
+                contactusToDelete = _contactusCollection.Where(item => item.id.Equals(i.id)).First();
             }
-            return feedbackToDelete;
+            return contactusToDelete;
         }
 
-        private void deleteFeedbackBtn_Click(object sender, RoutedEventArgs e)
+        private void deleteContactusBtn_Click(object sender, RoutedEventArgs e)
         {
-            FeedbackInfo feedbackToDelete = GetSelectedFeedbackItem();
-            if (feedbackToDelete != null)
+            ContactusInfo contactusToDelete = GetSelectedContactusItem();
+            if (contactusToDelete != null)
             {
-                feedbackCollection.Remove(feedbackToDelete);
-                ShoppingMallDb.DbInteraction.DeleteFeedback(feedbackToDelete.id);
+                contactusCollection.Remove(contactusToDelete);
+                ShoppingMallDb.DbInteraction.DeleteContactus(contactusToDelete.id);
             }
         }
         #endregion
@@ -362,7 +363,48 @@ namespace ShoppingMall
         }
         #endregion
 
-        
+        private void prdctbrowseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var fd = new Microsoft.Win32.OpenFileDialog();
+            fd.Filter = "All image formats (*.jpg; *.jpeg; *.bmp; *.png; *.gif)|*.jpg;*.jpeg;*.bmp;*.png;*.gif";
+            var ret = fd.ShowDialog();
+
+            if (ret.GetValueOrDefault())
+            {
+                prdctimagelinkTB.Text = fd.FileName;
+
+                try
+                {
+                    BitmapImage bmp = new BitmapImage(new Uri(fd.FileName, UriKind.Absolute));
+                    prdctimgPhoto.Source = bmp;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Invalid image file.", "Browse", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                }
+            }
+        }
+        private void shopbrowseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var fd = new Microsoft.Win32.OpenFileDialog();
+            fd.Filter = "All image formats (*.jpg; *.jpeg; *.bmp; *.png; *.gif)|*.jpg;*.jpeg;*.bmp;*.png;*.gif";
+            var ret = fd.ShowDialog();
+
+            if (ret.GetValueOrDefault())
+            {
+                shopimagelinkTB.Text = fd.FileName;
+
+                try
+                {
+                    BitmapImage bmp = new BitmapImage(new Uri(fd.FileName, UriKind.Absolute));
+                    shopimgPhoto.Source = bmp;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Invalid image file.", "Browse", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                }
+            }
+        }
     }
 }
 

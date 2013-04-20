@@ -40,11 +40,11 @@ namespace ShoppingMall
         }
 
 
-        private void feedback_Click(object sender, RoutedEventArgs e)
+        private void contactusBtn_Click(object sender, RoutedEventArgs e)
         {
-            ShoppingMall.FeedBack FeedBackobj = new ShoppingMall.FeedBack();
+            ShoppingMall.ContactUs ContactUsobj = new ShoppingMall.ContactUs();
             infodocP.Children.Clear();
-            infodocP.Children.Add(FeedBackobj);
+            infodocP.Children.Add(ContactUsobj);
         }
         private void adminZoneobjHL_Click(object sender, RoutedEventArgs e)
         {

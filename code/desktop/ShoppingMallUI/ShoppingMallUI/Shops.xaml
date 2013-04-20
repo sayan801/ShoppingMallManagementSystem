@@ -2,10 +2,12 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:my="clr-namespace:ShoppingMall"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              DataContext="{Binding RelativeSource={RelativeSource Self}}"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="738" FontFamily="Tempus Sans ITC" FontSize="20" Foreground="#FF318931">
+             d:DesignHeight="548" d:DesignWidth="882" FontFamily="Tempus Sans ITC" FontSize="20" Foreground="#FF318931">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -44,30 +46,36 @@
         </UniformGrid>
         <UniformGrid  Name="upinfo" Background="White">
             <DockPanel LastChildFill="True">
-                
-                
-                
-                    <DockPanel DockPanel.Dock="Right" >
+                <DockPanel DockPanel.Dock="Right" >
                     <Image DockPanel.Dock="top" Source="/ShoppingMallUI;component/Images/Shopping-Black-Friday1.jpg" Width="234" Height="138" />
                     <UniformGrid DockPanel.Dock="Bottom" Columns="1">
+                        <DatePicker Name="feedDateDp" Visibility="Collapsed" SelectedDate="{x:Static sys:DateTime.Now}" ></DatePicker>
                         <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Your Name</Label>
-                    <TextBox></TextBox>
+                        <TextBox Name="nameTb"></TextBox>
                     <Label  Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Email</Label>
-                    <TextBox></TextBox>
+                        <TextBox Name="mailTb"></TextBox>
                     <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Shop Rating</Label>
-                    <TextBox></TextBox>
+                        <TextBox Name="ratingTb"></TextBox>
                     <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Tell us your experience with this Shop</Label>
-                    <TextBox></TextBox>
+                        <TextBox Name="feedbackTb"></TextBox>
                         <Label></Label>
                         <UniformGrid Rows="1">
-                            <Button Style="{StaticResource ControlBtnStyle}" >Reset</Button>
-                            <Button Style="{StaticResource ControlBtnStyle}" >Submit</Button>
+                            <Button Name="resetshopFeedback" Style="{StaticResource ControlBtnStyle}" Click="resetshopFeedback_Click">Reset</Button>
+                            <Button Name="submitshopBtn" Style="{StaticResource ControlBtnStyle}" Click="submitshopBtn_Click">Submit</Button>
                         </UniformGrid>
                </UniformGrid>
             </DockPanel>
-
-                <TextBlock Name="aboutShopTextBlock" DockPanel.Dock="Top" Height="94">About the Shop</TextBlock>
-                <TextBlock DockPanel.Dock="Bottom" Height="94">Feedback</TextBlock>
+                <DockPanel LastChildFill="True">
+                    <TextBox Name="shopNameTb" DockPanel.Dock="Top" HorizontalContentAlignment="Center" IsEnabled="False">Shop Name</TextBox>
+                    <TextBlock Name="shopdetailsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" ScrollViewer.VerticalScrollBarVisibility="Visible">Details</TextBlock>
+                    <ScrollViewer>
+                    <UniformGrid DockPanel.Dock="Bottom" Columns="1">
+                            <my:Feedback  Margin="5"  />
+                            <my:Feedback  Margin="5"  />
+                            <my:Feedback  Margin="5"  />
+                        </UniformGrid>
+                    </ScrollViewer>
+                </DockPanel>
             </DockPanel>
         </UniformGrid>
 

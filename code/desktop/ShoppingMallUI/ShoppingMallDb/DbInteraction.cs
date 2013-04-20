@@ -25,14 +25,14 @@ namespace ShoppingMallDb
         }
 
 
-        #region FeedBack
-        #region Insert FeedBack
-        public static int DoEnterFeedback(FeedbackInfo NewFeedback)
+        #region Contactus
+        #region Insert Contactus
+        public static int DoEnterContactus(ContactusInfo NewContactus)
         {
-            return DoRegisterNewFeedbackindb(NewFeedback);
+            return DoRegisterNewContactusindb(NewContactus);
         }
 
-        private static int DoRegisterNewFeedbackindb(FeedbackInfo NewFeedback)
+        private static int DoRegisterNewContactusindb(ContactusInfo NewContactus)
         {
             int returnVal = 0;
             MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
@@ -45,17 +45,17 @@ namespace ShoppingMallDb
                 //define the connection used by the command object
                 msqlCommand.Connection = msqlConnection;
 
-                msqlCommand.CommandText = "INSERT INTO feedback(id,feedDate,name,address,mobileno,email,type,feedback) "
+                msqlCommand.CommandText = "INSERT INTO contactus(id,feedDate,name,address,mobileno,email,type,feedback) "
                                     + "VALUES(@id,@feedDate,@name,@address,@mobileno,@email,@type,@feedback)";
 
-                msqlCommand.Parameters.AddWithValue("@id", NewFeedback.id);
-                msqlCommand.Parameters.AddWithValue("@feedDate", NewFeedback.feedDate);
-                msqlCommand.Parameters.AddWithValue("@name", NewFeedback.name);
-                msqlCommand.Parameters.AddWithValue("@address", NewFeedback.address);
-                msqlCommand.Parameters.AddWithValue("@mobileno", NewFeedback.mobileno);
-                msqlCommand.Parameters.AddWithValue("@email", NewFeedback.email);
-                msqlCommand.Parameters.AddWithValue("@type", NewFeedback.type);
-                msqlCommand.Parameters.AddWithValue("@feedback", NewFeedback.feedback);
+                msqlCommand.Parameters.AddWithValue("@id", NewContactus.id);
+                msqlCommand.Parameters.AddWithValue("@feedDate", NewContactus.feedDate);
+                msqlCommand.Parameters.AddWithValue("@name", NewContactus.name);
+                msqlCommand.Parameters.AddWithValue("@address", NewContactus.address);
+                msqlCommand.Parameters.AddWithValue("@mobileno", NewContactus.mobileno);
+                msqlCommand.Parameters.AddWithValue("@email", NewContactus.email);
+                msqlCommand.Parameters.AddWithValue("@type", NewContactus.type);
+                msqlCommand.Parameters.AddWithValue("@feedback", NewContactus.feedback);
                 msqlCommand.ExecuteNonQuery();
 
                 returnVal = 1;
@@ -72,16 +72,16 @@ namespace ShoppingMallDb
             return returnVal;
         }
         #endregion
-        #region Display Feedback
+        #region Display Contactus
 
-        public static List<FeedbackInfo> GetAllFeedbackList()
+        public static List<ContactusInfo> GetAllContactusList()
         {
-            return QueryAllFeedbackList();
+            return QueryAllContactusList();
         }
 
-        private static List<FeedbackInfo> QueryAllFeedbackList()
+        private static List<ContactusInfo> QueryAllContactusList()
         {
-            List<FeedbackInfo> FeedbackList = new List<FeedbackInfo>();
+            List<ContactusInfo> ContactusList = new List<ContactusInfo>();
             MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
 
             try
@@ -91,23 +91,23 @@ namespace ShoppingMallDb
 
 
 
-                msqlCommand.CommandText = "Select * From feedback;";
+                msqlCommand.CommandText = "Select * From contactus;";
                 MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
 
                 while (msqlReader.Read())
                 {
-                    FeedbackInfo Feedback = new FeedbackInfo();
+                    ContactusInfo Contactus = new ContactusInfo();
 
-                    Feedback.id = msqlReader.GetString("id");
-                    Feedback.feedDate = msqlReader.GetDateTime("feedDate");
-                    Feedback.name = msqlReader.GetString("name");
-                    Feedback.address = msqlReader.GetString("address");
-                    Feedback.mobileno = msqlReader.GetString("mobileno");
-                    Feedback.email = msqlReader.GetString("email");
-                    Feedback.type = msqlReader.GetString("type");
-                    Feedback.feedback = msqlReader.GetString("feedback");
+                    Contactus.id = msqlReader.GetString("id");
+                    Contactus.feedDate = msqlReader.GetDateTime("feedDate");
+                    Contactus.name = msqlReader.GetString("name");
+                    Contactus.address = msqlReader.GetString("address");
+                    Contactus.mobileno = msqlReader.GetString("mobileno");
+                    Contactus.email = msqlReader.GetString("email");
+                    Contactus.type = msqlReader.GetString("type");
+                    Contactus.feedback = msqlReader.GetString("feedback");
 
-                    FeedbackList.Add(Feedback);
+                    ContactusList.Add(Contactus);
                 }
             }
 
@@ -120,13 +120,13 @@ namespace ShoppingMallDb
                 msqlConnection.Close();
             }
 
-            return FeedbackList;
+            return ContactusList;
 
         }
         #endregion
-        #region Delete Feedback
+        #region Delete Contactus
 
-        public static void DeleteFeedback(string feedbackToDelete)
+        public static void DeleteContactus(string contactusToDelete)
         {
             MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
 
@@ -135,8 +135,8 @@ namespace ShoppingMallDb
                 MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
                 msqlCommand.Connection = msqlConnection;
 
-                msqlCommand.CommandText = "DELETE FROM feedback WHERE id=@feedbackToDelete";
-                msqlCommand.Parameters.AddWithValue("@feedbackToDelete", feedbackToDelete);
+                msqlCommand.CommandText = "DELETE FROM contactus WHERE id=@contactusToDelete";
+                msqlCommand.Parameters.AddWithValue("@contactusToDelete", contactusToDelete);
 
                 MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
 
@@ -546,5 +546,52 @@ namespace ShoppingMallDb
 
             return ShopList;
         }
+
+
+        #region Insert Feedback
+        public static int DoEnterFeedback(FeedbackInfo NewFeedback)
+        {
+            return DoRegisterFeedbackindb(NewFeedback);
+        }
+
+        private static int DoRegisterFeedbackindb(FeedbackInfo NewFeedback)
+        {
+            int returnVal = 0;
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {
+                //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+
+                //define the connection used by the command object
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "INSERT INTO feedback(id,feedDate,item,name,email,rate,feedback) "
+                                    + "VALUES(@id,@feedDate,@item,@name,@email,@rate,@feedback)";
+
+                msqlCommand.Parameters.AddWithValue("@id", NewFeedback.id);
+                msqlCommand.Parameters.AddWithValue("@feedDate", NewFeedback.feedDate);
+                msqlCommand.Parameters.AddWithValue("@item", NewFeedback.item);
+                msqlCommand.Parameters.AddWithValue("@name", NewFeedback.name);
+                msqlCommand.Parameters.AddWithValue("@email", NewFeedback.email);
+                msqlCommand.Parameters.AddWithValue("@rate", NewFeedback.rate);
+                msqlCommand.Parameters.AddWithValue("@feedback", NewFeedback.feedback);
+                msqlCommand.ExecuteNonQuery();
+
+                returnVal = 1;
+            }
+            catch (Exception er)
+            {
+                returnVal = 0;
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+            return returnVal;
+        }
+        #endregion
     }
 }

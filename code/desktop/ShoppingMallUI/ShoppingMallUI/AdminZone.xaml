@@ -47,42 +47,6 @@
                 
                 <TabItem Header="Manage Products" Style="{StaticResource TItemStyle}">
                     <DockPanel LastChildFill="True">
-
-                        <UniformGrid  Name="manageUG" DockPanel.Dock="Top" Columns="4">
-                            
-                            
-                            <Label></Label>
-                            <Label Style="{StaticResource LblStyle}" >Name</Label>
-                            <TextBox Name="nameTB"></TextBox>
-                            <Label></Label>
-                            <Label  Style="{StaticResource LblStyle}" >Manage All</Label>
-                            <Label Style="{StaticResource LblStyle}" >Brand</Label>
-                            <TextBox Name="BrandTB"></TextBox>
-                            <Label></Label>
-
-                            <Label  Style="{StaticResource LblStyle}" >Products</Label>
-                            <Label  Style="{StaticResource LblStyle}" >Type</Label>
-                            <ComboBox IsEditable="True" Name="ProductypeCB" SelectedIndex="1">
-                                <ComboBoxItem>Electronics</ComboBoxItem>
-                                <ComboBoxItem>Garments</ComboBoxItem>
-                                <ComboBoxItem>Others</ComboBoxItem>
-                            </ComboBox>
-                            <Label></Label>
-                            
-                            <Label></Label>
-                            <Label  Style="{StaticResource LblStyle}" >Description</Label>
-                            <TextBox Name="productdescriptionTB"></TextBox>
-                            <Label></Label>
-                            <Label></Label>
-                            <Button Name="resetBtn" Style="{StaticResource ControlBtnStyle}" Click="resetBtn_Click">Reset</Button>
-                            <Button Name="submitproductkBtn" Style="{StaticResource ControlBtnStyle}" Click="submitproductkBtn_Click">Submit</Button>
-                            <Button Name="editProductkBtn" Style="{StaticResource ControlBtnStyle}" Visibility="Collapsed" Click="editProductkBtn_Click">Update</Button>
-                            <Label></Label>
-
-
-                        </UniformGrid>
-        
-
                         <UniformGrid DockPanel.Dock="Bottom" Rows="1">
                             <TextBox Name="searchTB"></TextBox>
                             <Button Style="{StaticResource ControlBtnStyle}">Search</Button>
@@ -90,6 +54,40 @@
                             <Button Name="deleteProduct" Style="{StaticResource ControlBtnStyle}" Click="deleteProduct_Click">Delete</Button>
                             <Button Style="{StaticResource ControlBtnStyle}">Close</Button>
                         </UniformGrid>
+                        <UniformGrid  Name="manageUG" DockPanel.Dock="Top" >
+                        <DockPanel LastChildFill="True">
+                                <Grid>
+
+                                    <Image Name="prdctimgPhoto"  Stretch="Uniform" Height="142" Margin="14,6,14,53" Width="203"></Image>
+                                    <TextBox Name="prdctimagelinkTB" Margin="14,154,100,8" Width="117" Height="39"></TextBox>
+
+                                    <Button Name="prdctbrowseBtn" Style="{StaticResource ControlBtnStyle}" Click="prdctbrowseBtn_Click" Margin="137,154,6,8" Height="39" Width="88">Browse</Button>
+                                
+                                </Grid>
+                                <UniformGrid DockPanel.Dock="Left" Columns="3">
+                                    <Label Style="{StaticResource LblStyle}" >Name</Label>
+                                    <TextBox Name="nameTB"></TextBox>
+                                    <Label></Label>
+                                    <Label Style="{StaticResource LblStyle}" >Brand</Label>
+                                    <TextBox Name="BrandTB"></TextBox>
+                                    <Label></Label>
+                                    <Label  Style="{StaticResource LblStyle}" >Type</Label>
+                                    <ComboBox IsEditable="True" Name="ProductypeCB" SelectedIndex="1">
+                                        <ComboBoxItem>Electronics</ComboBoxItem>
+                                        <ComboBoxItem>Garments</ComboBoxItem>
+                                        <ComboBoxItem>Others</ComboBoxItem>
+                                    </ComboBox>
+                                    <Label></Label>
+                                    <Label  Style="{StaticResource LblStyle}" >Description</Label>
+                                    <TextBox Name="productdescriptionTB"></TextBox>
+                                    <Label></Label>
+                                    <Button Name="resetBtn" Style="{StaticResource ControlBtnStyle}" Click="resetBtn_Click">Reset</Button>
+                                    <Button Name="submitproductkBtn" Style="{StaticResource ControlBtnStyle}" Click="submitproductkBtn_Click">Submit</Button>
+                                    <Button Name="editProductkBtn" Style="{StaticResource ControlBtnStyle}" Visibility="Collapsed" Click="editProductkBtn_Click">Update</Button>
+                                </UniformGrid>
+                            </DockPanel>
+                        </UniformGrid>
+                        
                         <UniformGrid DockPanel.Dock="Bottom">
                             <ListView Name="productsView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding productsCollection}" Loaded="Window_Loaded">
 
@@ -110,46 +108,6 @@
                 </TabItem>
                 <TabItem Header="Manage Shops" Style="{StaticResource TItemStyle}">
                     <DockPanel LastChildFill="True">
-
-                        <UniformGrid  Name="manageShopUG" DockPanel.Dock="Top" Columns="4">
-
-
-                            <Label></Label>
-                            <Label Style="{StaticResource LblStyle}" >Name</Label>
-                            <TextBox Name="shopnameTB"></TextBox>
-                            <Label></Label>
-                            <Label  Style="{StaticResource LblStyle}" >Manage All</Label>
-                            <Label  Style="{StaticResource LblStyle}" >Tag</Label>
-                            <TextBox Name="shopTagTB"></TextBox>
-                            <Label></Label>
-                            <Label  Style="{StaticResource LblStyle}" >Shops</Label>
-
-                            
-                            <Label  Style="{StaticResource LblStyle}" >Type</Label>
-                            <ComboBox IsEditable="True" Name="shopTypeCB" SelectedIndex="1">
-                                <ComboBoxItem>Electronics</ComboBoxItem>
-                                <ComboBoxItem>Garments</ComboBoxItem>
-                                <ComboBoxItem>Others</ComboBoxItem>
-                            </ComboBox>
-                            <Label></Label>
-                            <Label></Label>
-                            
-                            <Label  Style="{StaticResource LblStyle}" >Rate</Label>
-                            <TextBox Name="shopRateTB"></TextBox>
-                            <Label></Label>
-                            <Label></Label>
-                            <Label  Style="{StaticResource LblStyle}" >Description</Label>
-                            <TextBox Name="shopDescriptionTB"></TextBox>
-                            <Label></Label>
-                            <Label></Label>
-                            <Button Name="resetShopmangBtn" Style="{StaticResource ControlBtnStyle}" Click="resetShopmangBtn_Click">Reset</Button>
-                            <Button Name="submitkShopmangBtn" Style="{StaticResource ControlBtnStyle}" Click="submitkShopmangBtn_Click">Submit</Button>
-                            <Button Name="UpdateShopmangBtn" Style="{StaticResource ControlBtnStyle}" Visibility="Collapsed" Click="UpdateShopmangBtn_Click">Update</Button>
-
-
-                        </UniformGrid>
-
-
                         <UniformGrid DockPanel.Dock="Bottom" Rows="1">
                             <TextBox Name="searchShopmangTB"></TextBox>
                             <Button Style="{StaticResource ControlBtnStyle}">Search</Button>
@@ -157,6 +115,44 @@
                             <Button Name="deleteShop" Click="deleteShop_Click" Style="{StaticResource ControlBtnStyle}">Delete</Button>
                             <Button Name="closeAdmin" Style="{StaticResource ControlBtnStyle}" >Close</Button>
                         </UniformGrid>
+                        <DockPanel DockPanel.Dock="Top">
+                            <Grid>
+
+                                <Image Name="shopimgPhoto"  Stretch="Uniform" Height="142" Margin="14,6,14,53" Width="203"></Image>
+                            <TextBox Name="shopimagelinkTB" Margin="14,154,100,8" Width="117" Height="39"></TextBox>
+
+                                <Button Name="shopbrowseBtn" Style="{StaticResource ControlBtnStyle}" Click="shopbrowseBtn_Click" Margin="137,154,6,8" Height="39" Width="88">Browse</Button>
+
+                            </Grid>
+                            <UniformGrid  Name="manageShopUG" DockPanel.Dock="Top" Columns="3">
+                                <Label Style="{StaticResource LblStyle}" >Name</Label>
+                                <TextBox Name="shopnameTB"></TextBox>
+                                <Label></Label>
+                                <Label  Style="{StaticResource LblStyle}" >Tag</Label>
+                                <TextBox Name="shopTagTB"></TextBox>
+                                <Label></Label>
+                                <Label  Style="{StaticResource LblStyle}" >Type</Label>
+                                <ComboBox IsEditable="True" Name="shopTypeCB" SelectedIndex="1">
+                                    <ComboBoxItem>Electronics</ComboBoxItem>
+                                    <ComboBoxItem>Garments</ComboBoxItem>
+                                    <ComboBoxItem>Others</ComboBoxItem>
+                                </ComboBox>
+                                <Label></Label>
+                                <Label  Style="{StaticResource LblStyle}" >Rate</Label>
+                                <TextBox Name="shopRateTB"></TextBox>
+                                <Label></Label>
+                                <Label  Style="{StaticResource LblStyle}" >Description</Label>
+                                <TextBox Name="shopDescriptionTB"></TextBox>
+                                <Label></Label>
+                                <Button Name="resetShopmangBtn" Style="{StaticResource ControlBtnStyle}" Click="resetShopmangBtn_Click">Reset</Button>
+                                <Button Name="submitkShopmangBtn" Style="{StaticResource ControlBtnStyle}" Click="submitkShopmangBtn_Click">Submit</Button>
+                                <Button Name="UpdateShopmangBtn" Style="{StaticResource ControlBtnStyle}" Visibility="Collapsed" Click="UpdateShopmangBtn_Click">Update</Button>
+
+
+                            </UniformGrid>
+                        </DockPanel>
+
+                        
                         <UniformGrid DockPanel.Dock="Bottom">
                             <ListView Name="shopsView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding shopsCollection}"  Loaded="Window_Loaded">
 
@@ -179,9 +175,9 @@
                 </TabItem>
                 <TabItem Header="Manage FeedBack" Style="{StaticResource TItemStyle}">
                     <DockPanel LastChildFill="True">
-                        <Button Name="deleteFeedbackBtn" HorizontalAlignment="Right" DockPanel.Dock="Bottom" Style="{StaticResource ControlBtnStyle}" Width="173" Margin="0,0,20,0" Click="deleteFeedbackBtn_Click">Delete</Button>
+                        <Button Name="deleteContactusBtn" HorizontalAlignment="Right" DockPanel.Dock="Bottom" Style="{StaticResource ControlBtnStyle}" Width="173" Margin="0,0,20,0" Click="deleteContactusBtn_Click">Delete</Button>
                     <UniformGrid DockPanel.Dock="Top">
-                        <ListView Name="feedbackView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding feedbackCollection}" Loaded="Window_Loaded" >
+                        <ListView Name="contactusView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding contactusCollection}" Loaded="Window_Loaded" >
 
 
                             <ListView.View>
@@ -193,7 +189,7 @@
                                     <GridViewColumn Width="150" Header="Contact No." DisplayMemberBinding="{Binding mobileno}"/>
                                     <GridViewColumn Width="200" Header="Email" DisplayMemberBinding="{Binding email}" />
                                     <GridViewColumn Width="110" Header="Type" DisplayMemberBinding="{Binding type}" />
-                                    <GridViewColumn Width="370" Header="Feedback" DisplayMemberBinding="{Binding feedback}" />
+                                    <GridViewColumn Width="370" Header="Contactus" DisplayMemberBinding="{Binding contactus}" />
 
                                 </GridView>
                             </ListView.View>

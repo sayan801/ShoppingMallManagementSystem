@@ -61,7 +61,41 @@ namespace ShoppingMall
         {
             ShopInfo shopInfoObj = _shopsCollection.ElementAt(shopDetailsList.SelectedIndex);
             List<ShopInfo> shops = DbInteraction.GetSelectedShopList(shopInfoObj);
-            aboutShopTextBlock.Text = shopInfoObj.name;
+            shopNameTb.Text = shopInfoObj.name;
+            shopdetailsTBlock.Text = shopInfoObj.description;
+        }
+
+        private void submitshopBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShoppingMallData.FeedbackInfo newFeedback = new ShoppingMallData.FeedbackInfo();
+
+            newFeedback.id = GenerateId();
+
+            newFeedback.item = shopNameTb.Text;
+            newFeedback.feedDate = feedDateDp.SelectedDate.Value;
+            newFeedback.name = nameTb.Text;
+            newFeedback.email = mailTb.Text;
+            newFeedback.rate = ratingTb.Text;
+            newFeedback.feedback = feedbackTb.Text;
+
+
+
+            ShoppingMallDb.DbInteraction.DoEnterFeedback(newFeedback);
+            clearshopfeedbackFields();
+            //fetchFeedBackData();
+        }
+        private string GenerateId()
+        {
+            return DateTime.Now.ToOADate().ToString();
+        }
+
+        private void clearshopfeedbackFields()
+        {
+            nameTb.Text = mailTb.Text = ratingTb.Text = feedbackTb.Text = "";
+        }
+        private void resetshopFeedback_Click(object sender, RoutedEventArgs e)
+        {
+            clearshopfeedbackFields();
         }
        
     }

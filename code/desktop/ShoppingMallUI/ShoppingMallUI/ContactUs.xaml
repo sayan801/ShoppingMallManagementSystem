@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="ShoppingMall.ContactUs"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+              xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             mc:Ignorable="d" 
+             d:DesignHeight="453" d:DesignWidth="785"  Style="{DynamicResource UserCntrlStyle}">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ControlStyle;component/Commonstyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel LastChildFill="True"  >
+        
+        <UniformGrid  Name="upinfo" Background="White" DockPanel.Dock="Top" Columns="4">
+            <Label></Label>
+            <Label Style="{StaticResource LblStyle}" >Today</Label>
+            <DatePicker Name="feedDateDp" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  SelectedDate="{x:Static sys:DateTime.Now}" ></DatePicker>
+            <Label></Label>
+            <Label></Label>
+            <Label Style="{StaticResource LblStyle}" >Name</Label>
+            <TextBox Name="nameTB"></TextBox>
+            <Label></Label>
+            <Label></Label>
+            <Label Style="{StaticResource LblStyle}" >Address</Label>
+            <TextBox Name="addressTB"></TextBox>
+            <Label></Label>
+            <Label  Style="{StaticResource LblStyle}" >Enter your</Label>
+            <Label  Style="{StaticResource LblStyle}" >Mobile</Label>
+            <TextBox Name="mobilenoTB"></TextBox>
+            <Label></Label>
+            <Label  Style="{StaticResource LblStyle}" >Feed Back</Label>
+            <Label  Style="{StaticResource LblStyle}" >Email</Label>
+            <TextBox Name="emailTB"></TextBox>
+            <Label></Label>
+            <Label></Label>
+            <Label  Style="{StaticResource LblStyle}" >Type</Label>
+            <ComboBox IsEditable="True" Name="typeCB" SelectedIndex="1">
+                <ComboBoxItem>Guest</ComboBoxItem>
+                <ComboBoxItem>Customer</ComboBoxItem>
+                <ComboBoxItem>Others</ComboBoxItem>
+            </ComboBox>
+            <Label></Label>
+            <Label></Label>
+            <Label  Style="{StaticResource LblStyle}" >Complain/Contactus</Label>
+            <TextBox Name="contactusTB"></TextBox>
+            <Label></Label>
+            <Label></Label>
+            <Button Name="resetFdbckBtn" Style="{StaticResource ControlBtnStyle}" Click="resetFdbckBtn_Click">Reset</Button>
+            <Button Name="submitFdBckBtn" Style="{StaticResource ControlBtnStyle}" Click="submitFdBckBtn_Click">Submit</Button>
+            <Label></Label>
+            
+           
+        </UniformGrid>
+        
+        <UniformGrid DockPanel.Dock="Bottom">
+            <ListView Name="contactusView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding contactusCollection}" Loaded="Window_Loaded" >
+
+
+                <ListView.View>
+                    <GridView>
+                        <!--<GridViewColumn Width="100" Header="Id" DisplayMemberBinding="{Binding id}"  />-->
+                        <GridViewColumn Width="100" Header="Date" DisplayMemberBinding="{Binding feedDate}"  />
+                        <GridViewColumn Width="200" Header="Name" DisplayMemberBinding="{Binding name}"  />
+                        <GridViewColumn Width="250" Header="Address" DisplayMemberBinding="{Binding address}" />
+                        <GridViewColumn Width="150" Header="Contact No." DisplayMemberBinding="{Binding mobileno}"/>
+                        <GridViewColumn Width="200" Header="Email" DisplayMemberBinding="{Binding email}" />
+                        <GridViewColumn Width="110" Header="Type" DisplayMemberBinding="{Binding type}" />
+                        <GridViewColumn Width="370" Header="Feedback" DisplayMemberBinding="{Binding feedback}" />
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </UniformGrid>
+    </DockPanel>
+</UserControl>

@@ -88,9 +88,42 @@ namespace ShoppingMall
 
              List<ProductInfo> products = DbInteraction.GetSelectedProductList(productInfoObj);
 
-            aboutTheProductTextBlock.Text = productInfoObj.name;
+             productNameTb.Text = productInfoObj.name;
+            productDetailsTBlock.Text = productInfoObj.description;
         }
 
+        private void prdfdbckbtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShoppingMallData.FeedbackInfo newFeedback = new ShoppingMallData.FeedbackInfo();
+
+            newFeedback.id = GenerateId();
+
+            newFeedback.item = productNameTb.Text;
+            newFeedback.feedDate = feedDateDp.SelectedDate.Value;
+            newFeedback.name = nameTb.Text;
+            newFeedback.email = mailTb.Text;
+            newFeedback.rate = ratingTb.Text;
+            newFeedback.feedback = feedbackTb.Text;
+
+
+
+            ShoppingMallDb.DbInteraction.DoEnterFeedback(newFeedback);
+            clearProductfeedbackFields();
+            //fetchFeedBackData();
+        }
+        private string GenerateId()
+        {
+            return DateTime.Now.ToOADate().ToString();
+        }
+
+        private void clearProductfeedbackFields()
+        {
+            nameTb.Text = mailTb.Text = ratingTb.Text = feedbackTb.Text = "";
+        }
+        private void clearProductfeedbackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            clearProductfeedbackFields();
+        }
         }
         }
 
