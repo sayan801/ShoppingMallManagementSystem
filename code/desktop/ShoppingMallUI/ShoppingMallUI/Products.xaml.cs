@@ -108,8 +108,9 @@ namespace ShoppingMall
 
 
             ShoppingMallDb.DbInteraction.DoEnterFeedback(newFeedback);
-            clearProductfeedbackFields();
+            
             //fetchFeedBackData();
+            clearProductfeedbackFields();
         }
         private string GenerateId()
         {
@@ -124,6 +125,8 @@ namespace ShoppingMall
         {
             clearProductfeedbackFields();
         }
+
+        
         }
         }
 

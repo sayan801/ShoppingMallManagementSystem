@@ -89,11 +89,52 @@ namespace ShoppingMall
             ShoppingMallDb.DbInteraction.DoEnterProduct(newProduct);
             clearProductFields();
             fetchProductData();
+            takepic();
+            
         }
 
         private string GenerateId()
         {
             return DateTime.Now.ToOADate().ToString();
+        }
+        private void takepic()
+        {
+
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = new MySql.Data.MySqlClient.MySqlConnection("server=localhost; user id=root;password=technicise;database=shoppingdb;persist security info=false");
+
+
+
+            if (msqlConnection.State != System.Data.ConnectionState.Open)
+
+                msqlConnection.Open();
+
+
+
+            MySql.Data.MySqlClient.MySqlCommand msqlcommand = new MySql.Data.MySqlClient.MySqlCommand();
+
+
+
+            msqlcommand.Connection = msqlConnection;
+
+
+
+            msqlcommand.CommandText = "insert into product(image)" + "values(@image)";
+
+
+
+            msqlcommand.Parameters.AddWithValue("@image", prdctimgPhoto);
+
+            msqlcommand.ExecuteNonQuery();
+
+
+
+            msqlConnection.Close();
+
+
+
+            MessageBox.Show("Info Added");
+
+
         }
         #endregion
 
@@ -405,6 +446,8 @@ namespace ShoppingMall
                 }
             }
         }
+
+
     }
 }
 
