@@ -29,7 +29,7 @@
             <Label></Label>
             <Button Name="adminresetBtn" Style="{StaticResource ControlBtnStyle}" Click="adminresetBtn_Click">Reset</Button>
             <Button Name="adminloginBtn" Style="{StaticResource ControlBtnStyle}" Click="adminloginBtn_Click">Login</Button>
-            <Label></Label>
+            <Label Name="loginErrorlbl" Style="{StaticResource LblStyle}"></Label>
 
 
         </UniformGrid>
