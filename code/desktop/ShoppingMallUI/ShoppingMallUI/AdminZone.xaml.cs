@@ -89,7 +89,7 @@ namespace ShoppingMall
             ShoppingMallDb.DbInteraction.DoEnterProduct(newProduct);
             clearProductFields();
             fetchProductData();
-            takepic();
+            //takepic();
             
         }
 
@@ -97,45 +97,45 @@ namespace ShoppingMall
         {
             return DateTime.Now.ToOADate().ToString();
         }
-        private void takepic()
-        {
+        //private void takepic()
+        //{
 
-            MySql.Data.MySqlClient.MySqlConnection msqlConnection = new MySql.Data.MySqlClient.MySqlConnection("server=localhost; user id=root;password=technicise;database=shoppingdb;persist security info=false");
-
-
-
-            if (msqlConnection.State != System.Data.ConnectionState.Open)
-
-                msqlConnection.Open();
+        //    MySql.Data.MySqlClient.MySqlConnection msqlConnection = new MySql.Data.MySqlClient.MySqlConnection("server=localhost; user id=root;password=technicise;database=shoppingdb;persist security info=false");
 
 
 
-            MySql.Data.MySqlClient.MySqlCommand msqlcommand = new MySql.Data.MySqlClient.MySqlCommand();
+        //    if (msqlConnection.State != System.Data.ConnectionState.Open)
+
+        //        msqlConnection.Open();
 
 
 
-            msqlcommand.Connection = msqlConnection;
+        //    MySql.Data.MySqlClient.MySqlCommand msqlcommand = new MySql.Data.MySqlClient.MySqlCommand();
 
 
 
-            msqlcommand.CommandText = "insert into product(image)" + "values(@image)";
+        //    msqlcommand.Connection = msqlConnection;
 
 
 
-            msqlcommand.Parameters.AddWithValue("@image", prdctimgPhoto);
-
-            msqlcommand.ExecuteNonQuery();
+        //    msqlcommand.CommandText = "insert into product(image)" + "values(@image)";
 
 
 
-            msqlConnection.Close();
+        //    msqlcommand.Parameters.AddWithValue("@image", prdctimgPhoto);
+
+        //    msqlcommand.ExecuteNonQuery();
 
 
 
-            MessageBox.Show("Info Added");
+        //    msqlConnection.Close();
 
 
-        }
+
+        //    MessageBox.Show("Info Added");
+
+
+        //}
         #endregion
 
         #region Get Product
