@@ -47,7 +47,7 @@
                 
                 <TabItem Header="Manage Products" Style="{StaticResource TItemStyle}">
                     <DockPanel LastChildFill="True">
-                        <UniformGrid DockPanel.Dock="Bottom" Rows="1">
+                        <UniformGrid Name="operationProductAdmitnUG" DockPanel.Dock="Bottom" Rows="1">
                             <TextBox  Name="prdctAdminSearchTB"></TextBox>
                             <Button Name="searchAdminProductBtn" Style="{StaticResource ControlBtnStyle}" Click="searchAdminProductBtn_Click">Search</Button>
                             <Label></Label>
@@ -110,11 +110,11 @@
                 </TabItem>
                 <TabItem Header="Manage Shops" Style="{StaticResource TItemStyle}">
                     <DockPanel LastChildFill="True">
-                        <UniformGrid DockPanel.Dock="Bottom" Rows="1">
-                            <TextBox Name="searchShopmangTB"></TextBox>
-                            <Button Style="{StaticResource ControlBtnStyle}">Search</Button>
+                        <UniformGrid Name="oprtionShopUG" DockPanel.Dock="Bottom" Rows="1">
+                            <TextBox Name="searchAdminShopmangTB"></TextBox>
+                            <Button Name="searchAdminShopmangBtn" Style="{StaticResource ControlBtnStyle}" Click="searchAdminShopmangBtn_Click">Search</Button>
                             <Label></Label>
-                            <Button Style="{StaticResource ControlBtnStyle}">Refresh</Button>
+                            <Button Name="refreshAdminShopBtn" Style="{StaticResource ControlBtnStyle}" Click="refreshAdminShopBtn_Click">Refresh</Button>
                             <Button Name="editShopBtn" Style="{StaticResource ControlBtnStyle}" Click="editShopBtn_Click">Edit</Button>
                             <Button Name="deleteShop" Click="deleteShop_Click" Style="{StaticResource ControlBtnStyle}">Delete</Button>
                         </UniformGrid>

@@ -344,10 +344,7 @@ namespace ShoppingMall
         private void editProductBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            deleteProduct.IsEnabled = false;
-            searchAdminProductBtn.IsEnabled = false;
-            refreshAdminProductBtn.IsEnabled = false;
-            editProductBtn.IsEnabled = false;
+            operationProductAdmitnUG.IsEnabled = false;
 
             ProductInfo productToEdit = GetSelectedProductItem();
             if (productToEdit != null)
@@ -378,16 +375,17 @@ namespace ShoppingMall
             editProductkBtn.Visibility = Visibility.Collapsed;
             submitproductkBtn.Visibility = Visibility.Visible;
             fetchProductData();
-            deleteProduct.IsEnabled = true;
-            searchAdminProductBtn.IsEnabled = true;
-            refreshAdminProductBtn.IsEnabled = true;
-            editProductBtn.IsEnabled = true;
+
+            operationProductAdmitnUG.IsEnabled = true;
         }
         #endregion
 
         #region Edit Shop
         private void editShopBtn_Click(object sender, RoutedEventArgs e)
         {
+            oprtionShopUG.IsEnabled = false;
+            
+            
             ShopInfo shopToEdit = GetSelectedShopItem();
             if (shopToEdit != null)
             {
@@ -418,6 +416,8 @@ namespace ShoppingMall
             UpdateShopmangBtn.Visibility = Visibility.Collapsed;
             submitkShopmangBtn.Visibility = Visibility.Visible;
             fetchShopData();
+
+            oprtionShopUG.IsEnabled = true;
         }
         #endregion
 
@@ -492,6 +492,33 @@ namespace ShoppingMall
             fetchProductData();
         }
 
+        #region Search Admin Shop
+        private void searchAdminShopmangBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (searchAdminShopmangTB.Text == "")
+                fetchShopData();
+            else
+            {
+                ShopInfo shopInfo = new ShopInfo();
+                shopInfo.name = searchAdminShopmangTB.Text;
+
+
+                List<ShopInfo> shops = DbInteraction.searchShopList(shopInfo);
+
+                _shopsCollection.Clear();
+
+                foreach (ShopInfo shop in shops)
+                {
+                    _shopsCollection.Add(shop);
+                }
+            }
+        }
+        #endregion
+
+        private void refreshAdminShopBtn_Click(object sender, RoutedEventArgs e)
+        {
+            fetchShopData();
+        }
     }
 }
 

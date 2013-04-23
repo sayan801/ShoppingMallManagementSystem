@@ -522,6 +522,58 @@ namespace ShoppingMallDb
 
         #endregion
 
+        #region Search Admin Shop
+
+        public static List<ShopInfo> searchShopList(ShopInfo shopinfo)
+        {
+            return searchAllShopList(shopinfo);
+        }
+
+        private static List<ShopInfo> searchAllShopList(ShopInfo shopinfo)
+        {
+            List<ShopInfo> ShopList = new List<ShopInfo>();
+
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "Select * From product where id = @input or name = @input or tag = @input or type = @input or rating = @input or description = @input ; ";
+
+                msqlCommand.Parameters.AddWithValue("@input", shopinfo.name);
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+                while (msqlReader.Read())
+                {
+                    ShopInfo Shop = new ShopInfo();
+
+                    Shop.id = msqlReader.GetString("id");
+                    Shop.name = msqlReader.GetString("name");
+                    Shop.tag = msqlReader.GetString("tag");
+                    Shop.type = msqlReader.GetString("type");
+                    Shop.rating = msqlReader.GetString("rating");
+                    Shop.description = msqlReader.GetString("description");
+
+                    ShopList.Add(Shop);
+                }
+
+            }
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+
+            return ShopList;
+        }
+
+        #endregion
+
         public static List<ProductInfo> GetSelectedProductList(ProductInfo productInfoObj)
         {
             List<ProductInfo> ProductList = new List<ProductInfo>();
