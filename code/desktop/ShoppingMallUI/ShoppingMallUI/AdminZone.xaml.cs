@@ -343,6 +343,12 @@ namespace ShoppingMall
         #region Edit Product
         private void editProductBtn_Click(object sender, RoutedEventArgs e)
         {
+
+            deleteProduct.IsEnabled = false;
+            searchAdminProductBtn.IsEnabled = false;
+            refreshAdminProductBtn.IsEnabled = false;
+            editProductBtn.IsEnabled = false;
+
             ProductInfo productToEdit = GetSelectedProductItem();
             if (productToEdit != null)
             {
@@ -372,6 +378,10 @@ namespace ShoppingMall
             editProductkBtn.Visibility = Visibility.Collapsed;
             submitproductkBtn.Visibility = Visibility.Visible;
             fetchProductData();
+            deleteProduct.IsEnabled = true;
+            searchAdminProductBtn.IsEnabled = true;
+            refreshAdminProductBtn.IsEnabled = true;
+            editProductBtn.IsEnabled = true;
         }
         #endregion
 
@@ -454,6 +464,33 @@ namespace ShoppingMall
             }
         }
 
+        #region Search Admin Product
+        private void searchAdminProductBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (prdctAdminSearchTB.Text == "")
+                fetchProductData();
+            else
+            {
+                ProductInfo prodctInfo = new ProductInfo();
+                prodctInfo.name = prdctAdminSearchTB.Text;
+
+
+                List<ProductInfo> products = DbInteraction.searchProductList(prodctInfo);
+
+                _productsCollection.Clear();
+
+                foreach (ProductInfo product in products)
+                {
+                    _productsCollection.Add(product);
+                }
+            }
+        }
+        #endregion
+
+        private void refreshAdminProductBtn_Click(object sender, RoutedEventArgs e)
+        {
+            fetchProductData();
+        }
 
     }
 }

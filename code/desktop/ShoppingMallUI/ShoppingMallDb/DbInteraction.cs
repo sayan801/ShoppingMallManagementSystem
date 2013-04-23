@@ -309,6 +309,56 @@ namespace ShoppingMallDb
         }
 
         #endregion
+        #region Search Admin Product
+
+        public static List<ProductInfo> searchProductList(ProductInfo productinfo)
+        {
+            return searchAllProductList(productinfo);
+        }
+
+        private static List<ProductInfo> searchAllProductList(ProductInfo productinfo)
+        {
+            List<ProductInfo> ProductList = new List<ProductInfo>();
+
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "Select * From product where id = @input or name = @input or brand = @input or type = @input or description = @input ; ";
+
+                msqlCommand.Parameters.AddWithValue("@input", productinfo.name);
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+                while (msqlReader.Read())
+                {
+                    ProductInfo Product = new ProductInfo();
+
+                    Product.id = msqlReader.GetString("id");
+                    Product.name = msqlReader.GetString("name");
+                    Product.brand = msqlReader.GetString("brand");
+                    Product.type = msqlReader.GetString("type");
+                    Product.description = msqlReader.GetString("description");
+                    
+                    ProductList.Add(Product);
+                }
+
+            }
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+
+            return ProductList;
+        }
+
+        #endregion
         #endregion
 
         

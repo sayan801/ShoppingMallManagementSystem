@@ -48,10 +48,10 @@
                 <TabItem Header="Manage Products" Style="{StaticResource TItemStyle}">
                     <DockPanel LastChildFill="True">
                         <UniformGrid DockPanel.Dock="Bottom" Rows="1">
-                            <TextBox Name="searchTB"></TextBox>
-                            <Button Style="{StaticResource ControlBtnStyle}">Search</Button>
+                            <TextBox  Name="prdctAdminSearchTB"></TextBox>
+                            <Button Name="searchAdminProductBtn" Style="{StaticResource ControlBtnStyle}" Click="searchAdminProductBtn_Click">Search</Button>
                             <Label></Label>
-                            <Button Style="{StaticResource ControlBtnStyle}">Refresh</Button>
+                            <Button Name="refreshAdminProductBtn" Style="{StaticResource ControlBtnStyle}" Click="refreshAdminProductBtn_Click">Refresh</Button>
                             <Button Name="editProductBtn" Style="{StaticResource ControlBtnStyle}" Click="editProductBtn_Click">Edit</Button>
                             <Button Name="deleteProduct" Style="{StaticResource ControlBtnStyle}" Click="deleteProduct_Click">Delete</Button>
                             
