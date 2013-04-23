@@ -6,7 +6,7 @@
         <Setter Property="Foreground" Value="Goldenrod" />
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="BorderBrush" Value="#FF3DC43D" />
-        <Setter Property="FontFamily" Value="Tempus Sans ITC" />
+        <Setter Property="FontFamily" Value="Times New Roman" />
         <Setter Property="OpacityMask" Value="White" />
         <Setter Property="Template">
             <Setter.Value>
@@ -15,7 +15,7 @@
                             BorderThickness="1"
                             Padding="4,2" 
                             BorderBrush="White" 
-                            CornerRadius="0" 
+                            CornerRadius="5" 
                             Background="{TemplateBinding Background}">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
@@ -31,6 +31,19 @@
                             <Setter Property="Button.Background" Value="#D8D8D8" />
                             <Setter Property="Button.FontFamily" Value="Tempus Sans ITC" />
                         </Trigger>
+                       
+                            <!--<Trigger Property="IsSelected" Value="true">
+                                <Setter Property="Fill" Value="Blue" />
+                            </Trigger>-->
+                        
+                        <!--<Trigger Property="ToggleButton.IsChecked" Value="true">
+                            <Setter Property="Button.Background" Value="White" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="Red" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="Red" />
+                            <Setter Property="Foreground" Value="Red"/>
+                        </Trigger>-->
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

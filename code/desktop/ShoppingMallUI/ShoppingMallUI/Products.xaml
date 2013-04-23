@@ -17,7 +17,14 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <DockPanel LastChildFill="True"  >
-        <UniformGrid DockPanel.Dock="Left">
+        <DockPanel DockPanel.Dock="Left" LastChildFill="True">
+            <UniformGrid DockPanel.Dock="Top">
+                <DockPanel LastChildFill="True">
+                    <Button DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" >Go</Button>
+                <ComboBox DockPanel.Dock="Left" IsEditable="True"></ComboBox>
+                </DockPanel>
+            </UniformGrid>
+            <UniformGrid DockPanel.Dock="Bottom" Columns="1">
             <ScrollViewer Width="250">
                 <ListView Name="productDetailsList" ItemsSource="{Binding productsCollection}"  HorizontalAlignment="Stretch"  Background="Orange" SelectionChanged="productDetailsList_SelectionChanged">
                     <ListView.View>
@@ -26,33 +33,9 @@
                          </GridView>
                     </ListView.View>
                 </ListView>
-                <!--<StackPanel Background="Orange" Opacity=".8" >
-                    <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Name="babiesproduct">Babies Product</Label>
-                    <Label>Soft toys</Label>
-                    <Label>Resturent</Label>
-                    <Label>Beauty parler</Label>
-                    <Label>Electronics Gadgeats</Label>
-                    <Label>Beddings</Label>
-                    <Label>Book Stall</Label>
-                    <Label>Accerrice</Label>
-                    <Label>Shoes</Label>
-                    <Label>Bags</Label>
-                    <Label>Ladies Garments</Label>
-                    <Label>Geans Wear</Label>
-                    <Label>Jeans</Label>
-                    <Label>T-shirt</Label>
-                    <Label>Kid Section</Label>
-                    <Label>Wooden Product</Label>
-                    <Label>Grocery</Label>
-                    <Label>Jwellary</Label>
-                    <Label>Mobile Zone</Label>
-                    <Label>Music Store</Label>
-                    <Label>Bioscope</Label>
-                    
-
-                </StackPanel>-->
             </ScrollViewer>
         </UniformGrid>
+        </DockPanel>
         <UniformGrid  Name="upinfo" Background="White">
             <DockPanel LastChildFill="True">
                 <DockPanel DockPanel.Dock="Right" >

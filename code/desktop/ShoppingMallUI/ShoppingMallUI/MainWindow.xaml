@@ -44,13 +44,13 @@
 
 
         </UniformGrid>
-        <UniformGrid DockPanel.Dock="Top" Margin="2">
+        <UniformGrid DockPanel.Dock="Top" Margin="2" Height="45">
             <TextBlock FontFamily="Sylfaen" FontWeight="Bold" FontStyle="Normal" >
-                <Button Name="product" Style="{StaticResource ControlBtnStyle}" Click="product_Click">Products</Button>
-                <Button Name="shop" Style="{StaticResource ControlBtnStyle}" Click="shop_Click">Shops</Button>
-                <Button Name="floor" Style="{StaticResource ControlBtnStyle}" >Floor</Button>
-                <Button Name="contactusBtn" Style="{StaticResource ControlBtnStyle}" Click="contactusBtn_Click" >Contact Us</Button>
-                <Button Name="adminZoneobjHL" Style="{StaticResource ControlBtnStyle}" Click="adminZoneobjHL_Click" >Admin Zone</Button>
+                <Button Name="product" Style="{StaticResource ControlBtnStyle}" Click="product_Click" Height="40">Products</Button>
+                <Button Name="shop" Style="{StaticResource ControlBtnStyle}" Click="shop_Click" Height="40">Shops</Button>
+                <Button Name="floor" Style="{StaticResource ControlBtnStyle}" Height="40">Floor</Button>
+                <Button Name="contactusBtn" Style="{StaticResource ControlBtnStyle}" Click="contactusBtn_Click" Height="40">Contact Us</Button>
+                <Button Name="adminZoneobjHL" Style="{StaticResource ControlBtnStyle}" Click="adminZoneobjHL_Click" Height="40">Admin Zone</Button>
             </TextBlock>
         </UniformGrid>
         <DockPanel DockPanel.Dock="Bottom" Name="infodocP" LastChildFill="True">

@@ -30,6 +30,7 @@ namespace ShoppingMall
             ShoppingMall.Products productobj = new ShoppingMall.Products();
             infodocP.Children.Clear();
             infodocP.Children.Add(productobj);
+            product.Background = Brushes.Blue;
         }
 
         private void shop_Click(object sender, RoutedEventArgs e)
@@ -37,6 +38,7 @@ namespace ShoppingMall
             ShoppingMall.Shops shopobj = new ShoppingMall.Shops();
             infodocP.Children.Clear();
             infodocP.Children.Add(shopobj);
+            shop.Background = Brushes.Blue;
         }
 
 
@@ -45,6 +47,7 @@ namespace ShoppingMall
             ShoppingMall.ContactUs ContactUsobj = new ShoppingMall.ContactUs();
             infodocP.Children.Clear();
             infodocP.Children.Add(ContactUsobj);
+            contactusBtn.Background = Brushes.Blue;
         }
         private void adminZoneobjHL_Click(object sender, RoutedEventArgs e)
         {
@@ -52,6 +55,10 @@ namespace ShoppingMall
             infodocP.Children.Clear();
             infodocP.Children.Add(AdminZoneobj);
         }
-        
+
+        private void clearshopfeedbackFields()
+        {
+            
+        }
     }
 }

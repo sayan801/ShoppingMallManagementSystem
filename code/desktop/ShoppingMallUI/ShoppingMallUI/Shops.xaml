@@ -15,35 +15,27 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <DockPanel LastChildFill="True"  >
-        <UniformGrid DockPanel.Dock="Left">
-            <ScrollViewer Width="250">
-                <ListView  HorizontalAlignment="Stretch" Name="shopDetailsList"  Background="Orange" ItemsSource="{Binding shopsCollection}" Loaded="ListView_Loaded" SelectionChanged="ListView_SelectionChanged" >
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Width="250" Header="Shop List" DisplayMemberBinding="{Binding name}" />
-                        </GridView>
-                    </ListView.View>
-                </ListView>
-                <!--<StackPanel Background="Orange" Opacity=".8" >
-            <Label>Main Land Chaina</Label>
-            <Label>Cafe Coffie Day</Label>
-            <Label>Pizza Hut</Label>
-            <Label>Mcdonalds</Label>
-            <Label>Adidas</Label>
-            <Label>Reebok</Label>
-            <Label>Manyabar</Label>
-            <Label>Pantaloons</Label>
-            <Label>Fasion Bigbazar</Label>
-            <Label>Habibs</Label>
-            <Label>Woodlands</Label>
-            <Label>Playzone</Label>
-            <Label>Kidzone</Label>
-            <Label>Paper House</Label>
-            <Label>Sujata Cenema Hall</Label>
-                </StackPanel>-->
-            </ScrollViewer>
-        </UniformGrid>
+    <DockPanel LastChildFill="True">
+        <DockPanel DockPanel.Dock="Left" LastChildFill="True">
+            <UniformGrid DockPanel.Dock="Top">
+                <DockPanel LastChildFill="True">
+                    <Button DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" >Go</Button>
+                    <ComboBox DockPanel.Dock="Left" IsEditable="True"></ComboBox>
+                </DockPanel>
+            </UniformGrid>
+            <UniformGrid DockPanel.Dock="Bottom" Columns="1">
+                <ScrollViewer Width="250">
+                    <ListView  HorizontalAlignment="Stretch" Name="shopDetailsList"  Background="Orange" ItemsSource="{Binding shopsCollection}" Loaded="ListView_Loaded" SelectionChanged="ListView_SelectionChanged" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="250" Header="Shop List" DisplayMemberBinding="{Binding name}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </ScrollViewer>
+            </UniformGrid>
+        </DockPanel>
+        
         <UniformGrid  Name="upinfo" Background="White">
             <DockPanel LastChildFill="True">
                 <DockPanel DockPanel.Dock="Right" >

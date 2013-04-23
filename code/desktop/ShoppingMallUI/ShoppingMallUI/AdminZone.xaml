@@ -50,9 +50,11 @@
                         <UniformGrid DockPanel.Dock="Bottom" Rows="1">
                             <TextBox Name="searchTB"></TextBox>
                             <Button Style="{StaticResource ControlBtnStyle}">Search</Button>
+                            <Label></Label>
+                            <Button Style="{StaticResource ControlBtnStyle}">Refresh</Button>
                             <Button Name="editProductBtn" Style="{StaticResource ControlBtnStyle}" Click="editProductBtn_Click">Edit</Button>
                             <Button Name="deleteProduct" Style="{StaticResource ControlBtnStyle}" Click="deleteProduct_Click">Delete</Button>
-                            <Button Style="{StaticResource ControlBtnStyle}">Close</Button>
+                            
                         </UniformGrid>
                         <UniformGrid  Name="manageUG" DockPanel.Dock="Top" >
                         <DockPanel LastChildFill="True">
@@ -111,9 +113,10 @@
                         <UniformGrid DockPanel.Dock="Bottom" Rows="1">
                             <TextBox Name="searchShopmangTB"></TextBox>
                             <Button Style="{StaticResource ControlBtnStyle}">Search</Button>
+                            <Label></Label>
+                            <Button Style="{StaticResource ControlBtnStyle}">Refresh</Button>
                             <Button Name="editShopBtn" Style="{StaticResource ControlBtnStyle}" Click="editShopBtn_Click">Edit</Button>
                             <Button Name="deleteShop" Click="deleteShop_Click" Style="{StaticResource ControlBtnStyle}">Delete</Button>
-                            <Button Name="closeAdmin" Style="{StaticResource ControlBtnStyle}" >Close</Button>
                         </UniformGrid>
                         <DockPanel DockPanel.Dock="Top">
                             <Grid>
@@ -175,7 +178,15 @@
                 </TabItem>
                 <TabItem Header="Manage FeedBack" Style="{StaticResource TItemStyle}">
                     <DockPanel LastChildFill="True">
-                        <Button Name="deleteContactusBtn" HorizontalAlignment="Right" DockPanel.Dock="Bottom" Style="{StaticResource ControlBtnStyle}" Width="173" Margin="0,0,20,0" Click="deleteContactusBtn_Click">Delete</Button>
+                        <UniformGrid Rows="1" DockPanel.Dock="Bottom" >
+                            <Label></Label>
+                            <Label></Label>
+                            <Label></Label>
+                            <Label></Label>
+                            <Button Style="{StaticResource ControlBtnStyle}" >Refresh</Button>
+                            <Button Name="deleteContactusBtn" DockPanel.Dock="Bottom" Style="{StaticResource ControlBtnStyle}" Click="deleteContactusBtn_Click">Delete</Button>
+                        </UniformGrid>
+                        
                     <UniformGrid DockPanel.Dock="Top">
                         <ListView Name="contactusView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding contactusCollection}" Loaded="Window_Loaded" >
 
