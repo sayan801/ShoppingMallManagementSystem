@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="ControlBtnStyle" TargetType="Button">
-        <Setter Property="Background" Value="#FF251D23" />
-        <Setter Property="Foreground" Value="Goldenrod" />
+        <Setter Property="Background" Value="#FF0966DF" />
+        <Setter Property="Foreground" Value="#FFFCFDFF" />
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="BorderBrush" Value="#FF3DC43D" />
         <Setter Property="FontFamily" Value="Times New Roman" />
@@ -21,15 +21,13 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="BorderBrush" Value="#FF87742D" />
-                            <Setter Property="Button.Background" Value="#FF72633F" />
-                            <Setter Property="Button.Foreground" Value="#FFADA4A4" />
-                            <Setter Property="Button.FontFamily" Value="Tempus Sans ITC" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="#FFDFEBF2" />
+                            <Setter Property="Button.Background" Value="#FFDFEBF2" />
+                            <Setter Property="Button.Foreground" Value="#FF0966DF" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="border" Property="BorderBrush" Value="White" />
                             <Setter Property="Button.Background" Value="#D8D8D8" />
-                            <Setter Property="Button.FontFamily" Value="Tempus Sans ITC" />
                         </Trigger>
                        
                             <!--<Trigger Property="IsSelected" Value="true">
