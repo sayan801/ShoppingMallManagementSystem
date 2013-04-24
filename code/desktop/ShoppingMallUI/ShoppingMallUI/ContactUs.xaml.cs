@@ -29,6 +29,9 @@ namespace ShoppingMall
         #region insert FeedBack
         private void submitFdBckBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (!nameTB.Text.Equals("") && !addressTB.Text.Equals("") && !mobilenoTB.Text.Equals("") && !emailTB.Text.Equals("") && !typeCB.Text.Equals("") && !contactusTB.Text.Equals(""))
+            {
+            
             ShoppingMallData.ContactusInfo newContactus = new ShoppingMallData.ContactusInfo();
 
             newContactus.id = GenerateId();
@@ -46,6 +49,12 @@ namespace ShoppingMall
             ShoppingMallDb.DbInteraction.DoEnterContactus(newContactus);
             clearFeedBackFields();
             fetchFeedBackData();
+
+            }
+            else
+            {
+                MessageBox.Show("Please Insert Info Properly");
+            }
         }
 
         private string GenerateId()

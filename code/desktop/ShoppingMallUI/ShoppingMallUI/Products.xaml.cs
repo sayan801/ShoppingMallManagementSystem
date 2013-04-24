@@ -94,6 +94,9 @@ namespace ShoppingMall
 
         private void prdfdbckbtn_Click(object sender, RoutedEventArgs e)
         {
+            if (!nameTb.Text.Equals("") && !mailTb.Text.Equals("") && !ratingTb.Text.Equals("") && !feedbackTb.Text.Equals(""))
+            {
+            
             ShoppingMallData.FeedbackInfo newFeedback = new ShoppingMallData.FeedbackInfo();
 
             newFeedback.id = GenerateId();
@@ -111,6 +114,11 @@ namespace ShoppingMall
             
             //fetchFeedBackData();
             clearProductfeedbackFields();
+            }
+            else
+            {
+                MessageBox.Show("Please Insert Info Properly");
+            }
         }
         private string GenerateId()
         {

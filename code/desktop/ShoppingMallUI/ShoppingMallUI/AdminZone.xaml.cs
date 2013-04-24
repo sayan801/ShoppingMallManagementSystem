@@ -47,7 +47,7 @@ namespace ShoppingMall
             else
             {
                 adminUserPassPb.Password = "";
-                loginErrorlbl.Content = "Wrong Info";
+                MessageBox.Show("Please Insert Info Properly");
             }
             
         }
@@ -81,22 +81,30 @@ namespace ShoppingMall
         #region Insert Product
         private void submitproductkBtn_Click(object sender, RoutedEventArgs e)
         {
-            ShoppingMallData.ProductInfo newProduct = new ShoppingMallData.ProductInfo();
 
-            newProduct.id = GenerateId();
+            if (!nameTB.Text.Equals("") && !BrandTB.Text.Equals("") && !ProductypeCB.Text.Equals("") && !productdescriptionTB.Text.Equals(""))
+            {
+                ShoppingMallData.ProductInfo newProduct = new ShoppingMallData.ProductInfo();
 
-            newProduct.name = nameTB.Text;
-            newProduct.brand = BrandTB.Text;
-            newProduct.type = ProductypeCB.Text;
-            newProduct.description = productdescriptionTB.Text;
-            //newProduct.image = shopimgPhoto.BitmapImage;
+                newProduct.id = GenerateId();
+
+                newProduct.name = nameTB.Text;
+                newProduct.brand = BrandTB.Text;
+                newProduct.type = ProductypeCB.Text;
+                newProduct.description = productdescriptionTB.Text;
+                //newProduct.image = shopimgPhoto.BitmapImage;
 
 
 
-            ShoppingMallDb.DbInteraction.DoEnterProduct(newProduct);
-            clearProductFields();
-            fetchProductData();
-            //takepic();
+                ShoppingMallDb.DbInteraction.DoEnterProduct(newProduct);
+                clearProductFields();
+                fetchProductData();
+                //takepic();
+            }
+            else
+            {
+                MessageBox.Show("Please Insert Info Properly");
+            }
             
         }
 
@@ -185,6 +193,9 @@ namespace ShoppingMall
 
         private void submitkShopmangBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (!shopnameTB.Text.Equals("") && !shopTagTB.Text.Equals("") && !shopTypeCB.Text.Equals("") && !shopRateTB.Text.Equals("") && !shopDescriptionTB.Text.Equals(""))
+            {
+            
             ShoppingMallData.ShopInfo newShop = new ShoppingMallData.ShopInfo();
 
             newShop.id = GenerateId();
@@ -198,6 +209,12 @@ namespace ShoppingMall
             ShoppingMallDb.DbInteraction.DoEnterShop(newShop);
             clearShopFields();
             fetchShopData();
+            }
+
+            else
+            {
+                MessageBox.Show("Please Insert Info Properly");
+            }
         }
         #endregion
 
@@ -360,23 +377,30 @@ namespace ShoppingMall
 
         private void editProductkBtn_Click(object sender, RoutedEventArgs e)
         {
-            ProductInfo productToEdit = GetSelectedProductItem();
+            if (!nameTB.Text.Equals("") && !BrandTB.Text.Equals("") && !ProductypeCB.Text.Equals("") && !productdescriptionTB.Text.Equals(""))
+            {
+                ProductInfo productToEdit = GetSelectedProductItem();
 
-            productToEdit.name = nameTB.Text;
-            productToEdit.brand = BrandTB.Text;
-            productToEdit.type = ProductypeCB.Text;
-            productToEdit.description = productdescriptionTB.Text;
+                productToEdit.name = nameTB.Text;
+                productToEdit.brand = BrandTB.Text;
+                productToEdit.type = ProductypeCB.Text;
+                productToEdit.description = productdescriptionTB.Text;
 
 
 
-            ShoppingMallDb.DbInteraction.EditProduct(productToEdit);
+                ShoppingMallDb.DbInteraction.EditProduct(productToEdit);
 
-            clearProductFields();
-            editProductkBtn.Visibility = Visibility.Collapsed;
-            submitproductkBtn.Visibility = Visibility.Visible;
-            fetchProductData();
+                clearProductFields();
+                editProductkBtn.Visibility = Visibility.Collapsed;
+                submitproductkBtn.Visibility = Visibility.Visible;
+                fetchProductData();
 
-            operationProductAdmitnUG.IsEnabled = true;
+                operationProductAdmitnUG.IsEnabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Please Insert Info Properly");
+            }
         }
         #endregion
 
@@ -401,23 +425,31 @@ namespace ShoppingMall
 
         private void UpdateShopmangBtn_Click(object sender, RoutedEventArgs e)
         {
-            ShopInfo shopToEdit = GetSelectedShopItem();
-                        
-            shopToEdit.name = shopnameTB.Text;
-            shopToEdit.tag = shopTagTB.Text;
-            shopToEdit.type = shopTypeCB.Text;
-            shopToEdit.rating = shopRateTB.Text;
-            shopToEdit.description = shopDescriptionTB.Text;
+
+            if (!shopnameTB.Text.Equals("") && !shopTagTB.Text.Equals("") && !shopTypeCB.Text.Equals("") && !shopRateTB.Text.Equals("") && !shopDescriptionTB.Text.Equals(""))
+            {
+                ShopInfo shopToEdit = GetSelectedShopItem();
+
+                shopToEdit.name = shopnameTB.Text;
+                shopToEdit.tag = shopTagTB.Text;
+                shopToEdit.type = shopTypeCB.Text;
+                shopToEdit.rating = shopRateTB.Text;
+                shopToEdit.description = shopDescriptionTB.Text;
 
 
-            ShoppingMallDb.DbInteraction.EditShop(shopToEdit);
-            
-            clearShopFields();
-            UpdateShopmangBtn.Visibility = Visibility.Collapsed;
-            submitkShopmangBtn.Visibility = Visibility.Visible;
-            fetchShopData();
+                ShoppingMallDb.DbInteraction.EditShop(shopToEdit);
 
-            oprtionShopUG.IsEnabled = true;
+                clearShopFields();
+                UpdateShopmangBtn.Visibility = Visibility.Collapsed;
+                submitkShopmangBtn.Visibility = Visibility.Visible;
+                fetchShopData();
+
+                oprtionShopUG.IsEnabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Please Insert Info Properly");
+            }
         }
         #endregion
 
@@ -518,6 +550,11 @@ namespace ShoppingMall
         private void refreshAdminShopBtn_Click(object sender, RoutedEventArgs e)
         {
             fetchShopData();
+        }
+
+        private void refreshFeedbackAdminBtn_Click(object sender, RoutedEventArgs e)
+        {
+            fetchFeedBackData();
         }
     }
 }

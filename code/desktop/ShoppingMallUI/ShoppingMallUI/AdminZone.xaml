@@ -183,7 +183,7 @@
                             <Label></Label>
                             <Label></Label>
                             <Label></Label>
-                            <Button Style="{StaticResource ControlBtnStyle}" >Refresh</Button>
+                            <Button Name="refreshFeedbackAdminBtn" Style="{StaticResource ControlBtnStyle}" Click="refreshFeedbackAdminBtn_Click">Refresh</Button>
                             <Button Name="deleteContactusBtn" DockPanel.Dock="Bottom" Style="{StaticResource ControlBtnStyle}" Click="deleteContactusBtn_Click">Delete</Button>
                         </UniformGrid>
                         
