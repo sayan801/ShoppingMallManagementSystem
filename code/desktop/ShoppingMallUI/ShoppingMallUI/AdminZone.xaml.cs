@@ -272,13 +272,17 @@ namespace ShoppingMall
         #endregion
 
         #region Delete Product
-        private ProductInfo GetSelectedProductItem()
+
+        private ProductInfo GetSelectedProductItemforDel()
         {
 
             ProductInfo productToDelete = null;
 
             if (productsView.SelectedIndex == -1)
+            {
                 MessageBox.Show("Please Select an Item");
+
+            }
             else
             {
                 ProductInfo i = (ProductInfo)productsView.SelectedItem;
@@ -291,7 +295,7 @@ namespace ShoppingMall
 
         private void deleteProduct_Click(object sender, RoutedEventArgs e)
         {
-            ProductInfo productToDelete = GetSelectedProductItem();
+            ProductInfo productToDelete = GetSelectedProductItemforDel();
             if (productToDelete != null)
             {
                 productsCollection.Remove(productToDelete);
@@ -302,7 +306,7 @@ namespace ShoppingMall
         #endregion
 
         #region Delete Shop
-        private ShopInfo GetSelectedShopItem()
+        private ShopInfo GetSelectedShopItemforDel()
         {
 
             ShopInfo shopToDelete = null;
@@ -321,7 +325,7 @@ namespace ShoppingMall
 
         private void deleteShop_Click(object sender, RoutedEventArgs e)
         {
-            ShopInfo shopToDelete = GetSelectedShopItem();
+            ShopInfo shopToDelete = GetSelectedShopItemforDel();
             if (shopToDelete != null)
             {
                 shopsCollection.Remove(shopToDelete);
@@ -358,12 +362,36 @@ namespace ShoppingMall
         #endregion
 
         #region Edit Product
+
+        private ProductInfo GetSelectedProductItemForEdit()
+        {
+
+            ProductInfo productToDelete = null;
+
+            if (productsView.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please Select an Item");
+
+            }
+            else
+            {
+                editProductkBtn.Visibility = Visibility.Visible;
+                submitproductkBtn.Visibility = Visibility.Collapsed;
+                operationProductAdmitnUG.IsEnabled = false;
+
+                ProductInfo i = (ProductInfo)productsView.SelectedItem;
+
+                productToDelete = _productsCollection.Where(item => item.id.Equals(i.id)).First();
+            }
+
+            return productToDelete;
+        }
+
         private void editProductBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            operationProductAdmitnUG.IsEnabled = false;
+            ProductInfo productToEdit = GetSelectedProductItemForEdit();
 
-            ProductInfo productToEdit = GetSelectedProductItem();
             if (productToEdit != null)
             {
                 nameTB.Text = productToEdit.name;
@@ -371,15 +399,14 @@ namespace ShoppingMall
                 ProductypeCB.Text = productToEdit.type;
                 productdescriptionTB.Text = productToEdit.description;
             }
-            editProductkBtn.Visibility = Visibility.Visible;
-            submitproductkBtn.Visibility = Visibility.Collapsed;
+           
         }
 
         private void editProductkBtn_Click(object sender, RoutedEventArgs e)
         {
             if (!nameTB.Text.Equals("") && !BrandTB.Text.Equals("") && !ProductypeCB.Text.Equals("") && !productdescriptionTB.Text.Equals(""))
             {
-                ProductInfo productToEdit = GetSelectedProductItem();
+                ProductInfo productToEdit = GetSelectedProductItemForEdit();
 
                 productToEdit.name = nameTB.Text;
                 productToEdit.brand = BrandTB.Text;
@@ -405,12 +432,33 @@ namespace ShoppingMall
         #endregion
 
         #region Edit Shop
+
+        
+        private ShopInfo GetSelectedShopItemforEdit()
+        {
+
+            ShopInfo shopToDelete = null;
+
+            if (shopsView.SelectedIndex == -1)
+                MessageBox.Show("Please Select an Item");
+            else
+            {
+                UpdateShopmangBtn.Visibility = Visibility.Visible;
+                submitkShopmangBtn.Visibility = Visibility.Collapsed;
+                oprtionShopUG.IsEnabled = false;
+
+                ShopInfo i = (ShopInfo)shopsView.SelectedItem;
+
+                shopToDelete = _shopsCollection.Where(item => item.id.Equals(i.id)).First();
+            }
+
+            return shopToDelete;
+        }
+
         private void editShopBtn_Click(object sender, RoutedEventArgs e)
         {
-            oprtionShopUG.IsEnabled = false;
-            
-            
-            ShopInfo shopToEdit = GetSelectedShopItem();
+            ShopInfo shopToEdit = GetSelectedShopItemforEdit();
+
             if (shopToEdit != null)
             {
                 shopnameTB.Text = shopToEdit.name;
@@ -419,8 +467,7 @@ namespace ShoppingMall
                 shopRateTB.Text = shopToEdit.rating;
                 shopDescriptionTB.Text = shopToEdit.description;
             }
-            UpdateShopmangBtn.Visibility = Visibility.Visible;
-            submitkShopmangBtn.Visibility = Visibility.Collapsed;
+          
         }
 
         private void UpdateShopmangBtn_Click(object sender, RoutedEventArgs e)
@@ -428,7 +475,7 @@ namespace ShoppingMall
 
             if (!shopnameTB.Text.Equals("") && !shopTagTB.Text.Equals("") && !shopTypeCB.Text.Equals("") && !shopRateTB.Text.Equals("") && !shopDescriptionTB.Text.Equals(""))
             {
-                ShopInfo shopToEdit = GetSelectedShopItem();
+                ShopInfo shopToEdit = GetSelectedShopItemforEdit();
 
                 shopToEdit.name = shopnameTB.Text;
                 shopToEdit.tag = shopTagTB.Text;

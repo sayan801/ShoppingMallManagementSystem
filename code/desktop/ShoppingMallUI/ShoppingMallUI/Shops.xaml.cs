@@ -113,6 +113,7 @@ namespace ShoppingMall
 
         private void goShopBtn_Click(object sender, RoutedEventArgs e)
         {
+            //shopDetailsList.UnselectAll();
             if (shopNameSrchCB.Text == "")
                 fetchShopData();
             else
@@ -131,6 +132,10 @@ namespace ShoppingMall
                 }
             }
         }
-       
+
+        private void clearselection(object sender, RoutedEventArgs e)
+        {
+            shopDetailsList.SelectedIndex = -1;
+        }
     }
 }

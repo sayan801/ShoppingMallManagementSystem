@@ -49,17 +49,16 @@
     </Style>
 
     <Style x:Key="TItemStyle" TargetType="TabItem">
-        <Setter Property="FontFamily" Value="Tempus Sans ITC"/>
+        <Setter Property="FontFamily" Value="Times New Roman"/>
         <Setter Property="FontSize" Value="20"/>
-        <Setter Property="Foreground" Value="Black"/>
-        
+        <Setter Property="Foreground" Value="#FFFCFDFF"/>
 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TabItem}">
                     <Grid>
-                        <Border Name="Border" Margin="0,0,0,0" Background="#D8D8D8"
-                  BorderBrush="#D8D8D8" BorderThickness="1,1,1,1" CornerRadius="0">
+                        <Border Name="Border" Margin="0,0,0,0" Background="#FF0966DF"
+                   BorderThickness="1,1,1,1" CornerRadius="0">
                             <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center"
                               HorizontalAlignment="Center"
                               ContentSource="Header" Margin="12,2,12,2"
@@ -72,13 +71,12 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="#FF251D23" />
-                            <Setter Property="Button.Foreground" Value="Goldenrod" />
+                            <Setter TargetName="Border" Property="Background" Value="#FFDFEBF2" />
+                            <Setter Property="Button.Foreground" Value="#FF0966DF" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Border" Property="BorderBrush" Value="#FF251D23" />
-                            <Setter TargetName="Border" Property="Background" Value="#FF251D23" />
-                            <Setter Property="Button.Foreground" Value="White" />
+                            <Setter TargetName="Border" Property="Background" Value="#FFDFEBF2" />
+                            <Setter Property="Button.Foreground" Value="#FF0966DF" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -284,7 +282,7 @@
 
     <Style x:Key="HyperlinkStyle" TargetType="Hyperlink">
         <Setter Property="FontSize" Value="20"/>
-        <Setter Property="FontFamily" Value="Tempus Sans ITC"/>
+        <Setter Property="FontFamily" Value="Times New Roman"/>
         
 
         <Setter Property="Foreground" Value="Goldenrod"/>
@@ -299,7 +297,7 @@
     </Style>
 
     <Style x:Key="UserCntrlStyle" TargetType="UserControl">
-        <Setter Property="FontFamily" Value="Tempus Sans ITC"/>
+        <Setter Property="FontFamily" Value="Times New Roman"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="#FF318931"/>
     </Style>

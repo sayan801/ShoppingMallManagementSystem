@@ -8,7 +8,7 @@
              xmlns:toolkit="http://schemas.microsoft.com/wpf/2008/toolkit"
              xmlns:my="clr-namespace:ShoppingMall"
              mc:Ignorable="d" 
-             d:DesignHeight="586" d:DesignWidth="923" FontFamily="Tempus Sans ITC" FontSize="20" Foreground="#FF318931" Loaded="UserControl_Loaded" >
+             d:DesignHeight="586" d:DesignWidth="923" FontFamily="Times New Roman" FontSize="20" Foreground="#FF318931" Loaded="UserControl_Loaded" >
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
