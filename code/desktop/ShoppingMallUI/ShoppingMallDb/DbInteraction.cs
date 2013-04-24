@@ -540,7 +540,7 @@ namespace ShoppingMallDb
                 MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
                 msqlCommand.Connection = msqlConnection;
 
-                msqlCommand.CommandText = "Select * From product where id = @input or name = @input or tag = @input or type = @input or rating = @input or description = @input ; ";
+                msqlCommand.CommandText = "Select * From shop where id = @input or name = @input or tag = @input or type = @input or rating = @input or description = @input ; ";
 
                 msqlCommand.Parameters.AddWithValue("@input", shopinfo.name);
                 MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
