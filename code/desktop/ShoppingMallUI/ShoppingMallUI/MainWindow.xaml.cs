@@ -37,9 +37,9 @@ namespace ShoppingMall
             contactusBtn.IsEnabled = true;
             adminZoneobjHL.IsEnabled = true;
 
-            var bc = new BrushConverter();
-            product.Background = (Brush)bc.ConvertFrom("#FFDFEBF2");
-            product.Foreground = (Brush)bc.ConvertFrom("#FF0966DF");
+            //var bc = new BrushConverter();
+            //product.Background = (Brush)bc.ConvertFrom("#FFDFEBF2");
+            //product.Foreground = (Brush)bc.ConvertFrom("#FF0966DF");
         }
 
         private void shop_Click(object sender, RoutedEventArgs e)
