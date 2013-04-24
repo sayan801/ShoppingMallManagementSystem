@@ -27,7 +27,7 @@
             </UniformGrid>
             <UniformGrid DockPanel.Dock="Bottom" Columns="1">
             <ScrollViewer Width="250">
-                <ListView Name="productDetailsList" ItemsSource="{Binding productsCollection}"  HorizontalAlignment="Stretch"  Background="Orange" SelectionChanged="productDetailsList_SelectionChanged">
+                    <ListView Name="productDetailsList" ItemsSource="{Binding productsCollection}"  HorizontalAlignment="Stretch"  Background="#FF0966DF" Foreground="#FFFCFDFF" SelectionChanged="productDetailsList_SelectionChanged">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Width="250" Header="Product Item" DisplayMemberBinding="{Binding name}" />

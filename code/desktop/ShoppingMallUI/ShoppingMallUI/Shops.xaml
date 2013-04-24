@@ -7,7 +7,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              DataContext="{Binding RelativeSource={RelativeSource Self}}"
              mc:Ignorable="d" 
-             d:DesignHeight="548" d:DesignWidth="882" FontFamily="Times New Roman" FontSize="20" Foreground="#FF318931">
+             d:DesignHeight="548" d:DesignWidth="882" FontFamily="Times New Roman" FontSize="20" Foreground="#FF318931" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -26,7 +26,7 @@
             </UniformGrid>
             <UniformGrid DockPanel.Dock="Bottom" Columns="1">
                 <ScrollViewer Width="250">
-                    <ListView  HorizontalAlignment="Stretch" Name="shopDetailsList"  Background="Orange" ItemsSource="{Binding shopsCollection}" Loaded="ListView_Loaded" SelectionChanged="ListView_SelectionChanged" PreviewMouseDown="clearselection">
+                    <ListView  HorizontalAlignment="Stretch" Background="#FF0966DF" Foreground="#FFFCFDFF" Name="shopDetailsList" ItemsSource="{Binding shopsCollection}" Loaded="ListView_Loaded" SelectionChanged="ListView_SelectionChanged">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Width="250" Header="Shop List" DisplayMemberBinding="{Binding name}" />

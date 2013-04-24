@@ -40,7 +40,7 @@ namespace ShoppingMall
 
         private void ListView_Loaded(object sender, RoutedEventArgs e)
         {
-            fetchShopData();
+          
 
         }
 
@@ -133,9 +133,11 @@ namespace ShoppingMall
             }
         }
 
-        private void clearselection(object sender, RoutedEventArgs e)
+        
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            shopDetailsList.SelectedIndex = -1;
+            fetchShopData();
         }
     }
 }
