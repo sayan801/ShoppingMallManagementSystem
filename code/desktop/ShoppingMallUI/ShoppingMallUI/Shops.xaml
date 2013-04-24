@@ -19,8 +19,9 @@
         <DockPanel DockPanel.Dock="Left" LastChildFill="True">
             <UniformGrid DockPanel.Dock="Top">
                 <DockPanel LastChildFill="True">
-                    <Button DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" >Go</Button>
-                    <ComboBox DockPanel.Dock="Left" IsEditable="True"></ComboBox>
+                    <Button Name="refreshShopBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" Click="refreshShopBtn_Click">Refresh</Button>
+                    <Button Name="goShopBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" Click="goShopBtn_Click">Go</Button>
+                    <ComboBox DockPanel.Dock="Left"  Name="shopNameSrchCB"  Style="{StaticResource comboboxStyle}" ItemsSource="{Binding shopsCollection}" DisplayMemberPath="name"  SelectedValuePath="id"></ComboBox>
                 </DockPanel>
             </UniformGrid>
             <UniformGrid DockPanel.Dock="Bottom" Columns="1">

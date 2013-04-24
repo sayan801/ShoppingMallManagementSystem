@@ -105,6 +105,32 @@ namespace ShoppingMall
         {
             clearshopfeedbackFields();
         }
+
+        private void refreshShopBtn_Click(object sender, RoutedEventArgs e)
+        {
+            fetchShopData();
+        }
+
+        private void goShopBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (shopNameSrchCB.Text == "")
+                fetchShopData();
+            else
+            {
+                ShopInfo shopInfo = new ShopInfo();
+                shopInfo.name = shopNameSrchCB.Text;
+
+
+                List<ShopInfo> shops = DbInteraction.searchShopList(shopInfo);
+
+                _shopsCollection.Clear();
+
+                foreach (ShopInfo shop in shops)
+                {
+                    _shopsCollection.Add(shop);
+                }
+            }
+        }
        
     }
 }

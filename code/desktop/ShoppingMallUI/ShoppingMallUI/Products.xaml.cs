@@ -134,7 +134,34 @@ namespace ShoppingMall
             clearProductfeedbackFields();
         }
 
+        private void goProductBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (productNameSrchCB.Text == "")
+                fetchProductData();
+            else
+            {
+                ProductInfo prodctInfo = new ProductInfo();
+                prodctInfo.name = productNameSrchCB.Text;
+
+
+                List<ProductInfo> products = DbInteraction.searchProductList(prodctInfo);
+
+                _productsCollection.Clear();
+
+                foreach (ProductInfo product in products)
+                {
+                    _productsCollection.Add(product);
+                }
+            }
+        }
+
+        private void refreshProductBtn_Click(object sender, RoutedEventArgs e)
+        {
+            fetchProductData();
+        }
+
         
+
         }
         }
 

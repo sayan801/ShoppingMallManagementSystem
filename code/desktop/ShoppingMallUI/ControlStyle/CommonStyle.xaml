@@ -306,5 +306,11 @@
         <Setter Property="Foreground" Value="#FF318931"/>
     </Style>
 
+    <Style x:Key="comboboxStyle" TargetType="ComboBox">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="IsEditable" Value="True" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style>
 
 </ResourceDictionary>
