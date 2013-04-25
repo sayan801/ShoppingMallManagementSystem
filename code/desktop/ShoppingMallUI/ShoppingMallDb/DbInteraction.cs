@@ -377,13 +377,14 @@ namespace ShoppingMallDb
                 //define the connection used by the command object
                 msqlCommand.Connection = msqlConnection;
 
-                msqlCommand.CommandText = "INSERT INTO shop(id,name,tag,type,rating,description) "
-                                    + "VALUES(@id,@name,@tag,@type,@rating,@description)";
+                msqlCommand.CommandText = "INSERT INTO shop(id,name,tag,type,availableinfloor,rating,description) "
+                                    + "VALUES(@id,@name,@tag,@type,@availableinfloor,@rating,@description)";
 
                 msqlCommand.Parameters.AddWithValue("@id", NewShop.id);
                 msqlCommand.Parameters.AddWithValue("@name", NewShop.name);
                 msqlCommand.Parameters.AddWithValue("@tag", NewShop.tag);
                 msqlCommand.Parameters.AddWithValue("@type", NewShop.type);
+                msqlCommand.Parameters.AddWithValue("@availableinfloor", NewShop.@availableinfloor);
                 msqlCommand.Parameters.AddWithValue("@rating", NewShop.rating);
                 msqlCommand.Parameters.AddWithValue("@description", NewShop.description);
                 msqlCommand.ExecuteNonQuery();
@@ -433,6 +434,7 @@ namespace ShoppingMallDb
                     Shop.name = msqlReader.GetString("name");
                     Shop.tag = msqlReader.GetString("tag");
                     Shop.type = msqlReader.GetString("type");
+                    Shop.availableinfloor = msqlReader.GetString("availableinfloor");
                     Shop.rating = msqlReader.GetString("rating");
                     Shop.description = msqlReader.GetString("description");
 
@@ -495,13 +497,14 @@ namespace ShoppingMallDb
                 MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
                 msqlCommand.Connection = msqlConnection;
 
-                msqlCommand.CommandText = "UPDATE shop SET name=@name,tag=@tag,type=@type,rating=@rating,description=@description  WHERE id=@id";
+                msqlCommand.CommandText = "UPDATE shop SET name=@name,tag=@tag,type=@type,availableinfloor=@availableinfloor,rating=@rating,description=@description  WHERE id=@id";
 
                                
                 
                 msqlCommand.Parameters.AddWithValue("@name", newUpdateShop.name);
                 msqlCommand.Parameters.AddWithValue("@tag", newUpdateShop.tag);
                 msqlCommand.Parameters.AddWithValue("@type", newUpdateShop.type);
+                msqlCommand.Parameters.AddWithValue("@availableinfloor", newUpdateShop.availableinfloor);
                 msqlCommand.Parameters.AddWithValue("@rating", newUpdateShop.rating);
                 msqlCommand.Parameters.AddWithValue("@description", newUpdateShop.description);
                 msqlCommand.Parameters.AddWithValue("@id", newUpdateShop.id);
@@ -553,6 +556,7 @@ namespace ShoppingMallDb
                     Shop.name = msqlReader.GetString("name");
                     Shop.tag = msqlReader.GetString("tag");
                     Shop.type = msqlReader.GetString("type");
+                    Shop.availableinfloor = msqlReader.GetString("availableinfloor");
                     Shop.rating = msqlReader.GetString("rating");
                     Shop.description = msqlReader.GetString("description");
 
@@ -694,6 +698,171 @@ namespace ShoppingMallDb
             }
             return returnVal;
         }
+        #endregion
+
+        #region Get Ground Floor Shop
+
+        public static List<ShopInfo> getGroundfloorShopList(ShopInfo shopinfo)
+        {
+            return getGroundfloorAllShopList(shopinfo);
+        }
+
+        private static List<ShopInfo> getGroundfloorAllShopList(ShopInfo shopinfo)
+        {
+            List<ShopInfo> ShopList = new List<ShopInfo>();
+
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "Select * From shop where availableinfloor = @input ; ";
+
+                msqlCommand.Parameters.AddWithValue("@input", shopinfo.name);
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+                while (msqlReader.Read())
+                {
+                    ShopInfo Shop = new ShopInfo();
+
+
+                    Shop.id = msqlReader.GetString("id");
+                    Shop.name = msqlReader.GetString("name");
+                    Shop.tag = msqlReader.GetString("tag");
+                    Shop.type = msqlReader.GetString("type");
+                    Shop.availableinfloor = msqlReader.GetString("availableinfloor");
+                    Shop.rating = msqlReader.GetString("rating");
+                    Shop.description = msqlReader.GetString("description");
+                    
+
+                    ShopList.Add(Shop);
+                }
+
+            }
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+
+            return ShopList;
+        }
+
+        #endregion
+
+        #region Get First Floor Shop
+
+        public static List<ShopInfo> getFirstFloorShopList(ShopInfo shopinfo)
+        {
+            return getFirstfloorAllShopList(shopinfo);
+        }
+
+        private static List<ShopInfo> getFirstfloorAllShopList(ShopInfo shopinfo)
+        {
+            List<ShopInfo> ShopList = new List<ShopInfo>();
+
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "Select * From shop where availableinfloor = @input ; ";
+
+                msqlCommand.Parameters.AddWithValue("@input", shopinfo.name);
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+                while (msqlReader.Read())
+                {
+                    ShopInfo Shop = new ShopInfo();
+
+
+                    Shop.id = msqlReader.GetString("id");
+                    Shop.name = msqlReader.GetString("name");
+                    Shop.tag = msqlReader.GetString("tag");
+                    Shop.type = msqlReader.GetString("type");
+                    Shop.availableinfloor = msqlReader.GetString("availableinfloor");
+                    Shop.rating = msqlReader.GetString("rating");
+                    Shop.description = msqlReader.GetString("description");
+
+
+                    ShopList.Add(Shop);
+                }
+
+            }
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+
+            return ShopList;
+        }
+
+        #endregion
+        
+        #region Get First Floor Shop
+
+        public static List<ShopInfo> getSecondFloorShopList(ShopInfo shopinfo)
+        {
+            return getSecondfloorAllShopList(shopinfo);
+        }
+
+        private static List<ShopInfo> getSecondfloorAllShopList(ShopInfo shopinfo)
+        {
+            List<ShopInfo> ShopList = new List<ShopInfo>();
+
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "Select * From shop where availableinfloor = @input ; ";
+
+                msqlCommand.Parameters.AddWithValue("@input", shopinfo.name);
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+                while (msqlReader.Read())
+                {
+                    ShopInfo Shop = new ShopInfo();
+
+
+                    Shop.id = msqlReader.GetString("id");
+                    Shop.name = msqlReader.GetString("name");
+                    Shop.tag = msqlReader.GetString("tag");
+                    Shop.type = msqlReader.GetString("type");
+                    Shop.availableinfloor = msqlReader.GetString("availableinfloor");
+                    Shop.rating = msqlReader.GetString("rating");
+                    Shop.description = msqlReader.GetString("description");
+
+
+                    ShopList.Add(Shop);
+                }
+
+            }
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+
+            return ShopList;
+        }
+
         #endregion
     }
 }

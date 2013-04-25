@@ -11,6 +11,7 @@ namespace ShoppingMallData
         public string name { get; set; }
         public string tag { get; set; }
         public string type { get; set; }
+        public string availableinfloor { get; set; }
         public string rating { get; set; }
         public string description { get; set; }
     }

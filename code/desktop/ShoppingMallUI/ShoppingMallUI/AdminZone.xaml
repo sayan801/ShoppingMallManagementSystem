@@ -15,7 +15,11 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <DockPanel LastChildFill="True"  >
-
+        <DockPanel LastChildFill="True" DockPanel.Dock="Top">
+            <Button DockPanel.Dock="Right" Name="adminlogoutBtn" Style="{StaticResource ControlBtnStyle}" Visibility="Collapsed" Click="adminlogoutBtn_Click">Logout Admin</Button>
+            <Label DockPanel.Dock="left" Background="#FF0966DF" Foreground="#FFFCFDFF" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Admin Zone</Label>
+        </DockPanel>
+        
         <UniformGrid  Name="loginUG" Background="White" DockPanel.Dock="Top" Columns="4">
             <Label></Label>
             <Label  Style="{StaticResource LblStyle}" >User Name</Label>
@@ -37,7 +41,7 @@
             <Label></Label>
             <Label></Label>
             <Label></Label>
-            <Button Name="adminlogoutBtn" Style="{StaticResource ControlBtnStyle}" Visibility="Collapsed" Click="adminlogoutBtn_Click">Logout Admin</Button>
+            
             
 
 
@@ -79,6 +83,7 @@
                                         <ComboBoxItem>Garments</ComboBoxItem>
                                         <ComboBoxItem>Others</ComboBoxItem>
                                     </ComboBox>
+                                    
                                     <Label></Label>
                                     <Label  Style="{StaticResource LblStyle}" >Description</Label>
                                     <TextBox Name="productdescriptionTB"></TextBox>
@@ -141,6 +146,14 @@
                                     <ComboBoxItem>Others</ComboBoxItem>
                                 </ComboBox>
                                 <Label></Label>
+                                
+                                <Label  Style="{StaticResource LblStyle}" >Available In</Label>
+                                <ComboBox IsEditable="True" Name="availableShopFloorCB" SelectedIndex="1">
+                                    <ComboBoxItem>Ground Floor</ComboBoxItem>
+                                    <ComboBoxItem>First Floor</ComboBoxItem>
+                                    <ComboBoxItem>Second Floor</ComboBoxItem>
+                                </ComboBox>
+                                <Label></Label>
                                 <Label  Style="{StaticResource LblStyle}" >Rate</Label>
                                 <TextBox Name="shopRateTB"></TextBox>
                                 <Label></Label>
@@ -166,6 +179,7 @@
                                         <GridViewColumn Width="200" Header="Name" DisplayMemberBinding="{Binding name}"  />
                                         <GridViewColumn Width="250" Header="Tag" DisplayMemberBinding="{Binding tag}" />
                                         <GridViewColumn Width="110" Header="Type" DisplayMemberBinding="{Binding type}" />
+                                        <GridViewColumn Width="110" Header="Available In" DisplayMemberBinding="{Binding availableinfloor}" />
                                         <GridViewColumn Width="370" Header="Rate" DisplayMemberBinding="{Binding rating}" />
                                         <GridViewColumn Width="370" Header="Description" DisplayMemberBinding="{Binding description}" />
                                         

@@ -16,7 +16,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <DockPanel LastChildFill="True"  >
-        
+        <Label DockPanel.Dock="Top" Background="#FF0966DF" Foreground="#FFFCFDFF" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Contract Us</Label>
         <UniformGrid  Name="upinfo" Background="White" DockPanel.Dock="Top" Columns="4">
             <Label></Label>
             <Label Style="{StaticResource LblStyle}" >Today</Label>

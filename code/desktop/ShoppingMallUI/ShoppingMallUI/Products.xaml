@@ -17,6 +17,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <DockPanel LastChildFill="True"  >
+        <Label DockPanel.Dock="Top" Background="#FF0966DF" Foreground="#FFFCFDFF" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Products</Label>
         <DockPanel DockPanel.Dock="Left" LastChildFill="True">
             <UniformGrid DockPanel.Dock="Top">
                 <DockPanel LastChildFill="True">

@@ -203,6 +203,7 @@ namespace ShoppingMall
             newShop.name = shopnameTB.Text;
             newShop.tag = shopTagTB.Text;
             newShop.type = shopTypeCB.Text;
+            newShop.availableinfloor = availableShopFloorCB.Text;
             newShop.rating = shopRateTB.Text;
             newShop.description = shopDescriptionTB.Text;
 
@@ -464,6 +465,7 @@ namespace ShoppingMall
                 shopnameTB.Text = shopToEdit.name;
                 shopTagTB.Text = shopToEdit.tag;
                 shopTypeCB.Text = shopToEdit.type;
+                availableShopFloorCB.Text = shopToEdit.availableinfloor;
                 shopRateTB.Text = shopToEdit.rating;
                 shopDescriptionTB.Text = shopToEdit.description;
             }
@@ -473,13 +475,14 @@ namespace ShoppingMall
         private void UpdateShopmangBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            if (!shopnameTB.Text.Equals("") && !shopTagTB.Text.Equals("") && !shopTypeCB.Text.Equals("") && !shopRateTB.Text.Equals("") && !shopDescriptionTB.Text.Equals(""))
+            if (!shopnameTB.Text.Equals("") && !shopTagTB.Text.Equals("") && !shopTypeCB.Text.Equals("") && !availableShopFloorCB.Text.Equals("") && !shopRateTB.Text.Equals("") && !shopDescriptionTB.Text.Equals(""))
             {
                 ShopInfo shopToEdit = GetSelectedShopItemforEdit();
 
                 shopToEdit.name = shopnameTB.Text;
                 shopToEdit.tag = shopTagTB.Text;
                 shopToEdit.type = shopTypeCB.Text;
+                shopToEdit.availableinfloor = availableShopFloorCB.Text;
                 shopToEdit.rating = shopRateTB.Text;
                 shopToEdit.description = shopDescriptionTB.Text;
 

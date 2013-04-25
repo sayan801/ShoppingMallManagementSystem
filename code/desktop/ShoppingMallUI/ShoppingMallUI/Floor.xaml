@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
              xmlns:my="clr-namespace:ShoppingMall"
-             mc:Ignorable="d" 
-             d:DesignHeight="346" d:DesignWidth="716" Style="{DynamicResource UserCntrlStyle}" Loaded="UserControl_Loaded">
+             mc:Ignorable="d" Style="{DynamicResource UserCntrlStyle}">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -17,22 +17,24 @@
     </UserControl.Resources>
     
     <DockPanel>
+        <Label DockPanel.Dock="Top" Background="#FF0966DF" Foreground="#FFFCFDFF" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Floor</Label>
         <UniformGrid>
             <TabControl >
 
                 <TabItem Header="Ground Floor" Style="{StaticResource TItemStyle}">
                     <DockPanel LastChildFill="True">
+                        
                         <DockPanel DockPanel.Dock="Left" LastChildFill="True">
                             <UniformGrid DockPanel.Dock="Top">
                                 <DockPanel LastChildFill="True">
-                                    <Button Name="refreshShopBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" Click="refreshShopBtn_Click">Refresh</Button>
-                                    <Button Name="goShopBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" Click="goShopBtn_Click">Go</Button>
-                                    <ComboBox DockPanel.Dock="Left"  Name="shopNameSrchCB"  Style="{StaticResource comboboxStyle}" ItemsSource="{Binding shopsCollection}" DisplayMemberPath="name"  SelectedValuePath="id"></ComboBox>
+                                    <Button Name="refreshgroundShopBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" Click="refreshgroundShopBtn_Click">Refresh</Button>
+                                    <Button Name="gogroundShopBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" >Go</Button>
+                                    <ComboBox DockPanel.Dock="Left"  Name="groundShopNameSrchCB"  Style="{StaticResource comboboxStyle}" ItemsSource="{Binding shopsCollection}" DisplayMemberPath="name"  SelectedValuePath="id"></ComboBox>
                                 </DockPanel>
                             </UniformGrid>
                             <UniformGrid DockPanel.Dock="Bottom" Columns="1">
                                 <ScrollViewer Width="250">
-                                    <ListView  HorizontalAlignment="Stretch" Background="#FF0966DF" Foreground="#FFFCFDFF" Name="shopDetailsList" ItemsSource="{Binding shopsCollection}" Loaded="ListView_Loaded" SelectionChanged="ListView_SelectionChanged">
+                                    <ListView  HorizontalAlignment="Stretch" Background="#FF0966DF" Foreground="#FFFCFDFF" Name="shopDetailsList" ItemsSource="{Binding shopsCollection}" Loaded="Window_Loaded"  SelectionChanged="ListView_GroundFloorSelectionChanged">
                                         <ListView.View>
                                             <GridView>
                                                 <GridViewColumn Width="250" Header="Shop List" DisplayMemberBinding="{Binding name}" />
@@ -43,36 +45,18 @@
                             </UniformGrid>
                         </DockPanel>
 
-                        <UniformGrid  Name="upinfo" Background="White">
+                        <UniformGrid  Name="grndflrupinfo" Background="White">
                             <DockPanel LastChildFill="True">
+                                <Label DockPanel.Dock="Top" Background="#FF0966DF" Foreground="#FFFCFDFF" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Ground Floor</Label>
                                 <DockPanel DockPanel.Dock="Right" >
                                     <Image DockPanel.Dock="top" Source="/ShoppingMallUI;component/Images/Shopping-Black-Friday1.jpg" Width="234" Height="138" />
-                                    <UniformGrid DockPanel.Dock="Bottom" Columns="1">
-                                        <DatePicker Name="feedDateDp" Visibility="Collapsed" SelectedDate="{x:Static sys:DateTime.Now}" ></DatePicker>
-                                        <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Your Name</Label>
-                                        <TextBox Name="nameTb"></TextBox>
-                                        <Label  Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Email</Label>
-                                        <TextBox Name="mailTb"></TextBox>
-                                        <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Shop Rating</Label>
-                                        <TextBox Name="ratingTb"></TextBox>
-                                        <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Tell us your experience with this Shop</Label>
-                                        <TextBox Name="feedbackTb"></TextBox>
-                                        <Label></Label>
-                                        <UniformGrid Rows="1">
-                                            <Button Name="resetshopFeedback" Style="{StaticResource ControlBtnStyle}" Click="resetshopFeedback_Click">Reset</Button>
-                                            <Button Name="submitshopBtn" Style="{StaticResource ControlBtnStyle}" Click="submitshopBtn_Click">Submit</Button>
-                                        </UniformGrid>
-                                    </UniformGrid>
+                                    
                                 </DockPanel>
                                 <DockPanel LastChildFill="True">
-                                    <TextBox Name="shopNameTb" DockPanel.Dock="Top" HorizontalContentAlignment="Center" IsEnabled="False">Shop Name</TextBox>
-                                    <TextBlock Name="shopdetailsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" ScrollViewer.VerticalScrollBarVisibility="Visible">Details</TextBlock>
+                                    <TextBox Name="grndflrshopNameTb" DockPanel.Dock="Top" HorizontalContentAlignment="Center" IsEnabled="False">Shop Name</TextBox>
+                                    <TextBlock Name="grndflrshopdetailsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" ScrollViewer.VerticalScrollBarVisibility="Visible">Details</TextBlock>
                                     <ScrollViewer>
-                                        <UniformGrid DockPanel.Dock="Bottom" Columns="1">
-                                            <my:Feedback  Margin="5"  />
-                                            <my:Feedback  Margin="5"  />
-                                            <my:Feedback  Margin="5"  />
-                                        </UniformGrid>
+                                        
                                     </ScrollViewer>
                                 </DockPanel>
                             </DockPanel>
@@ -82,21 +66,22 @@
 
                 </TabItem>
                 <TabItem Header="First Floor" Style="{StaticResource TItemStyle}">
-                    <!--<DockPanel LastChildFill="True">
+                    <DockPanel LastChildFill="True">
+
                         <DockPanel DockPanel.Dock="Left" LastChildFill="True">
                             <UniformGrid DockPanel.Dock="Top">
                                 <DockPanel LastChildFill="True">
-                                    <Button Name="refreshfrstFloorBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" >Refresh</Button>
-                                    <Button Name="goFrstFloorBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" >Go</Button>
-                                    <ComboBox DockPanel.Dock="Left"  Name="frstFloorshopNameSrchCB"  Style="{StaticResource comboboxStyle}" ></ComboBox>
+                                    <Button Name="refreshfirstflrShopBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" Click="refreshfirstflrShopBtn_Click">Refresh</Button>
+                                    <Button Name="gofirstflrShopBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" >Go</Button>
+                                    <ComboBox DockPanel.Dock="Left"  Name="firstflrNameSrchCB"  Style="{StaticResource comboboxStyle}" ItemsSource="{Binding shopsCollection}" DisplayMemberPath="name"  SelectedValuePath="id"></ComboBox>
                                 </DockPanel>
                             </UniformGrid>
                             <UniformGrid DockPanel.Dock="Bottom" Columns="1">
                                 <ScrollViewer Width="250">
-                                    <ListView  HorizontalAlignment="Stretch" Background="#FF0966DF" Foreground="#FFFCFDFF" Name="frstShopDetailsList" >
+                                    <ListView  HorizontalAlignment="Stretch" Background="#FF0966DF" Foreground="#FFFCFDFF" Name="firstflrDetailsList" ItemsSource="{Binding frstfloorshopsCollection}" SelectionChanged="ListView_FirstFloorSelectionChanged">
                                         <ListView.View>
                                             <GridView>
-                                                <GridViewColumn Width="250" Header="Shop List" />
+                                                <GridViewColumn Width="250" Header="Shop List" DisplayMemberBinding="{Binding name}" />
                                             </GridView>
                                         </ListView.View>
                                     </ListView>
@@ -104,41 +89,42 @@
                             </UniformGrid>
                         </DockPanel>
 
-                        <UniformGrid  Name="frstloorupinfo" Background="White">
+                        <UniformGrid  Name="firstflrupinfo" Background="White">
                             <DockPanel LastChildFill="True">
+                                <Label DockPanel.Dock="Top" Background="#FF0966DF" Foreground="#FFFCFDFF" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">First Floor</Label>
                                 <DockPanel DockPanel.Dock="Right" >
+                                    <Image DockPanel.Dock="top" Source="/ShoppingMallUI;component/Images/Shopping-Black-Friday1.jpg" Width="234" Height="138" />
 
                                 </DockPanel>
                                 <DockPanel LastChildFill="True">
-                                    <TextBox Name="frstFloorshopNameTb" DockPanel.Dock="Top" HorizontalContentAlignment="Center" IsEnabled="False">Shop Name</TextBox>
-                                    <TextBlock Name="frstFloorshopdetailsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" ScrollViewer.VerticalScrollBarVisibility="Visible">Details</TextBlock>
+                                    <TextBox Name="firstflrshopNameTb" DockPanel.Dock="Top" HorizontalContentAlignment="Center" IsEnabled="False">Shop Name</TextBox>
+                                    <TextBlock Name="firstflrshopdetailsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" ScrollViewer.VerticalScrollBarVisibility="Visible">Details</TextBlock>
                                     <ScrollViewer>
-                                        <UniformGrid DockPanel.Dock="Bottom" Columns="1">
 
-                                        </UniformGrid>
                                     </ScrollViewer>
                                 </DockPanel>
                             </DockPanel>
                         </UniformGrid>
 
-                    </DockPanel>-->
+                    </DockPanel>
                 </TabItem>
                 <TabItem Header="Second Floor" Style="{StaticResource TItemStyle}">
-                    <!--<DockPanel LastChildFill="True">
+                    <DockPanel LastChildFill="True">
+
                         <DockPanel DockPanel.Dock="Left" LastChildFill="True">
                             <UniformGrid DockPanel.Dock="Top">
                                 <DockPanel LastChildFill="True">
-                                    <Button Name="refreshsecondFloorBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" >Refresh</Button>
-                                    <Button Name="gosecondFloorBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" >Go</Button>
-                                    <ComboBox DockPanel.Dock="Left"  Name="secondFloorshopNameSrchCB"  Style="{StaticResource comboboxStyle}" ></ComboBox>
+                                    <Button Name="refreshsecondflrShopBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" Click="refreshsecondflrShopBtn_Click">Refresh</Button>
+                                    <Button Name="gosecondflrShopBtn" DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}" >Go</Button>
+                                    <ComboBox DockPanel.Dock="Left"  Name="secondflrNameSrchCB"  Style="{StaticResource comboboxStyle}" ItemsSource="{Binding shopsCollection}" DisplayMemberPath="name"  SelectedValuePath="id"></ComboBox>
                                 </DockPanel>
                             </UniformGrid>
                             <UniformGrid DockPanel.Dock="Bottom" Columns="1">
                                 <ScrollViewer Width="250">
-                                    <ListView  HorizontalAlignment="Stretch" Background="#FF0966DF" Foreground="#FFFCFDFF"  ItemsSource="{Binding shopsCollection}" Loaded="ListView_Loaded" SelectionChanged="ListView_SelectionChanged" >
+                                    <ListView HorizontalAlignment="Stretch" Background="#FF0966DF" Foreground="#FFFCFDFF" Name="secondflrDetailsList" ItemsSource="{Binding secondfloorshopsCollection}" SelectionChanged="ListView_SecondFloorSelectionChanged">
                                         <ListView.View>
-                                            <GridView>
-                                                <GridViewColumn Width="250" Header="Shop List" DisplayMemberBinding="{Binding name}"/>
+                                            <GridView >
+                                                <GridViewColumn  Width="250" Header="Shop List" DisplayMemberBinding="{Binding name}" />
                                             </GridView>
                                         </ListView.View>
                                     </ListView>
@@ -146,24 +132,24 @@
                             </UniformGrid>
                         </DockPanel>
 
-                        <UniformGrid  Name="secondFloorupinfo" Background="White">
+                        <UniformGrid  Name="secondflrupinfo" Background="White">
                             <DockPanel LastChildFill="True">
+                                <Label DockPanel.Dock="Top" Background="#FF0966DF" Foreground="#FFFCFDFF" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Second Floor</Label>
                                 <DockPanel DockPanel.Dock="Right" >
+                                    <Image DockPanel.Dock="top" Source="/ShoppingMallUI;component/Images/Shopping-Black-Friday1.jpg" Width="234" Height="138" />
 
                                 </DockPanel>
                                 <DockPanel LastChildFill="True">
-                                    <TextBox Name="secondFloorshopNameTb" DockPanel.Dock="Top" HorizontalContentAlignment="Center" IsEnabled="False">Shop Name</TextBox>
-                                    <TextBlock Name="secondFloorshopdetailsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" ScrollViewer.VerticalScrollBarVisibility="Visible">Details</TextBlock>
+                                    <TextBox Name="secondflrshopNameTb" DockPanel.Dock="Top" HorizontalContentAlignment="Center" IsEnabled="False">Shop Name</TextBox>
+                                    <TextBlock Name="secondflrshopdetailsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" ScrollViewer.VerticalScrollBarVisibility="Visible">Details</TextBlock>
                                     <ScrollViewer>
-                                        <UniformGrid DockPanel.Dock="Bottom" Columns="1">
 
-                                        </UniformGrid>
                                     </ScrollViewer>
                                 </DockPanel>
                             </DockPanel>
                         </UniformGrid>
 
-                    </DockPanel>-->
+                    </DockPanel>
                 </TabItem>
 
 

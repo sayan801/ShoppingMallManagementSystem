@@ -16,6 +16,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <DockPanel LastChildFill="True">
+        <Label DockPanel.Dock="Top" Background="#FF0966DF" Foreground="#FFFCFDFF" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Shops</Label>
         <DockPanel DockPanel.Dock="Left" LastChildFill="True">
             <UniformGrid DockPanel.Dock="Top">
                 <DockPanel LastChildFill="True">
@@ -38,7 +39,9 @@
         </DockPanel>
         
         <UniformGrid  Name="upinfo" Background="White">
+            
             <DockPanel LastChildFill="True">
+                
                 <DockPanel DockPanel.Dock="Right" >
                     <Image DockPanel.Dock="top" Source="/ShoppingMallUI;component/Images/Shopping-Black-Friday1.jpg" Width="234" Height="138" />
                     <UniformGrid DockPanel.Dock="Bottom" Columns="1">

@@ -21,6 +21,20 @@ namespace ShoppingMall
     /// </summary>
     public partial class Floor : UserControl
     {
+        public Floor()
+        {
+            InitializeComponent();
+            
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            GetSelectedGroundFloorItem();
+            GetSelectedFirstFloorItem();
+            GetSelectedSecondFloorItem();
+        }
+
+        #region Get Groundfloor Shop
         ObservableCollection<ShopInfo> _shopsCollection = new ObservableCollection<ShopInfo>();
 
 
@@ -31,21 +45,15 @@ namespace ShoppingMall
                 return _shopsCollection;
             }
         }
-        public Floor()
-        {
-            InitializeComponent();
-            
-        }
-        private void ListView_Loaded(object sender, RoutedEventArgs e)
+
+        private void GetSelectedGroundFloorItem()
         {
 
+            ShopInfo shopInfo = new ShopInfo();
+            shopInfo.name = "Ground Floor";
 
-        }
 
-
-        private void fetchShopData()
-        {
-            List<ShopInfo> shops = DbInteraction.GetAllShopList();
+            List<ShopInfo> shops = DbInteraction.getGroundfloorShopList(shopInfo);
 
             _shopsCollection.Clear();
 
@@ -54,89 +62,104 @@ namespace ShoppingMall
                 _shopsCollection.Add(shop);
             }
         }
+        #endregion
 
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        #region Get First Floor Shop
+        ObservableCollection<ShopInfo> _frstfloorshopsCollection = new ObservableCollection<ShopInfo>();
+
+
+        public ObservableCollection<ShopInfo> frstfloorshopsCollection
+        {
+            get
+            {
+                return _frstfloorshopsCollection;
+            }
+        }
+
+        private void GetSelectedFirstFloorItem()
+        {
+
+            ShopInfo shopInfo = new ShopInfo();
+            shopInfo.name = "First Floor";
+
+
+            List<ShopInfo> shops = DbInteraction.getFirstFloorShopList(shopInfo);
+
+            _frstfloorshopsCollection.Clear();
+
+            foreach (ShopInfo shop in shops)
+            {
+                _frstfloorshopsCollection.Add(shop);
+            }
+        }
+        #endregion
+
+        #region Get Second Floor Shop
+        ObservableCollection<ShopInfo> _secondfloorshopsCollection = new ObservableCollection<ShopInfo>();
+
+
+        public ObservableCollection<ShopInfo> secondfloorshopsCollection
+        {
+            get
+            {
+                return _secondfloorshopsCollection;
+            }
+        }
+
+        private void GetSelectedSecondFloorItem()
+        {
+
+            ShopInfo shopInfo = new ShopInfo();
+            shopInfo.name = "Second Floor";
+
+
+            List<ShopInfo> shops = DbInteraction.getSecondFloorShopList(shopInfo);
+
+            _secondfloorshopsCollection.Clear();
+
+            foreach (ShopInfo shop in shops)
+            {
+                _secondfloorshopsCollection.Add(shop);
+            }
+        }
+        #endregion
+
+        private void refreshgroundShopBtn_Click(object sender, RoutedEventArgs e)
+        {
+            GetSelectedGroundFloorItem();
+        }
+
+        private void refreshfirstflrShopBtn_Click(object sender, RoutedEventArgs e)
+        {
+            GetSelectedFirstFloorItem();
+        }
+
+        private void refreshsecondflrShopBtn_Click(object sender, RoutedEventArgs e)
+        {
+            GetSelectedSecondFloorItem();
+        }
+
+        private void ListView_GroundFloorSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ShopInfo shopInfoObj = _shopsCollection.ElementAt(shopDetailsList.SelectedIndex);
             List<ShopInfo> shops = DbInteraction.GetSelectedShopList(shopInfoObj);
-            shopNameTb.Text = shopInfoObj.name;
-            shopdetailsTBlock.Text = shopInfoObj.description;
+            grndflrshopNameTb.Text = shopInfoObj.name;
+            grndflrshopdetailsTBlock.Text = shopInfoObj.description;
         }
 
-        private void submitshopBtn_Click(object sender, RoutedEventArgs e)
+        private void ListView_FirstFloorSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-            if (!nameTb.Text.Equals("") && !mailTb.Text.Equals("") && !ratingTb.Text.Equals("") && !feedbackTb.Text.Equals(""))
-            {
-                ShoppingMallData.FeedbackInfo newFeedback = new ShoppingMallData.FeedbackInfo();
-
-                newFeedback.id = GenerateId();
-
-                newFeedback.item = shopNameTb.Text;
-                newFeedback.feedDate = feedDateDp.SelectedDate.Value;
-                newFeedback.name = nameTb.Text;
-                newFeedback.email = mailTb.Text;
-                newFeedback.rate = ratingTb.Text;
-                newFeedback.feedback = feedbackTb.Text;
-
-
-
-                ShoppingMallDb.DbInteraction.DoEnterFeedback(newFeedback);
-                clearshopfeedbackFields();
-                //fetchFeedBackData();
-            }
-            else
-            {
-                MessageBox.Show("Please Insert Info Properly");
-            }
+            ShopInfo shopInfoObj = _shopsCollection.ElementAt(shopDetailsList.SelectedIndex);
+            List<ShopInfo> shops = DbInteraction.GetSelectedShopList(shopInfoObj);
+            firstflrshopNameTb.Text = shopInfoObj.name;
+            firstflrshopdetailsTBlock.Text = shopInfoObj.description;
         }
-        private string GenerateId()
+        private void ListView_SecondFloorSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            return DateTime.Now.ToOADate().ToString();
+            ShopInfo shopInfoObj = _shopsCollection.ElementAt(shopDetailsList.SelectedIndex);
+            List<ShopInfo> shops = DbInteraction.GetSelectedShopList(shopInfoObj);
+            secondflrshopNameTb.Text = shopInfoObj.name;
+            secondflrshopdetailsTBlock.Text = shopInfoObj.description;
         }
-
-        private void clearshopfeedbackFields()
-        {
-            nameTb.Text = mailTb.Text = ratingTb.Text = feedbackTb.Text = "";
-        }
-        private void resetshopFeedback_Click(object sender, RoutedEventArgs e)
-        {
-            clearshopfeedbackFields();
-        }
-
-        private void refreshShopBtn_Click(object sender, RoutedEventArgs e)
-        {
-            fetchShopData();
-        }
-
-        private void goShopBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //shopDetailsList.UnselectAll();
-            if (shopNameSrchCB.Text == "")
-                fetchShopData();
-            else
-            {
-                ShopInfo shopInfo = new ShopInfo();
-                shopInfo.name = shopNameSrchCB.Text;
-
-
-                List<ShopInfo> shops = DbInteraction.searchShopList(shopInfo);
-
-                _shopsCollection.Clear();
-
-                foreach (ShopInfo shop in shops)
-                {
-                    _shopsCollection.Add(shop);
-                }
-            }
-        }
-
-
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            fetchShopData();
-        }
-
     }
 }
