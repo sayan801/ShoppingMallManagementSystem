@@ -63,6 +63,9 @@ namespace ShoppingMall
             List<ShopInfo> shops = DbInteraction.GetSelectedShopList(shopInfoObj);
             shopNameTb.Text = shopInfoObj.name;
             shopdetailsTBlock.Text = shopInfoObj.description;
+
+            GetSelectedshopfeedbackItem();
+
         }
 
         private void submitshopBtn_Click(object sender, RoutedEventArgs e)
@@ -86,6 +89,8 @@ namespace ShoppingMall
             ShoppingMallDb.DbInteraction.DoEnterFeedback(newFeedback);
             clearshopfeedbackFields();
             //fetchFeedBackData();
+
+            GetSelectedshopfeedbackItem();
             }
             else
             {
@@ -139,5 +144,47 @@ namespace ShoppingMall
         {
             fetchShopData();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+
+        #region Display only selected Shop Feedback
+
+        ObservableCollection<FeedbackInfo> _shopFeedbackCollection = new ObservableCollection<FeedbackInfo>();
+
+
+        public ObservableCollection<FeedbackInfo> shopFeedbackCollection
+        {
+            get
+            {
+                return _shopFeedbackCollection;
+            }
+        }
+
+
+        private void GetSelectedshopfeedbackItem()
+        {
+
+            FeedbackInfo shopInfo = new FeedbackInfo();
+            shopInfo.name = shopNameTb.Text;
+
+
+            List<FeedbackInfo> shops = DbInteraction.getshopFeedbackList(shopInfo);
+
+            _shopFeedbackCollection.Clear();
+
+            foreach (FeedbackInfo shop in shops)
+            {
+                _shopFeedbackCollection.Add(shop);
+            }
+        }
+        #endregion
+        
+
+    
     }
+
 }

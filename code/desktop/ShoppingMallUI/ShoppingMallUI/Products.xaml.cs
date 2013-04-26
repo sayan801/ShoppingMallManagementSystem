@@ -88,8 +88,10 @@ namespace ShoppingMall
 
              List<ProductInfo> products = DbInteraction.GetSelectedProductList(productInfoObj);
 
-             productNameTb.Text = productInfoObj.name;
+            productNameTb.Text = productInfoObj.name;
             productDetailsTBlock.Text = productInfoObj.description;
+
+            GetSelectedProductfeedbackItem();
         }
 
         private void prdfdbckbtn_Click(object sender, RoutedEventArgs e)
@@ -114,6 +116,7 @@ namespace ShoppingMall
             
             //fetchFeedBackData();
             clearProductfeedbackFields();
+            GetSelectedProductfeedbackItem();
             }
             else
             {
@@ -160,9 +163,45 @@ namespace ShoppingMall
             fetchProductData();
         }
 
-
-
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //fetchshopFeedbackData();
         }
+
+
+        #region Display only selected product Feedback
+
+        ObservableCollection<FeedbackInfo> _productFeedbackCollection = new ObservableCollection<FeedbackInfo>();
+
+
+        public ObservableCollection<FeedbackInfo> productFeedbackCollection
+        {
+            get
+            {
+                return _productFeedbackCollection;
+            }
+        }
+
+
+        private void GetSelectedProductfeedbackItem()
+        {
+
+            FeedbackInfo productInfo = new FeedbackInfo();
+            productInfo.name = productNameTb.Text;
+
+
+            List<FeedbackInfo> products = DbInteraction.getproductFeedbackList(productInfo);
+
+            _productFeedbackCollection.Clear();
+
+            foreach (FeedbackInfo product in products)
+            {
+                _productFeedbackCollection.Add(product);
+            }
+        }
+        #endregion
+
+    }
         }
 
 

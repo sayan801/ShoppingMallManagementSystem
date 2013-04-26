@@ -864,5 +864,163 @@ namespace ShoppingMallDb
         }
 
         #endregion
+
+
+        //#region Display Shop FeedBack
+
+        //public static List<FeedbackInfo> GetAllshopFeedbackCollectionList()
+        //{
+        //    return QueryshopFeedbackList();
+        //}
+
+        //private static List<FeedbackInfo> QueryshopFeedbackList()
+        //{
+        //    List<FeedbackInfo> shopFeedbackList = new List<FeedbackInfo>();
+        //    MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+        //    try
+        //    {   //define the command reference
+        //        MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+        //        msqlCommand.Connection = msqlConnection;
+
+
+
+        //        msqlCommand.CommandText = "Select * From feedback;";
+        //        MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+        //        while (msqlReader.Read())
+        //        {
+        //            FeedbackInfo shopFeedbacks = new FeedbackInfo();
+
+
+        //            shopFeedbacks.feedDate = msqlReader.GetDateTime("feedDate");
+        //            shopFeedbacks.name = msqlReader.GetString("name");
+        //            shopFeedbacks.email = msqlReader.GetString("email");
+        //            shopFeedbacks.rate = msqlReader.GetString("rate");
+        //            shopFeedbacks.feedback = msqlReader.GetString("feedback");
+
+        //            shopFeedbackList.Add(shopFeedbacks);
+        //        }
+        //    }
+
+        //    catch (Exception er)
+        //    {
+        //    }
+        //    finally
+        //    {
+        //        //always close the connection
+        //        msqlConnection.Close();
+        //    }
+
+        //    return shopFeedbackList;
+
+        //}
+        //#endregion
+
+
+
+        #region Display only selected product Feedback
+
+        public static List<FeedbackInfo> getproductFeedbackList(FeedbackInfo feedbackinfo)
+        {
+            return getAllproductFeedbackList(feedbackinfo);
+        }
+
+        private static List<FeedbackInfo> getAllproductFeedbackList(FeedbackInfo feedbackinfo)
+        {
+            List<FeedbackInfo> productFeedbackList = new List<FeedbackInfo>();
+
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "Select * From feedback where item = @input ; ";
+
+                msqlCommand.Parameters.AddWithValue("@input", feedbackinfo.name);
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+                while (msqlReader.Read())
+                {
+                    FeedbackInfo productFeedback = new FeedbackInfo();
+
+                    productFeedback.feedDate = msqlReader.GetDateTime("feedDate");
+                    productFeedback.name = msqlReader.GetString("name");
+                    productFeedback.email = msqlReader.GetString("email");
+                    productFeedback.rate = msqlReader.GetString("rate");
+                    productFeedback.feedback = msqlReader.GetString("feedback");
+
+
+                    productFeedbackList.Add(productFeedback);
+                }
+
+            }
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+
+            return productFeedbackList;
+        }
+
+        #endregion
+
+        #region Display only selected shop Feedback
+
+        public static List<FeedbackInfo> getshopFeedbackList(FeedbackInfo feedbackinfo)
+        {
+            return getAllshopFeedbackList(feedbackinfo);
+        }
+
+        private static List<FeedbackInfo> getAllshopFeedbackList(FeedbackInfo feedbackinfo)
+        {
+            List<FeedbackInfo> shopFeedbackList = new List<FeedbackInfo>();
+
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = OpenDbConnection();
+
+            try
+            {   //define the command reference
+                MySql.Data.MySqlClient.MySqlCommand msqlCommand = new MySql.Data.MySqlClient.MySqlCommand();
+                msqlCommand.Connection = msqlConnection;
+
+                msqlCommand.CommandText = "Select * From feedback where item = @input ; ";
+
+                msqlCommand.Parameters.AddWithValue("@input", feedbackinfo.name);
+                MySql.Data.MySqlClient.MySqlDataReader msqlReader = msqlCommand.ExecuteReader();
+
+                while (msqlReader.Read())
+                {
+                    FeedbackInfo shopFeedback = new FeedbackInfo();
+
+                    shopFeedback.feedDate = msqlReader.GetDateTime("feedDate");
+                    shopFeedback.name = msqlReader.GetString("name");
+                    shopFeedback.email = msqlReader.GetString("email");
+                    shopFeedback.rate = msqlReader.GetString("rate");
+                    shopFeedback.feedback = msqlReader.GetString("feedback");
+
+
+                    shopFeedbackList.Add(shopFeedback);
+                }
+
+            }
+            catch (Exception er)
+            {
+            }
+            finally
+            {
+                //always close the connection
+                msqlConnection.Close();
+            }
+
+            return shopFeedbackList;
+        }
+
+        #endregion
     }
 }

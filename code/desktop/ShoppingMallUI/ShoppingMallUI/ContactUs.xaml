@@ -47,7 +47,7 @@
             </ComboBox>
             <Label></Label>
             <Label></Label>
-            <Label  Style="{StaticResource LblStyle}" >Complain/Contactus</Label>
+            <Label  Style="{StaticResource LblStyle}" >Complain/Feedback</Label>
             <TextBox Name="contactusTB"></TextBox>
             <Label></Label>
             <Label></Label>

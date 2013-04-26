@@ -50,7 +50,7 @@
                         <TextBox Name="mailTb"></TextBox>
                         <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Product Rating</Label>
                         <TextBox Name="ratingTb"></TextBox>
-                        <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Tell us your experience with this Product</Label>
+                        <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Share your experience with all</Label>
                         <TextBox Name="feedbackTb"></TextBox>
                         <Label></Label>
                         
@@ -63,13 +63,23 @@
                 <DockPanel LastChildFill="True">
                     <TextBox Name="productNameTb" DockPanel.Dock="Top" HorizontalContentAlignment="Center" IsEnabled="False">Product Name</TextBox>
                  <TextBlock Name="productDetailsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}">Contactus</TextBlock>
-                    <ScrollViewer>
                         <UniformGrid DockPanel.Dock="Bottom" Columns="1">
-                            <my:Feedback  Margin="5"  />
-                            <my:Feedback  Margin="5"  />
-                            <my:Feedback  Margin="5"  />
-                        </UniformGrid>
-                    </ScrollViewer>
+                        <ListView Name="productFeedbackView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding productFeedbackCollection}" Loaded="Window_Loaded" >
+
+
+                            <ListView.View>
+                                <GridView>
+                                    <!--<GridViewColumn Width="100" Header="Id" DisplayMemberBinding="{Binding id}"  />-->
+                                    <GridViewColumn Width="100" Header="Date" DisplayMemberBinding="{Binding feedDate}"  />
+                                    <GridViewColumn Width="150" Header="Name" DisplayMemberBinding="{Binding name}"  />
+                                    <GridViewColumn Width="150" Header="Email" DisplayMemberBinding="{Binding email}" />
+                                    <GridViewColumn Width="70" Header="Rating" DisplayMemberBinding="{Binding rate}" />
+                                    <GridViewColumn Width="370" Header="Feedback" DisplayMemberBinding="{Binding feedback}" />
+
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </UniformGrid>
                 </DockPanel>
             </DockPanel>
         </UniformGrid>
