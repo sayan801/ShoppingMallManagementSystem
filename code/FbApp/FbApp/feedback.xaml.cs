@@ -15,20 +15,13 @@ using System.Windows.Shapes;
 namespace FbApp
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for feedback.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class feedback : UserControl
     {
-        public MainWindow()
+        public feedback()
         {
             InitializeComponent();
-        }
-
-        private void go_Click(object sender, RoutedEventArgs e)
-        {
-            FbApp.feedback obj=new feedback();
-            infofeedback.Children.Clear();
-            infofeedback.Children.Add(obj);
         }
     }
 }
