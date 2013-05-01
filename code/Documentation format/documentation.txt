@@ -1,0 +1,14 @@
+1.Abstract
+2.Introduction
+3.Objective of the project
+4.Proposed Methodology
+  a> DFD
+  b>ERD
+  c>Usecase Diagram
+     Database Connectivity
+5.Result and Discussion
+
+6.Conclution and future work.
+
+documentation amake pdf a pathaben na. .doc a pathaben.
+ami jgulo lagbe ta janalam. apnara amar thekeo vlo janben r ki ki lagbe.
