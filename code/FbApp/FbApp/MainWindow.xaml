@@ -11,24 +11,24 @@
     </Window.Resources>-->
     <DockPanel LastChildFill="True"  >
 
-        <UniformGrid DockPanel.Dock="Top" Background="White" Height="88" >
+        <UniformGrid DockPanel.Dock="Top" Background="ForestGreen" Height="88" >
             <Label FontFamily="Viner Hand ITC" FontSize="50" Foreground="Orange" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Let,s start to share your opinion</Label>
 
         </UniformGrid>
-        <UniformGrid DockPanel.Dock="Top"  Height="90" Columns="5">
+        <UniformGrid DockPanel.Dock="Top"  Height="90" Columns="5" Background="ForestGreen">
             <Label></Label>
             <Label HorizontalContentAlignment="Right" FontSize="20" FontFamily="Tempus Sans ITC">Email Id</Label>
             <TextBox ></TextBox>
-            <Label></Label>
-            <Label></Label>
-            <Label></Label>
+            <Label ></Label>
+            <Label ></Label>
+            <Label ></Label>
             <Label  Margin="30,0,0,0" HorizontalContentAlignment="Right" FontSize="20" FontFamily="Tempus Sans ITC">Pass Word</Label>
             <PasswordBox></PasswordBox>
             <Label></Label>
             <Label></Label>
 
         </UniformGrid>
-        <UniformGrid DockPanel.Dock="Top" Columns="9" Height="40">
+        <UniformGrid DockPanel.Dock="Top" Columns="9" Height="40" Background="ForestGreen">
             <Label></Label>
             <Label></Label>
             <Label></Label>
@@ -40,14 +40,16 @@
             <Label></Label>
         </UniformGrid>
 
-        <DockPanel DockPanel.Dock="Bottom" Name="infofeedback">
-            <UniformGrid DockPanel.Dock="Top" Height="40" Columns="6">
-                <Button Name="home" Content="HOME"></Button>
-                <Button Name="about_us" Content="ABOUT US"></Button>
+        <DockPanel DockPanel.Dock="Bottom">
+            <UniformGrid DockPanel.Dock="Top" Height="40" Columns="8" Background="YellowGreen">
                 <Label></Label>
+                <Label Name="home" Content="HOME"></Label>
+                <Label Name="about_us" Content="ABOUT US" ></Label>
+                <Label Name="contact" Content="CONTACT"></Label>
+                <Label Name="Feedback" Content="FEED BACK"></Label>
                 
             </UniformGrid>
-            <UniformGrid>
+            <UniformGrid  Name="infofeedback">
                 
             </UniformGrid>
 
