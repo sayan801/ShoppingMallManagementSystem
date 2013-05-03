@@ -26,7 +26,7 @@ namespace phonebook
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MySql.Data.MySqlClient.MySqlConnection msqlConnection = new MySql.Data.MySqlClient.MySqlConnection("server=localhost; user id=root;password=technicise;database=test;persist security info=false");
+            MySql.Data.MySqlClient.MySqlConnection msqlConnection = new MySql.Data.MySqlClient.MySqlConnection("server=localhost; user id=root;password=technicise;database=my_schema;persist security info=false");
 
 //open the connection
 
