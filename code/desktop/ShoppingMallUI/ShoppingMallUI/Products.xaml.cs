@@ -84,14 +84,19 @@ namespace ShoppingMall
 
         private void productDetailsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           ProductInfo productInfoObj = _productsCollection.ElementAt(productDetailsList.SelectedIndex);
+            if (productDetailsList.SelectedIndex != -1)
+            {
+                ProductInfo productInfoObj = _productsCollection.ElementAt(productDetailsList.SelectedIndex);
 
-             List<ProductInfo> products = DbInteraction.GetSelectedProductList(productInfoObj);
+                List<ProductInfo> products = DbInteraction.GetSelectedProductList(productInfoObj);
 
-            productNameTb.Text = productInfoObj.name;
-            productDetailsTBlock.Text = productInfoObj.description;
+                productNameTb.Text = productInfoObj.name;
+                productDetailsTBlock.Text = productInfoObj.description;
 
-            GetSelectedProductfeedbackItem();
+                GetSelectedProductfeedbackItem();
+            }
+            else
+                MessageBox.Show("SelectedIndex equals -1");
         }
 
         private void prdfdbckbtn_Click(object sender, RoutedEventArgs e)
