@@ -606,6 +606,27 @@ namespace ShoppingMall
         {
             fetchFeedBackData();
         }
+
+
+        private void deleteAvailShopItemBtn_Click(object sender, RoutedEventArgs e)
+        {
+            availableShopLView.Items.RemoveAt(availableShopLView.Items.IndexOf(availableShopLView.SelectedItem));
+        }
+
+        private void addShopToListview_Click(object sender, RoutedEventArgs e)
+        {
+            availableShopLView.Items.Add(avaiableShopCB.Text);
+        }
+
+        private void addProductToListview_Click(object sender, RoutedEventArgs e)
+        {
+            availproductView.Items.Add(avaiableProductCB.Text);
+        }
+
+        private void deleteAvailProductItemBtn_Click(object sender, RoutedEventArgs e)
+        {
+            availproductView.Items.RemoveAt(availproductView.Items.IndexOf(availproductView.SelectedItem));
+        }
     }
 }
 
