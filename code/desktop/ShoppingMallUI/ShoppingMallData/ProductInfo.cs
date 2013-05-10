@@ -12,6 +12,7 @@ namespace ShoppingMallData
         public string brand { get; set; }
         public string type { get; set; }
         public string description { get; set; }
+        public string availableinshop { get; set; }
         //public byte[] image { get; set; }
     }
 }

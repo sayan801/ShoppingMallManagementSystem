@@ -14,5 +14,6 @@ namespace ShoppingMallData
         public string availableinfloor { get; set; }
         public string rating { get; set; }
         public string description { get; set; }
+        public string availableProduct { get; set; }
     }
 }

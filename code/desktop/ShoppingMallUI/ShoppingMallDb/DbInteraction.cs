@@ -170,14 +170,15 @@ namespace ShoppingMallDb
                 //define the connection used by the command object
                 msqlCommand.Connection = msqlConnection;
 
-                msqlCommand.CommandText = "INSERT INTO product(id,name,brand,type,description) "
-                                    + "VALUES(@id,@name,@brand,@type,@description)";
+                msqlCommand.CommandText = "INSERT INTO product(id,name,brand,type,description,availableinshop) "
+                                    + "VALUES(@id,@name,@brand,@type,@description,@availableinshop)";
 
                 msqlCommand.Parameters.AddWithValue("@id", NewProduct.id);
                 msqlCommand.Parameters.AddWithValue("@name", NewProduct.name);
                 msqlCommand.Parameters.AddWithValue("@brand", NewProduct.brand);
                 msqlCommand.Parameters.AddWithValue("@type", NewProduct.type);
                 msqlCommand.Parameters.AddWithValue("@description", NewProduct.description);
+                msqlCommand.Parameters.AddWithValue("@availableinshop", NewProduct.availableinshop);
                 msqlCommand.ExecuteNonQuery();
 
                 returnVal = 1;
@@ -225,6 +226,7 @@ namespace ShoppingMallDb
                     Product.brand = msqlReader.GetString("brand");
                     Product.type = msqlReader.GetString("type");
                     Product.description = msqlReader.GetString("description");
+                    Product.availableinshop = msqlReader.GetString("availableinshop");
 
                     ProductList.Add(Product);
                 }
@@ -377,8 +379,8 @@ namespace ShoppingMallDb
                 //define the connection used by the command object
                 msqlCommand.Connection = msqlConnection;
 
-                msqlCommand.CommandText = "INSERT INTO shop(id,name,tag,type,availableinfloor,rating,description) "
-                                    + "VALUES(@id,@name,@tag,@type,@availableinfloor,@rating,@description)";
+                msqlCommand.CommandText = "INSERT INTO shop(id,name,tag,type,availableinfloor,rating,description,availableProduct) "
+                                    + "VALUES(@id,@name,@tag,@type,@availableinfloor,@rating,@description,@availableProduct)";
 
                 msqlCommand.Parameters.AddWithValue("@id", NewShop.id);
                 msqlCommand.Parameters.AddWithValue("@name", NewShop.name);
@@ -387,6 +389,7 @@ namespace ShoppingMallDb
                 msqlCommand.Parameters.AddWithValue("@availableinfloor", NewShop.@availableinfloor);
                 msqlCommand.Parameters.AddWithValue("@rating", NewShop.rating);
                 msqlCommand.Parameters.AddWithValue("@description", NewShop.description);
+                msqlCommand.Parameters.AddWithValue("@availableProduct", NewShop.availableProduct);
                 msqlCommand.ExecuteNonQuery();
 
                 returnVal = 1;
@@ -437,6 +440,7 @@ namespace ShoppingMallDb
                     Shop.availableinfloor = msqlReader.GetString("availableinfloor");
                     Shop.rating = msqlReader.GetString("rating");
                     Shop.description = msqlReader.GetString("description");
+                    Shop.availableProduct = msqlReader.GetString("availableProduct");
 
                     ShopList.Add(Shop);
                 }

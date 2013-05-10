@@ -63,6 +63,7 @@ namespace ShoppingMall
             List<ShopInfo> shops = DbInteraction.GetSelectedShopList(shopInfoObj);
             shopNameTb.Text = shopInfoObj.name;
             shopdetailsTBlock.Text = shopInfoObj.description;
+            availableProductsTBlock.Text = shopInfoObj.availableProduct;
 
             GetSelectedshopfeedbackItem();
 
@@ -182,7 +183,12 @@ namespace ShoppingMall
             }
         }
         #endregion
-        
+
+
+        private void availableProducts_MouseDown(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Go To Product");
+        }
 
     
     }

@@ -63,6 +63,8 @@
                 <DockPanel LastChildFill="True">
                     <TextBox Name="productNameTb" DockPanel.Dock="Top" HorizontalContentAlignment="Center" IsEnabled="False">Product Name</TextBox>
                  <TextBlock Name="productDetailsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}">Contactus</TextBlock>
+                    <Label DockPanel.Dock="Top" >Available In Following Shops : </Label>
+                    <TextBlock Name="availableInShopTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" MouseDown="availableShops_MouseDown">Available In Shop</TextBlock>
                         <UniformGrid DockPanel.Dock="Bottom" Columns="1">
                         <ListView Name="productFeedbackView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding productFeedbackCollection}" Loaded="Window_Loaded" >
 

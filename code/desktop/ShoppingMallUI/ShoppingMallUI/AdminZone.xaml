@@ -113,6 +113,7 @@
                                         <GridViewColumn Width="250" Header="Brand" DisplayMemberBinding="{Binding brand}" />
                                         <GridViewColumn Width="110" Header="Type" DisplayMemberBinding="{Binding type}" />
                                         <GridViewColumn Width="370" Header="Description" DisplayMemberBinding="{Binding description}" />
+                                        <GridViewColumn Width="370" Header="Available In" DisplayMemberBinding="{Binding availableinshop}" />
 
                                     </GridView>
                                 </ListView.View>
@@ -189,7 +190,7 @@
                                         <GridViewColumn Width="110" Header="Available In" DisplayMemberBinding="{Binding availableinfloor}" />
                                         <GridViewColumn Width="370" Header="Rate" DisplayMemberBinding="{Binding rating}" />
                                         <GridViewColumn Width="370" Header="Description" DisplayMemberBinding="{Binding description}" />
-                                        
+                                        <GridViewColumn Width="370" Header="Available In" DisplayMemberBinding="{Binding availableProduct}" />
 
                                     </GridView>
                                 </ListView.View>

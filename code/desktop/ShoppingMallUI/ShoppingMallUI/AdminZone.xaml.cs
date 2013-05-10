@@ -81,6 +81,14 @@ namespace ShoppingMall
         #region Insert Product
         private void submitproductkBtn_Click(object sender, RoutedEventArgs e)
         {
+            string availableinshop = "";
+
+            for (int i = 0; i < availableShopLView.Items.Count; i++)
+            {
+                availableinshop += availableShopLView.Items[i].ToString() + ", ";
+            }
+            
+
 
             if (!nameTB.Text.Equals("") && !BrandTB.Text.Equals("") && !ProductypeCB.Text.Equals("") && !productdescriptionTB.Text.Equals(""))
             {
@@ -92,6 +100,7 @@ namespace ShoppingMall
                 newProduct.brand = BrandTB.Text;
                 newProduct.type = ProductypeCB.Text;
                 newProduct.description = productdescriptionTB.Text;
+                newProduct.availableinshop = availableinshop;
                 //newProduct.image = shopimgPhoto.BitmapImage;
 
 
@@ -193,6 +202,13 @@ namespace ShoppingMall
 
         private void submitkShopmangBtn_Click(object sender, RoutedEventArgs e)
         {
+            string availableProduct = "";
+
+            for (int i = 0; i < availproductView.Items.Count; i++)
+            {
+                availableProduct += availproductView.Items[i].ToString() + ", ";
+            }
+            
             if (!shopnameTB.Text.Equals("") && !shopTagTB.Text.Equals("") && !shopTypeCB.Text.Equals("") && !shopRateTB.Text.Equals("") && !shopDescriptionTB.Text.Equals(""))
             {
             
@@ -206,6 +222,7 @@ namespace ShoppingMall
             newShop.availableinfloor = availableShopFloorCB.Text;
             newShop.rating = shopRateTB.Text;
             newShop.description = shopDescriptionTB.Text;
+            newShop.availableProduct = availableProduct;
 
             ShoppingMallDb.DbInteraction.DoEnterShop(newShop);
             clearShopFields();
@@ -627,6 +644,8 @@ namespace ShoppingMall
         {
             availproductView.Items.RemoveAt(availproductView.Items.IndexOf(availproductView.SelectedItem));
         }
+
+
     }
 }
 

@@ -92,6 +92,7 @@ namespace ShoppingMall
 
                 productNameTb.Text = productInfoObj.name;
                 productDetailsTBlock.Text = productInfoObj.description;
+                availableInShopTBlock.Text = productInfoObj.availableinshop;
 
                 GetSelectedProductfeedbackItem();
             }
@@ -205,6 +206,11 @@ namespace ShoppingMall
             }
         }
         #endregion
+
+        private void availableShops_MouseDown(object sender, RoutedEventArgs e)
+        {
+             MessageBox.Show("Go To shop");
+        }
 
     }
         }
