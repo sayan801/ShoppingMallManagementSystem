@@ -24,14 +24,13 @@ namespace ShoppingMall
         public Floor()
         {
             InitializeComponent();
-            
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             GetSelectedGroundFloorItem();
-            GetSelectedFirstFloorItem();
-            GetSelectedSecondFloorItem();
+            //GetSelectedFirstFloorItem();
+            //GetSelectedSecondFloorItem();
         }
 
         #region Get Groundfloor Shop
@@ -43,6 +42,17 @@ namespace ShoppingMall
             get
             {
                 return _shopsCollection;
+            }
+        }
+
+        ObservableCollection<FeedbackInfo> _shopFeedbackCollection = new ObservableCollection<FeedbackInfo>();
+
+
+        public ObservableCollection<FeedbackInfo> shopFeedbackCollection
+        {
+            get
+            {
+                return _shopFeedbackCollection;
             }
         }
 
@@ -141,25 +151,103 @@ namespace ShoppingMall
 
         private void ListView_GroundFloorSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ShopInfo shopInfoObj = _shopsCollection.ElementAt(shopDetailsList.SelectedIndex);
+            if (shopDetailsList.SelectedIndex != -1)
+            {
+                ShopInfo shopInfoObj = _shopsCollection.ElementAt(shopDetailsList.SelectedIndex);
             List<ShopInfo> shops = DbInteraction.GetSelectedShopList(shopInfoObj);
             grndflrshopNameTb.Text = shopInfoObj.name;
             grndflrshopdetailsTBlock.Text = shopInfoObj.description;
+            availableGroundProductsTBlock.Text = shopInfoObj.availableProduct;
+
+            GetSelectedshopfeedbackGrndflrItem();
+            }
+            else
+                MessageBox.Show("SelectedIndex equals -1");
+
         }
 
         private void ListView_FirstFloorSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ShopInfo shopInfoObj = _shopsCollection.ElementAt(shopDetailsList.SelectedIndex);
+            if (firstflrDetailsList.SelectedIndex != -1)
+            {
+                ShopInfo shopInfoObj = _shopsCollection.ElementAt(firstflrDetailsList.SelectedIndex);
             List<ShopInfo> shops = DbInteraction.GetSelectedShopList(shopInfoObj);
             firstflrshopNameTb.Text = shopInfoObj.name;
             firstflrshopdetailsTBlock.Text = shopInfoObj.description;
+            availableFirstProductsTBlock.Text = shopInfoObj.availableProduct;
+
+            GetSelectedshopfeedbackfrstflrItem();
+            }
+            else
+                MessageBox.Show("SelectedIndex equals -1");
         }
         private void ListView_SecondFloorSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ShopInfo shopInfoObj = _shopsCollection.ElementAt(shopDetailsList.SelectedIndex);
+            if (secondflrDetailsList.SelectedIndex != -1)
+            {
+                ShopInfo shopInfoObj = _shopsCollection.ElementAt(secondflrDetailsList.SelectedIndex);
             List<ShopInfo> shops = DbInteraction.GetSelectedShopList(shopInfoObj);
             secondflrshopNameTb.Text = shopInfoObj.name;
             secondflrshopdetailsTBlock.Text = shopInfoObj.description;
+            availableSecondProductsTBlock.Text = shopInfoObj.availableProduct;
+
+            GetSelectedshopfeedbackSecondflrItem();
+            }
+            else
+                MessageBox.Show("SelectedIndex equals -1");
+        }
+
+        private void GetSelectedshopfeedbackGrndflrItem()
+        {
+            FeedbackInfo shopInfo = new FeedbackInfo();
+            shopInfo.name = grndflrshopNameTb.Text;
+
+
+            List<FeedbackInfo> shops = DbInteraction.getshopFeedbackList(shopInfo);
+
+            _shopFeedbackCollection.Clear();
+
+            foreach (FeedbackInfo shop in shops)
+            {
+                _shopFeedbackCollection.Add(shop);
+            }
+        }
+
+        private void GetSelectedshopfeedbackfrstflrItem()
+        {
+            FeedbackInfo shopInfo = new FeedbackInfo();
+            shopInfo.name = firstflrshopNameTb.Text;
+
+
+            List<FeedbackInfo> shops = DbInteraction.getshopFeedbackList(shopInfo);
+
+            _shopFeedbackCollection.Clear();
+
+            foreach (FeedbackInfo shop in shops)
+            {
+                _shopFeedbackCollection.Add(shop);
+            }
+        }
+
+        private void GetSelectedshopfeedbackSecondflrItem()
+        {
+            FeedbackInfo shopInfo = new FeedbackInfo();
+            shopInfo.name = secondflrshopNameTb.Text;
+
+
+            List<FeedbackInfo> shops = DbInteraction.getshopFeedbackList(shopInfo);
+
+            _shopFeedbackCollection.Clear();
+
+            foreach (FeedbackInfo shop in shops)
+            {
+                _shopFeedbackCollection.Add(shop);
+            }
+        }
+
+        private void availableProducts_MouseDown(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Go To Product");
         }
     }
 }

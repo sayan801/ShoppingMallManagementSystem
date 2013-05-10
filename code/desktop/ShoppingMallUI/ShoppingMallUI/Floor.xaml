@@ -55,9 +55,25 @@
                                 <DockPanel LastChildFill="True">
                                     <TextBox Name="grndflrshopNameTb" DockPanel.Dock="Top" HorizontalContentAlignment="Center" IsEnabled="False">Shop Name</TextBox>
                                     <TextBlock Name="grndflrshopdetailsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" ScrollViewer.VerticalScrollBarVisibility="Visible">Details</TextBlock>
-                                    <ScrollViewer>
-                                        
-                                    </ScrollViewer>
+                                    <Label DockPanel.Dock="Top" >Available Products :</Label>
+                                    <TextBlock Name="availableGroundProductsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" MouseDown="availableProducts_MouseDown">Available Products</TextBlock>
+                                    <UniformGrid DockPanel.Dock="Bottom" Columns="1">
+                                        <ListView Name="grndsfloorhopFeedbackView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding shopFeedbackCollection}" Loaded="Window_Loaded" >
+
+
+                                            <ListView.View>
+                                                <GridView>
+                                                    <!--<GridViewColumn Width="100" Header="Id" DisplayMemberBinding="{Binding id}"  />-->
+                                                    <GridViewColumn Width="100" Header="Date" DisplayMemberBinding="{Binding feedDate}"  />
+                                                    <GridViewColumn Width="150" Header="Name" DisplayMemberBinding="{Binding name}"  />
+                                                    <GridViewColumn Width="150" Header="Email" DisplayMemberBinding="{Binding email}" />
+                                                    <GridViewColumn Width="70" Header="Rating" DisplayMemberBinding="{Binding rate}" />
+                                                    <GridViewColumn Width="370" Header="Feedback" DisplayMemberBinding="{Binding feedback}" />
+
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </UniformGrid>
                                 </DockPanel>
                             </DockPanel>
                         </UniformGrid>
@@ -99,9 +115,25 @@
                                 <DockPanel LastChildFill="True">
                                     <TextBox Name="firstflrshopNameTb" DockPanel.Dock="Top" HorizontalContentAlignment="Center" IsEnabled="False">Shop Name</TextBox>
                                     <TextBlock Name="firstflrshopdetailsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" ScrollViewer.VerticalScrollBarVisibility="Visible">Details</TextBlock>
-                                    <ScrollViewer>
+                                    <Label DockPanel.Dock="Top" >Available Products :</Label>
+                                    <TextBlock Name="availableFirstProductsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" MouseDown="availableProducts_MouseDown">Available Products</TextBlock>
+                                    <UniformGrid DockPanel.Dock="Bottom" Columns="1">
+                                        <ListView Name="firstfloorshopFeedbackView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding shopFeedbackCollection}" Loaded="Window_Loaded" >
 
-                                    </ScrollViewer>
+
+                                            <ListView.View>
+                                                <GridView>
+                                                    <!--<GridViewColumn Width="100" Header="Id" DisplayMemberBinding="{Binding id}"  />-->
+                                                    <GridViewColumn Width="100" Header="Date" DisplayMemberBinding="{Binding feedDate}"  />
+                                                    <GridViewColumn Width="150" Header="Name" DisplayMemberBinding="{Binding name}"  />
+                                                    <GridViewColumn Width="150" Header="Email" DisplayMemberBinding="{Binding email}" />
+                                                    <GridViewColumn Width="70" Header="Rating" DisplayMemberBinding="{Binding rate}" />
+                                                    <GridViewColumn Width="370" Header="Feedback" DisplayMemberBinding="{Binding feedback}" />
+
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </UniformGrid>
                                 </DockPanel>
                             </DockPanel>
                         </UniformGrid>
@@ -142,9 +174,25 @@
                                 <DockPanel LastChildFill="True">
                                     <TextBox Name="secondflrshopNameTb" DockPanel.Dock="Top" HorizontalContentAlignment="Center" IsEnabled="False">Shop Name</TextBox>
                                     <TextBlock Name="secondflrshopdetailsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" ScrollViewer.VerticalScrollBarVisibility="Visible">Details</TextBlock>
-                                    <ScrollViewer>
+                                    <Label DockPanel.Dock="Top" >Available Products :</Label>
+                                    <TextBlock Name="availableSecondProductsTBlock" DockPanel.Dock="Top" Style="{StaticResource TextBlockStyle}" MouseDown="availableProducts_MouseDown">Available Products</TextBlock>
+                                    <UniformGrid DockPanel.Dock="Bottom" Columns="1">
+                                        <ListView Name="secondfloorshopFeedbackView"  HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding shopFeedbackCollection}" Loaded="Window_Loaded" >
 
-                                    </ScrollViewer>
+
+                                            <ListView.View>
+                                                <GridView>
+                                                    <!--<GridViewColumn Width="100" Header="Id" DisplayMemberBinding="{Binding id}"  />-->
+                                                    <GridViewColumn Width="100" Header="Date" DisplayMemberBinding="{Binding feedDate}"  />
+                                                    <GridViewColumn Width="150" Header="Name" DisplayMemberBinding="{Binding name}"  />
+                                                    <GridViewColumn Width="150" Header="Email" DisplayMemberBinding="{Binding email}" />
+                                                    <GridViewColumn Width="70" Header="Rating" DisplayMemberBinding="{Binding rate}" />
+                                                    <GridViewColumn Width="370" Header="Feedback" DisplayMemberBinding="{Binding feedback}" />
+
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </UniformGrid>
                                 </DockPanel>
                             </DockPanel>
                         </UniformGrid>

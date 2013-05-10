@@ -59,13 +59,18 @@ namespace ShoppingMall
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ShopInfo shopInfoObj = _shopsCollection.ElementAt(shopDetailsList.SelectedIndex);
-            List<ShopInfo> shops = DbInteraction.GetSelectedShopList(shopInfoObj);
-            shopNameTb.Text = shopInfoObj.name;
-            shopdetailsTBlock.Text = shopInfoObj.description;
-            availableProductsTBlock.Text = shopInfoObj.availableProduct;
+            if (shopDetailsList.SelectedIndex != -1)
+            {
+                ShopInfo shopInfoObj = _shopsCollection.ElementAt(shopDetailsList.SelectedIndex);
+                List<ShopInfo> shops = DbInteraction.GetSelectedShopList(shopInfoObj);
+                shopNameTb.Text = shopInfoObj.name;
+                shopdetailsTBlock.Text = shopInfoObj.description;
+                availableProductsTBlock.Text = shopInfoObj.availableProduct;
 
-            GetSelectedshopfeedbackItem();
+                GetSelectedshopfeedbackItem();
+            }
+            else
+                MessageBox.Show("SelectedIndex equals -1");
 
         }
 

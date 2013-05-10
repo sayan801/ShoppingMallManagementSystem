@@ -8,7 +8,7 @@ namespace ShoppingMallDb
 {
     public class DbInteraction
     {
-        static string passwordCurrent = "technicise";
+        static string passwordCurrent = "";
         static string dbmsCurrent = "shoppingdb";
 
         private static MySql.Data.MySqlClient.MySqlConnection OpenDbConnection()
