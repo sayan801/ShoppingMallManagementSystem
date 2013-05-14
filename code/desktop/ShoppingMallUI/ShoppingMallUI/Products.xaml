@@ -48,7 +48,7 @@
                         <TextBox Name="nameTb"></TextBox>
                         <Label  Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Email</Label>
                         <TextBox Name="mailTb"></TextBox>
-                        <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Product Rating</Label>
+                        <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Product Rating (Out of 10)</Label>
                         <TextBox Name="ratingTb"></TextBox>
                         <Label Style="{StaticResource LblStyle}" VerticalContentAlignment="Bottom">Share your experience with all</Label>
                         <TextBox Name="feedbackTb"></TextBox>

@@ -31,14 +31,7 @@
             </Label>
         </UniformGrid>
         <UniformGrid  DockPanel.Dock="Top" Rows="1" >
-            <DockPanel>
-                <Button DockPanel.Dock="Right" Style="{StaticResource ControlBtnStyle}">Go</Button>
-
-                <TextBox DockPanel.Dock="Right"  Width="276" HorizontalAlignment="Left" />
-                <!--<Image Source=""></Image>-->
-                
-                <Label DockPanel.Dock="Right"></Label>
-            </DockPanel>
+            
 
                     
 

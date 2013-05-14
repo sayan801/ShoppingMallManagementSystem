@@ -91,6 +91,8 @@
                                     <ComboBox IsEditable="True" Name="ProductypeCB" SelectedIndex="1">
                                         <ComboBoxItem>Electronics</ComboBoxItem>
                                         <ComboBoxItem>Garments</ComboBoxItem>
+                                        <ComboBoxItem>Computer</ComboBoxItem>
+                                        <ComboBoxItem>Mobile</ComboBoxItem>
                                         <ComboBoxItem>Others</ComboBoxItem>
                                     </ComboBox>
                                     <Label  Style="{StaticResource LblStyle}" >Description</Label>
@@ -156,6 +158,8 @@
                                 <ComboBox IsEditable="True" Name="shopTypeCB" SelectedIndex="1">
                                     <ComboBoxItem>Electronics</ComboBoxItem>
                                     <ComboBoxItem>Garments</ComboBoxItem>
+                                    <ComboBoxItem>Computer</ComboBoxItem>
+                                    <ComboBoxItem>Mobile</ComboBoxItem>
                                     <ComboBoxItem>Others</ComboBoxItem>
                                 </ComboBox>
                                 <Label  Style="{StaticResource LblStyle}" >Available In</Label>
@@ -164,7 +168,7 @@
                                     <ComboBoxItem>First Floor</ComboBoxItem>
                                     <ComboBoxItem>Second Floor</ComboBoxItem>
                                 </ComboBox>
-                                <Label  Style="{StaticResource LblStyle}" >Rate</Label>
+                                <Label  Style="{StaticResource LblStyle}" >Rate (Out of 10)</Label>
                                 <TextBox Name="shopRateTB"></TextBox>
                                 <Label  Style="{StaticResource LblStyle}" >Description</Label>
                                 <TextBox Name="shopDescriptionTB"></TextBox>
