@@ -191,7 +191,7 @@
                                         <GridViewColumn Width="200" Header="Name" DisplayMemberBinding="{Binding name}"  />
                                         <GridViewColumn Width="250" Header="Tag" DisplayMemberBinding="{Binding tag}" />
                                         <GridViewColumn Width="110" Header="Type" DisplayMemberBinding="{Binding type}" />
-                                        <GridViewColumn Width="110" Header="Available In" DisplayMemberBinding="{Binding availableinfloor}" />
+                                        <GridViewColumn Width="110" Header="Floor" DisplayMemberBinding="{Binding availableinfloor}" />
                                         <GridViewColumn Width="370" Header="Rate" DisplayMemberBinding="{Binding rating}" />
                                         <GridViewColumn Width="370" Header="Description" DisplayMemberBinding="{Binding description}" />
                                         <GridViewColumn Width="370" Header="Available In" DisplayMemberBinding="{Binding availableProduct}" />
