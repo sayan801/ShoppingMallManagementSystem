@@ -75,6 +75,7 @@
     <Compile Include="Floor.xaml.cs">
       <DependentUpon>Floor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="Shops.xaml.cs">
       <DependentUpon>Shops.xaml</DependentUpon>
     </Compile>
