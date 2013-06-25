@@ -72,4 +72,514 @@
     </Entities>
     <Relationships />
   </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>ImageInsertion.exe</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>App</Name>
+        <Access>Public</Access>
+        <Location left="224" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public App()</Member>
+        <Member type="Method">public Void InitializeComponent()</Member>
+        <Member type="Method">public static Void Main()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MainWindow</Name>
+        <Access>Public</Access>
+        <Location left="12" top="12" />
+        <Size width="162" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String passwordCurrent</Member>
+        <Member type="Field">private String dbmsCurrent</Member>
+        <Member type="Field">internal TextBox pathTextBox</Member>
+        <Member type="Field">internal Button submitbutton1</Member>
+        <Member type="Field">internal Button button1</Member>
+        <Member type="Field">internal TextBox idtextBox1</Member>
+        <Member type="Field">internal Image retimage1</Member>
+        <Member type="Field">private Boolean _contentLoaded</Member>
+        <Member type="Constructor">public MainWindow()</Member>
+        <Member type="Method">private Void submitbutton1_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private MySqlConnection OpenDbConnection()</Member>
+        <Member type="Method">public Int32 DoRegisterNewContactusindb(String path)</Member>
+        <Member type="Method">private Void button1_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">public Void InitializeComponent()</Member>
+        <Member type="Method">Void System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>ShoppingMallDb.dll</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>DbInteraction</Name>
+        <Access>Public</Access>
+        <Location left="12" top="12" />
+        <Size width="519" height="755" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static String passwordCurrent</Member>
+        <Member type="Field">private static String dbmsCurrent</Member>
+        <Member type="Constructor">public DbInteraction()</Member>
+        <Member type="Constructor">static DbInteraction()</Member>
+        <Member type="Method">private static MySqlConnection OpenDbConnection()</Member>
+        <Member type="Method">public static Int32 DoEnterContactus(ContactusInfo NewContactus)</Member>
+        <Member type="Method">private static Int32 DoRegisterNewContactusindb(ContactusInfo NewContactus)</Member>
+        <Member type="Method">public static List&lt;ContactusInfo&gt; GetAllContactusList()</Member>
+        <Member type="Method">private static List&lt;ContactusInfo&gt; QueryAllContactusList()</Member>
+        <Member type="Method">public static Void DeleteContactus(String contactusToDelete)</Member>
+        <Member type="Method">public static Int32 DoEnterProduct(ProductInfo NewProduct)</Member>
+        <Member type="Method">public static List&lt;ProductInfo&gt; GetAllProductList()</Member>
+        <Member type="Method">private static List&lt;ProductInfo&gt; QueryAllProductList()</Member>
+        <Member type="Method">public static Void DeleteProduct(String productToDelete)</Member>
+        <Member type="Method">public static Void EditProduct(ProductInfo newUpdateProduct)</Member>
+        <Member type="Method">public static List&lt;ProductInfo&gt; searchProductList(ProductInfo productinfo)</Member>
+        <Member type="Method">private static List&lt;ProductInfo&gt; searchAllProductList(ProductInfo productinfo)</Member>
+        <Member type="Method">public static Int32 DoEnterShop(ShopInfo NewShop)</Member>
+        <Member type="Method">public static List&lt;ShopInfo&gt; GetAllShopList()</Member>
+        <Member type="Method">private static List&lt;ShopInfo&gt; QueryAllShopList()</Member>
+        <Member type="Method">public static Void DeleteShop(String shopToDelete)</Member>
+        <Member type="Method">public static Void EditShop(ShopInfo newUpdateShop)</Member>
+        <Member type="Method">public static List&lt;ShopInfo&gt; searchShopList(ShopInfo shopinfo)</Member>
+        <Member type="Method">private static List&lt;ShopInfo&gt; searchAllShopList(ShopInfo shopinfo)</Member>
+        <Member type="Method">public static List&lt;ProductInfo&gt; GetSelectedProductList(ProductInfo productInfoObj)</Member>
+        <Member type="Method">public static List&lt;ShopInfo&gt; GetSelectedShopList(ShopInfo shopInfoObj)</Member>
+        <Member type="Method">public static Int32 DoEnterFeedback(FeedbackInfo NewFeedback)</Member>
+        <Member type="Method">private static Int32 DoRegisterFeedbackindb(FeedbackInfo NewFeedback)</Member>
+        <Member type="Method">public static List&lt;ShopInfo&gt; getGroundfloorShopList(ShopInfo shopinfo)</Member>
+        <Member type="Method">private static List&lt;ShopInfo&gt; getGroundfloorAllShopList(ShopInfo shopinfo)</Member>
+        <Member type="Method">public static List&lt;ShopInfo&gt; getFirstFloorShopList(ShopInfo shopinfo)</Member>
+        <Member type="Method">private static List&lt;ShopInfo&gt; getFirstfloorAllShopList(ShopInfo shopinfo)</Member>
+        <Member type="Method">public static List&lt;ShopInfo&gt; getSecondFloorShopList(ShopInfo shopinfo)</Member>
+        <Member type="Method">private static List&lt;ShopInfo&gt; getSecondfloorAllShopList(ShopInfo shopinfo)</Member>
+        <Member type="Method">public static List&lt;FeedbackInfo&gt; getproductFeedbackList(FeedbackInfo feedbackinfo)</Member>
+        <Member type="Method">private static List&lt;FeedbackInfo&gt; getAllproductFeedbackList(FeedbackInfo feedbackinfo)</Member>
+        <Member type="Method">public static List&lt;FeedbackInfo&gt; getshopFeedbackList(FeedbackInfo feedbackinfo)</Member>
+        <Member type="Method">private static List&lt;FeedbackInfo&gt; getAllshopFeedbackList(FeedbackInfo feedbackinfo)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>ShoppingMallUI.exe</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Products</Name>
+        <Access>Public</Access>
+        <Location left="796" top="25" />
+        <Size width="162" height="706" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ObservableCollection&lt;ProductInfo&gt; _productsCollection</Member>
+        <Member type="Field">private ObservableCollection&lt;FeedbackInfo&gt; _productFeedbackCollection</Member>
+        <Member type="Field">internal Button refreshProductBtn</Member>
+        <Member type="Field">internal Button goProductBtn</Member>
+        <Member type="Field">internal ComboBox productNameSrchCB</Member>
+        <Member type="Field">internal ListView productDetailsList</Member>
+        <Member type="Field">internal UniformGrid upinfo</Member>
+        <Member type="Field">internal DatePicker feedDateDp</Member>
+        <Member type="Field">internal TextBox nameTb</Member>
+        <Member type="Field">internal TextBox mailTb</Member>
+        <Member type="Field">internal TextBox ratingTb</Member>
+        <Member type="Field">internal TextBox feedbackTb</Member>
+        <Member type="Field">internal Button clearProductfeedbackBtn</Member>
+        <Member type="Field">internal Button prdfdbckbtn</Member>
+        <Member type="Field">internal TextBox productNameTb</Member>
+        <Member type="Field">internal TextBlock productDetailsTBlock</Member>
+        <Member type="Field">internal TextBlock availableInShopTBlock</Member>
+        <Member type="Field">internal ListView productFeedbackView</Member>
+        <Member type="Field">private Boolean _contentLoaded</Member>
+        <Member type="Property">public ObservableCollection&lt;ProductInfo&gt; productsCollection { get; }</Member>
+        <Member type="Property">public ObservableCollection&lt;FeedbackInfo&gt; productFeedbackCollection { get; }</Member>
+        <Member type="Constructor">public Products()</Member>
+        <Member type="Method">private Void Slider_ValueChanged(Object sender, RoutedPropertyChangedEventArgs&lt;Double&gt; e)</Member>
+        <Member type="Method">private Void fetchProductData()</Member>
+        <Member type="Method">private Void UserControl_Loaded(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void productDetailsList_SelectionChanged(Object sender, SelectionChangedEventArgs e)</Member>
+        <Member type="Method">private Void prdfdbckbtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private String GenerateId()</Member>
+        <Member type="Method">private Void clearProductfeedbackFields()</Member>
+        <Member type="Method">private Void clearProductfeedbackBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void goProductBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void refreshProductBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void Window_Loaded(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void GetSelectedProductfeedbackItem()</Member>
+        <Member type="Method">private Void availableShops_MouseDown(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">public Void InitializeComponent()</Member>
+        <Member type="Method">Void System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MainWindow</Name>
+        <Access>Public</Access>
+        <Location left="791" top="801" />
+        <Size width="162" height="366" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal Label lable1</Member>
+        <Member type="Field">internal Button product</Member>
+        <Member type="Field">internal Button shop</Member>
+        <Member type="Field">internal Button floor</Member>
+        <Member type="Field">internal Button contactusBtn</Member>
+        <Member type="Field">internal Button adminZoneobjHL</Member>
+        <Member type="Field">internal DockPanel infodocP</Member>
+        <Member type="Field">private Boolean _contentLoaded</Member>
+        <Member type="Constructor">public MainWindow()</Member>
+        <Member type="Method">private Void product_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void shop_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void contactusBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void adminZoneobjHL_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void clearshopfeedbackFields()</Member>
+        <Member type="Method">private Void floor_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">public Void InitializeComponent()</Member>
+        <Member type="Method">Void System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>App</Name>
+        <Access>Public</Access>
+        <Location left="577" top="825" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public App()</Member>
+        <Member type="Method">public Void InitializeComponent()</Member>
+        <Member type="Method">public static Void Main()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Floor</Name>
+        <Access>Public</Access>
+        <Location left="331" top="772" />
+        <Size width="162" height="978" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ObservableCollection&lt;ShopInfo&gt; _shopsCollection</Member>
+        <Member type="Field">private ObservableCollection&lt;FeedbackInfo&gt; _shopFeedbackCollection</Member>
+        <Member type="Field">private ObservableCollection&lt;ShopInfo&gt; _frstfloorshopsCollection</Member>
+        <Member type="Field">private ObservableCollection&lt;ShopInfo&gt; _secondfloorshopsCollection</Member>
+        <Member type="Field">internal Button refreshgroundShopBtn</Member>
+        <Member type="Field">internal Button gogroundShopBtn</Member>
+        <Member type="Field">internal ComboBox groundShopNameSrchCB</Member>
+        <Member type="Field">internal ListView shopDetailsList</Member>
+        <Member type="Field">internal UniformGrid grndflrupinfo</Member>
+        <Member type="Field">internal TextBox grndflrshopNameTb</Member>
+        <Member type="Field">internal TextBlock grndflrshopdetailsTBlock</Member>
+        <Member type="Field">internal TextBlock availableGroundProductsTBlock</Member>
+        <Member type="Field">internal ListView grndsfloorhopFeedbackView</Member>
+        <Member type="Field">internal Button refreshfirstflrShopBtn</Member>
+        <Member type="Field">internal Button gofirstflrShopBtn</Member>
+        <Member type="Field">internal ComboBox firstflrNameSrchCB</Member>
+        <Member type="Field">internal ListView firstflrDetailsList</Member>
+        <Member type="Field">internal UniformGrid firstflrupinfo</Member>
+        <Member type="Field">internal TextBox firstflrshopNameTb</Member>
+        <Member type="Field">internal TextBlock firstflrshopdetailsTBlock</Member>
+        <Member type="Field">internal TextBlock availableFirstProductsTBlock</Member>
+        <Member type="Field">internal ListView firstfloorshopFeedbackView</Member>
+        <Member type="Field">internal Button refreshsecondflrShopBtn</Member>
+        <Member type="Field">internal Button gosecondflrShopBtn</Member>
+        <Member type="Field">internal ComboBox secondflrNameSrchCB</Member>
+        <Member type="Field">internal ListView secondflrDetailsList</Member>
+        <Member type="Field">internal UniformGrid secondflrupinfo</Member>
+        <Member type="Field">internal TextBox secondflrshopNameTb</Member>
+        <Member type="Field">internal TextBlock secondflrshopdetailsTBlock</Member>
+        <Member type="Field">internal TextBlock availableSecondProductsTBlock</Member>
+        <Member type="Field">internal ListView secondfloorshopFeedbackView</Member>
+        <Member type="Field">private Boolean _contentLoaded</Member>
+        <Member type="Property">public ObservableCollection&lt;ShopInfo&gt; shopsCollection { get; }</Member>
+        <Member type="Property">public ObservableCollection&lt;FeedbackInfo&gt; shopFeedbackCollection { get; }</Member>
+        <Member type="Property">public ObservableCollection&lt;ShopInfo&gt; frstfloorshopsCollection { get; }</Member>
+        <Member type="Property">public ObservableCollection&lt;ShopInfo&gt; secondfloorshopsCollection { get; }</Member>
+        <Member type="Constructor">public Floor()</Member>
+        <Member type="Method">private Void Window_Loaded(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void GetSelectedGroundFloorItem()</Member>
+        <Member type="Method">private Void GetSelectedFirstFloorItem()</Member>
+        <Member type="Method">private Void GetSelectedSecondFloorItem()</Member>
+        <Member type="Method">private Void refreshgroundShopBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void refreshfirstflrShopBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void refreshsecondflrShopBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void ListView_GroundFloorSelectionChanged(Object sender, SelectionChangedEventArgs e)</Member>
+        <Member type="Method">private Void ListView_FirstFloorSelectionChanged(Object sender, SelectionChangedEventArgs e)</Member>
+        <Member type="Method">private Void ListView_SecondFloorSelectionChanged(Object sender, SelectionChangedEventArgs e)</Member>
+        <Member type="Method">private Void GetSelectedshopfeedbackGrndflrItem()</Member>
+        <Member type="Method">private Void GetSelectedshopfeedbackfrstflrItem()</Member>
+        <Member type="Method">private Void GetSelectedshopfeedbackSecondflrItem()</Member>
+        <Member type="Method">private Void availableProducts_MouseDown(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">public Void InitializeComponent()</Member>
+        <Member type="Method">Void System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ContactUs</Name>
+        <Access>Public</Access>
+        <Location left="347" top="253" />
+        <Size width="162" height="468" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ObservableCollection&lt;ContactusInfo&gt; _contactusCollection</Member>
+        <Member type="Field">internal UniformGrid upinfo</Member>
+        <Member type="Field">internal DatePicker feedDateDp</Member>
+        <Member type="Field">internal TextBox nameTB</Member>
+        <Member type="Field">internal TextBox addressTB</Member>
+        <Member type="Field">internal TextBox mobilenoTB</Member>
+        <Member type="Field">internal TextBox emailTB</Member>
+        <Member type="Field">internal ComboBox typeCB</Member>
+        <Member type="Field">internal TextBox contactusTB</Member>
+        <Member type="Field">internal Button resetFdbckBtn</Member>
+        <Member type="Field">internal Button submitFdBckBtn</Member>
+        <Member type="Field">internal ListView contactusView</Member>
+        <Member type="Field">private Boolean _contentLoaded</Member>
+        <Member type="Property">public ObservableCollection&lt;ContactusInfo&gt; contactusCollection { get; }</Member>
+        <Member type="Constructor">public ContactUs()</Member>
+        <Member type="Method">private Void submitFdBckBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private String GenerateId()</Member>
+        <Member type="Method">private Void resetFdbckBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void clearFeedBackFields()</Member>
+        <Member type="Method">private Void Window_Loaded(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void fetchFeedBackData()</Member>
+        <Member type="Method">public Void InitializeComponent()</Member>
+        <Member type="Method">Void System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Shops</Name>
+        <Access>Public</Access>
+        <Location left="559" top="12" />
+        <Size width="162" height="706" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ObservableCollection&lt;ShopInfo&gt; _shopsCollection</Member>
+        <Member type="Field">private ObservableCollection&lt;FeedbackInfo&gt; _shopFeedbackCollection</Member>
+        <Member type="Field">internal Button refreshShopBtn</Member>
+        <Member type="Field">internal Button goShopBtn</Member>
+        <Member type="Field">internal ComboBox shopNameSrchCB</Member>
+        <Member type="Field">internal ListView shopDetailsList</Member>
+        <Member type="Field">internal UniformGrid upinfo</Member>
+        <Member type="Field">internal DatePicker feedDateDp</Member>
+        <Member type="Field">internal TextBox nameTb</Member>
+        <Member type="Field">internal TextBox mailTb</Member>
+        <Member type="Field">internal TextBox ratingTb</Member>
+        <Member type="Field">internal TextBox feedbackTb</Member>
+        <Member type="Field">internal Button resetshopFeedback</Member>
+        <Member type="Field">internal Button submitshopBtn</Member>
+        <Member type="Field">internal TextBox shopNameTb</Member>
+        <Member type="Field">internal TextBlock shopdetailsTBlock</Member>
+        <Member type="Field">internal TextBlock availableProductsTBlock</Member>
+        <Member type="Field">internal ListView shopFeedbackView</Member>
+        <Member type="Field">private Boolean _contentLoaded</Member>
+        <Member type="Property">public ObservableCollection&lt;ShopInfo&gt; shopsCollection { get; }</Member>
+        <Member type="Property">public ObservableCollection&lt;FeedbackInfo&gt; shopFeedbackCollection { get; }</Member>
+        <Member type="Constructor">public Shops()</Member>
+        <Member type="Method">private Void ListView_Loaded(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void fetchShopData()</Member>
+        <Member type="Method">private Void ListView_SelectionChanged(Object sender, SelectionChangedEventArgs e)</Member>
+        <Member type="Method">private Void submitshopBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private String GenerateId()</Member>
+        <Member type="Method">private Void clearshopfeedbackFields()</Member>
+        <Member type="Method">private Void resetshopFeedback_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void refreshShopBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void goShopBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void UserControl_Loaded(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void Window_Loaded(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void GetSelectedshopfeedbackItem()</Member>
+        <Member type="Method">private Void availableProducts_MouseDown(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">public Void InitializeComponent()</Member>
+        <Member type="Method">Void System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Feedback</Name>
+        <Access>Public</Access>
+        <Location left="347" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Boolean _contentLoaded</Member>
+        <Member type="Constructor">public Feedback()</Member>
+        <Member type="Method">public Void InitializeComponent()</Member>
+        <Member type="Method">Void System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AdminZone</Name>
+        <Access>Public</Access>
+        <Location left="17" top="12" />
+        <Size width="301" height="1885" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ObservableCollection&lt;ProductInfo&gt; _productsCollection</Member>
+        <Member type="Field">private ObservableCollection&lt;ShopInfo&gt; _shopsCollection</Member>
+        <Member type="Field">private ObservableCollection&lt;ContactusInfo&gt; _contactusCollection</Member>
+        <Member type="Field">internal Button adminlogoutBtn</Member>
+        <Member type="Field">internal UniformGrid loginUG</Member>
+        <Member type="Field">internal TextBox adminUserNameTB</Member>
+        <Member type="Field">internal PasswordBox adminUserPassPb</Member>
+        <Member type="Field">internal Button adminresetBtn</Member>
+        <Member type="Field">internal Button adminloginBtn</Member>
+        <Member type="Field">internal Label loginErrorlbl</Member>
+        <Member type="Field">internal UniformGrid logoutUG</Member>
+        <Member type="Field">internal UniformGrid manageadminUG</Member>
+        <Member type="Field">internal UniformGrid operationProductAdmitnUG</Member>
+        <Member type="Field">internal TextBox prdctAdminSearchTB</Member>
+        <Member type="Field">internal Button searchAdminProductBtn</Member>
+        <Member type="Field">internal Button refreshAdminProductBtn</Member>
+        <Member type="Field">internal Button editProductBtn</Member>
+        <Member type="Field">internal Button deleteProduct</Member>
+        <Member type="Field">internal UniformGrid manageUG</Member>
+        <Member type="Field">internal Image prdctimgPhoto</Member>
+        <Member type="Field">internal TextBox prdctimagelinkTB</Member>
+        <Member type="Field">internal Button prdctbrowseBtn</Member>
+        <Member type="Field">internal ComboBox avaiableShopCB</Member>
+        <Member type="Field">internal Button deleteAvailShopItemBtn</Member>
+        <Member type="Field">internal Button addShopToListview</Member>
+        <Member type="Field">internal ListView availableShopLView</Member>
+        <Member type="Field">internal TextBox nameTB</Member>
+        <Member type="Field">internal TextBox BrandTB</Member>
+        <Member type="Field">internal ComboBox ProductypeCB</Member>
+        <Member type="Field">internal TextBox productdescriptionTB</Member>
+        <Member type="Field">internal Button resetBtn</Member>
+        <Member type="Field">internal Button submitproductkBtn</Member>
+        <Member type="Field">internal Button editProductkBtn</Member>
+        <Member type="Field">internal ListView productsView</Member>
+        <Member type="Field">internal UniformGrid oprtionShopUG</Member>
+        <Member type="Field">internal TextBox searchAdminShopmangTB</Member>
+        <Member type="Field">internal Button searchAdminShopmangBtn</Member>
+        <Member type="Field">internal Button refreshAdminShopBtn</Member>
+        <Member type="Field">internal Button editShopBtn</Member>
+        <Member type="Field">internal Button deleteShop</Member>
+        <Member type="Field">internal Image shopimgPhoto</Member>
+        <Member type="Field">internal TextBox shopimagelinkTB</Member>
+        <Member type="Field">internal Button shopbrowseBtn</Member>
+        <Member type="Field">internal ComboBox avaiableProductCB</Member>
+        <Member type="Field">internal Button deleteAvailProductItemBtn</Member>
+        <Member type="Field">internal Button addProductToListview</Member>
+        <Member type="Field">internal ListView availproductView</Member>
+        <Member type="Field">internal UniformGrid manageShopUG</Member>
+        <Member type="Field">internal TextBox shopnameTB</Member>
+        <Member type="Field">internal TextBox shopTagTB</Member>
+        <Member type="Field">internal ComboBox shopTypeCB</Member>
+        <Member type="Field">internal ComboBox availableShopFloorCB</Member>
+        <Member type="Field">internal TextBox shopRateTB</Member>
+        <Member type="Field">internal TextBox shopDescriptionTB</Member>
+        <Member type="Field">internal Button resetShopmangBtn</Member>
+        <Member type="Field">internal Button submitkShopmangBtn</Member>
+        <Member type="Field">internal Button UpdateShopmangBtn</Member>
+        <Member type="Field">internal ListView shopsView</Member>
+        <Member type="Field">internal Button refreshFeedbackAdminBtn</Member>
+        <Member type="Field">internal Button deleteContactusBtn</Member>
+        <Member type="Field">internal ListView contactusView</Member>
+        <Member type="Field">private Boolean _contentLoaded</Member>
+        <Member type="Property">public ObservableCollection&lt;ProductInfo&gt; productsCollection { get; }</Member>
+        <Member type="Property">public ObservableCollection&lt;ShopInfo&gt; shopsCollection { get; }</Member>
+        <Member type="Property">public ObservableCollection&lt;ContactusInfo&gt; contactusCollection { get; }</Member>
+        <Member type="Constructor">public AdminZone()</Member>
+        <Member type="Method">private Void Window_Loaded(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void adminloginBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void adminlogoutBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void clearSecurityFields()</Member>
+        <Member type="Method">private Void adminresetBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void clearProductFields()</Member>
+        <Member type="Method">private Void resetBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void submitproductkBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private String GenerateId()</Member>
+        <Member type="Method">private Void fetchProductData()</Member>
+        <Member type="Method">private Void clearShopFields()</Member>
+        <Member type="Method">private Void resetShopmangBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void submitkShopmangBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void fetchShopData()</Member>
+        <Member type="Method">private Void fetchFeedBackData()</Member>
+        <Member type="Method">private ProductInfo GetSelectedProductItemforDel()</Member>
+        <Member type="Method">private Void deleteProduct_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private ShopInfo GetSelectedShopItemforDel()</Member>
+        <Member type="Method">private Void deleteShop_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private ContactusInfo GetSelectedContactusItem()</Member>
+        <Member type="Method">private Void deleteContactusBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private ProductInfo GetSelectedProductItemForEdit()</Member>
+        <Member type="Method">private Void editProductBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void editProductkBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private ShopInfo GetSelectedShopItemforEdit()</Member>
+        <Member type="Method">private Void editShopBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void UpdateShopmangBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void prdctbrowseBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void shopbrowseBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void searchAdminProductBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void refreshAdminProductBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void searchAdminShopmangBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void refreshAdminShopBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void refreshFeedbackAdminBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void deleteAvailShopItemBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void addShopToListview_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void addProductToListview_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">private Void deleteAvailProductItemBtn_Click(Object sender, RoutedEventArgs e)</Member>
+        <Member type="Method">public Void InitializeComponent()</Member>
+        <Member type="Method">Void System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ProductInfo</Name>
+        <Access>Public</Access>
+        <Location left="541" top="1226" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String id { get; set; }</Member>
+        <Member type="Property">public String name { get; set; }</Member>
+        <Member type="Property">public String brand { get; set; }</Member>
+        <Member type="Property">public String type { get; set; }</Member>
+        <Member type="Property">public String description { get; set; }</Member>
+        <Member type="Property">public String availableinshop { get; set; }</Member>
+        <Member type="Constructor">public ProductInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ContactusInfo</Name>
+        <Access>Public</Access>
+        <Location left="791" top="1226" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String id { get; set; }</Member>
+        <Member type="Property">public DateTime feedDate { get; set; }</Member>
+        <Member type="Property">public String name { get; set; }</Member>
+        <Member type="Property">public String address { get; set; }</Member>
+        <Member type="Property">public String mobileno { get; set; }</Member>
+        <Member type="Property">public String email { get; set; }</Member>
+        <Member type="Property">public String type { get; set; }</Member>
+        <Member type="Property">public String feedback { get; set; }</Member>
+        <Member type="Constructor">public ContactusInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FeedbackInfo</Name>
+        <Access>Public</Access>
+        <Location left="791" top="1506" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String id { get; set; }</Member>
+        <Member type="Property">public String item { get; set; }</Member>
+        <Member type="Property">public DateTime feedDate { get; set; }</Member>
+        <Member type="Property">public String name { get; set; }</Member>
+        <Member type="Property">public String email { get; set; }</Member>
+        <Member type="Property">public String rate { get; set; }</Member>
+        <Member type="Property">public String feedback { get; set; }</Member>
+        <Member type="Constructor">public FeedbackInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ShopInfo</Name>
+        <Access>Public</Access>
+        <Location left="541" top="1506" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String id { get; set; }</Member>
+        <Member type="Property">public String name { get; set; }</Member>
+        <Member type="Property">public String tag { get; set; }</Member>
+        <Member type="Property">public String type { get; set; }</Member>
+        <Member type="Property">public String availableinfloor { get; set; }</Member>
+        <Member type="Property">public String rating { get; set; }</Member>
+        <Member type="Property">public String description { get; set; }</Member>
+        <Member type="Property">public String availableProduct { get; set; }</Member>
+        <Member type="Constructor">public ShopInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
 </Project>
