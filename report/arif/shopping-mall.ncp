@@ -1,0 +1,75 @@
+<Project>
+  <Name>Shopping-mall</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>ShoppingMallData.dll</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>ShopInfo</Name>
+        <Access>Public</Access>
+        <Location left="12" top="292" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String id { get; set; }</Member>
+        <Member type="Property">public String name { get; set; }</Member>
+        <Member type="Property">public String tag { get; set; }</Member>
+        <Member type="Property">public String type { get; set; }</Member>
+        <Member type="Property">public String availableinfloor { get; set; }</Member>
+        <Member type="Property">public String rating { get; set; }</Member>
+        <Member type="Property">public String description { get; set; }</Member>
+        <Member type="Property">public String availableProduct { get; set; }</Member>
+        <Member type="Constructor">public ShopInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FeedbackInfo</Name>
+        <Access>Public</Access>
+        <Location left="436" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String id { get; set; }</Member>
+        <Member type="Property">public String item { get; set; }</Member>
+        <Member type="Property">public DateTime feedDate { get; set; }</Member>
+        <Member type="Property">public String name { get; set; }</Member>
+        <Member type="Property">public String email { get; set; }</Member>
+        <Member type="Property">public String rate { get; set; }</Member>
+        <Member type="Property">public String feedback { get; set; }</Member>
+        <Member type="Constructor">public FeedbackInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ContactusInfo</Name>
+        <Access>Public</Access>
+        <Location left="224" top="12" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String id { get; set; }</Member>
+        <Member type="Property">public DateTime feedDate { get; set; }</Member>
+        <Member type="Property">public String name { get; set; }</Member>
+        <Member type="Property">public String address { get; set; }</Member>
+        <Member type="Property">public String mobileno { get; set; }</Member>
+        <Member type="Property">public String email { get; set; }</Member>
+        <Member type="Property">public String type { get; set; }</Member>
+        <Member type="Property">public String feedback { get; set; }</Member>
+        <Member type="Constructor">public ContactusInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ProductInfo</Name>
+        <Access>Public</Access>
+        <Location left="12" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String id { get; set; }</Member>
+        <Member type="Property">public String name { get; set; }</Member>
+        <Member type="Property">public String brand { get; set; }</Member>
+        <Member type="Property">public String type { get; set; }</Member>
+        <Member type="Property">public String description { get; set; }</Member>
+        <Member type="Property">public String availableinshop { get; set; }</Member>
+        <Member type="Constructor">public ProductInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
