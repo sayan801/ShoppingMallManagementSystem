@@ -115,6 +115,10 @@ Backup*/
 UpgradeLog*.XML
 
 
+############
+## dia
+############
+*.dia~
 
 ############
 ## Windows
